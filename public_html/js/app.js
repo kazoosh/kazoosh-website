@@ -1,4 +1,4 @@
-var kazoosh = angular.module('kazoosh', ['config', 'provider', 'ui.router', 'ngSanitize']);
+var kazoosh = angular.module('kazoosh', ['config', 'provider', 'ui.router', 'ngSanitize', 'underscore']);
 
 kazoosh.config(function(CONF, $stateProvider, $urlRouterProvider, templateProvider) {
 	

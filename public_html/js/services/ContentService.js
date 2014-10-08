@@ -1,5 +1,5 @@
 angular.module('kazoosh')
-	.factory('ContentService', ['CONF', '$http', '$q', function(CONF, $http, $q) {
+	.factory('ContentService', ['CONF', '$http', '$q', '_', function(CONF, $http, $q, _) {
 		return{
 			getList: function(type){
 
@@ -45,6 +45,8 @@ angular.module('kazoosh')
 			},
 
 			_extendAttributes: function(content, attributes){
+
+				attributes = _.extend({}, attributes);
 
 				var converter = new Showdown.converter();
 
