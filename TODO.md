@@ -1,6 +1,5 @@
 
 
-* alle unteroder von content automatisch umwandeln (im gruntfile)
 * navigation automatisch erzeugen
 * cache für json files
 

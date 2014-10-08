@@ -12,10 +12,7 @@ module.exports = function(grunt) {
 		shell: {
 			mdToJson: {
 				command: [
-					'ls content/home/* | xargs node node_modules/markdown-to-json/bin/m2j -w 1000000000 -o public_html/content/home.json',
-					'ls content/projekte/* | xargs node node_modules/markdown-to-json/bin/m2j -w 1000000000 -o public_html/content/projekte.json',
-					'ls content/teilnehmer/* | xargs node node_modules/markdown-to-json/bin/m2j -w 1000000000 -o public_html/content/teilnehmer.json',
-					'ls content/other/* | xargs node node_modules/markdown-to-json/bin/m2j -w 1000000000 -o public_html/content/other.json'
+					'for D in content/*; do if [ -d $D ]; then ls $D/* | xargs node node_modules/markdown-to-json/bin/m2j -w 1000000000 -o "public_html/$D.json"; fi; done;'
 				].join('&&')
 			}
 		}
