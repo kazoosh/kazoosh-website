@@ -3,6 +3,7 @@ angular.module('config', [])
 		'name': 'development',
 		'content_folder': '/content/',
 		'templates_folder': '/templates/',
+		'image_folder': '/img/',
 
 		'error_template': '404.html',
 		'default_list_template': 'default-list.html',

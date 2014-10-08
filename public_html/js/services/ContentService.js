@@ -3,21 +3,14 @@ angular.module('kazoosh')
 		return{
 			getList: function(type){
 
+				var that = this;
 				var deferred = $q.defer();
 
 				$http.get(CONF.content_folder + type + '.json')
 					.success(function(list){
 
-						var converter = new Showdown.converter();
-
 						for(var id in list){
-							//parse markdown
-							list[id][CONF.markdown_to_html_attribute] = converter.makeHtml(list[id][CONF.markdown_attribute]);
-
-							//add id attribute
-							if(!list[id].id){
-								list[id].id = id;
-							}
+							list[id] = that._extendAttributes(list[id], {id: id});
 						}
 
 						deferred.resolve(list);
@@ -30,24 +23,16 @@ angular.module('kazoosh')
 			},
 			getDetail: function(type, id){
 
+				var that = this;
 				var deferred = $q.defer();
 
 				$http.get(CONF.content_folder + type + '.json')
 					.success(function(list){
 
-						var converter = new Showdown.converter();
-
 						var detail = list[id];
 
 						if(detail){
-							
-							//parse markdown
-							detail[CONF.markdown_to_html_attribute] = converter.makeHtml(detail[CONF.markdown_attribute]);
-
-							//add id attribute
-							if(!detail.id){
-								detail.id = id;
-							}
+							detail = that._extendAttributes(detail);
 						}
 						
 						deferred.resolve(detail);
@@ -57,6 +42,26 @@ angular.module('kazoosh')
 					});
 
 				return deferred.promise;
+			},
+
+			_extendAttributes: function(content, attributes){
+
+				var converter = new Showdown.converter();
+
+				//parse markdown
+				content[CONF.markdown_to_html_attribute] = converter.makeHtml(content[CONF.markdown_attribute]);
+
+				//add id attribute
+				if(!content.id && attributes.id){
+					content.id = attributes.id;
+				}
+
+				//extend image path
+				if(content.image){
+					content.image = CONF.image_folder + content.image;
+				}
+
+				return content;
 			}
 		};
 	}]);

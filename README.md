@@ -7,5 +7,5 @@
 
 # RUN
 
-
+* python -m SimpleHTTPServer
 * grunt observe
