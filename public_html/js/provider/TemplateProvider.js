@@ -14,10 +14,10 @@ angular.module('provider', [])
 					if($stateParams.type && $stateParams.type != '404'){
 
 						if(templateType == 'list'){
-							templateUrl = CONF.templates_folder + $stateParams.type + '-list.html';
+							templateUrl = CONF.templates_folder + $stateParams.type + '/list.html';
 						}
 						else if(templateType == 'detail'){
-							templateUrl = CONF.templates_folder + $stateParams.type + '-detail.html';
+							templateUrl = CONF.templates_folder + $stateParams.type + '/detail.html';
 						}
 					}
 					//use 404 template, if no type was given

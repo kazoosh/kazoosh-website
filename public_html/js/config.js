@@ -6,8 +6,8 @@ angular.module('config', [])
 		'image_folder': '/img/',
 
 		'error_template': '404.html',
-		'default_list_template': 'default-list.html',
-		'default_detail_template': 'default-detail.html',
+		'default_list_template': 'list.html',
+		'default_detail_template': 'detail.html',
 
 		'exlude_from_navigation': ['other'],
 		

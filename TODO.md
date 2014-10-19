@@ -1,4 +1,7 @@
 
+* Änderungsdatum für Inhalte
+
+* eigene templates für bestimmte inhalte
 
 * navigation automatisch erzeugen
 * cache für json files
