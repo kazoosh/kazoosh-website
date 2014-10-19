@@ -1,6 +1,21 @@
 angular.module('kazoosh')
 	.factory('ContentService', ['CONF', '$http', '$q', '_', function(CONF, $http, $q, _) {
 		return{
+			getContents: function(){
+
+				var that = this;
+				var deferred = $q.defer();
+
+				$http.get(CONF.content_folder + 'contents.json')
+					.success(function(list){
+						deferred.resolve(list);
+					})
+					.error(function(list, status, headers, config) {
+						deferred.reject(null);
+					});
+
+				return deferred.promise;
+			},
 			getList: function(type){
 
 				var that = this;
@@ -32,7 +47,7 @@ angular.module('kazoosh')
 						var detail = list[id];
 
 						if(detail){
-							detail = that._extendAttributes(detail);
+							detail = that._extendAttributes(detail, {id: id});
 						}
 						
 						deferred.resolve(detail);
