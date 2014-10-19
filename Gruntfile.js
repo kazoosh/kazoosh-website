@@ -1,19 +1,45 @@
 module.exports = function(grunt) {
-
+	
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		watch: {
-			scripts: {
+			addContent: {
 				files: ['content/**'],
-				tasks: ['shell:mdToJson']
-			},
+				tasks: ['shell:mdToJson'],
+				options: {
+					event: ['added', 'changed', 'deleted']
+				}
+			}
 		},
 		shell: {
 			mdToJson: {
-				command: [
-					'for D in content/*; do if [ -d $D ]; then ls $D/* | xargs node node_modules/markdown-to-json/bin/m2j -w 1000000000 -o "public_html/$D.json"; fi; done;'
-				].join('&&')
+				command: function () {
+					grunt.log.writeln('mdToJson');
+					
+					var script = '';
+					script += 'for D in content/*;'
+					//for all directories in content folder
+					script += '	do if [ -d $D ]; ';
+					script += '		then';
+					script += '			for z in $D/*; do';
+					script += '				if [ -f $z ];';
+					script += '					then';
+					//update if directory contains files
+					//script += '						echo "update public_html/$D.json";';
+					script += '						ls $D/* | xargs node node_modules/markdown-to-json/bin/m2j -w 1000000000 -o "public_html/$D.json";';
+					script += '						break;';
+					script += '					else';
+					//remove if directory contains no files
+					//script += '						echo "rm public_html/$D.json";';
+					script += '						rm "public_html/$D.json";';
+					script += '					fi;';
+					script += '			done;';
+					script += '		fi;';
+					script += 'done;';
+					
+					return script;
+				}
 			}
 		}
 	});
@@ -21,8 +47,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-shell');
 	
-
-	// Default task(s).
+	
 	grunt.registerTask('observe', ['watch']);
-	grunt.registerTask('content', ['shell:mdToJson']);
+
 };
