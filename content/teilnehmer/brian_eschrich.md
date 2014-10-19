@@ -4,7 +4,7 @@ title: Brian Eschrich
 teaser: ...
 image: teilnehmer/deborah.png
 
-lsastname: Eschrich
+lastname: Eschrich
 firstname: Brian
 
 ---

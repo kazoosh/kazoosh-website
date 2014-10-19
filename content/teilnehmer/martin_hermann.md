@@ -4,7 +4,7 @@ title: Martin Hermann
 teaser: ...
 image: teilnehmer/deborah.png
 
-lsastname: Hermann
+lastname: Hermann
 firstname: Martin
 
 ---

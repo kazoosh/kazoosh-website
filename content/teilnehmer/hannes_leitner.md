@@ -1,11 +1,11 @@
 ---
 type: teilnehmer
-title: Hannes Leitner
+title: Hanness Leitner
 teaser: ...
 image: teilnehmer/deborah.png
 
-lsastname: Leitner
-firstname: Hannes
+lastname: Leitner
+firstname: Hanness
 
 ---
 

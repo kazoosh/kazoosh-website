@@ -4,7 +4,7 @@
     "title": "Brian Eschrich",
     "teaser": "...",
     "image": "teilnehmer/deborah.png",
-    "lsastname": "Eschrich",
+    "lastname": "Eschrich",
     "firstname": "Brian",
     "preview": "##Brian E.",
     "basename": "brian_eschrich"
@@ -14,18 +14,18 @@
     "title": "Deborah Schmidt",
     "teaser": "...",
     "image": "teilnehmer/deborah.png",
-    "lsastname": "Schmidt",
+    "lastname": "Schmidt",
     "firstname": "Deborah",
     "preview": "##Deborah",
     "basename": "deborah_schmidt"
   },
   "hannes_leitner": {
     "type": "teilnehmer",
-    "title": "Hannes Leitner",
+    "title": "Hanness Leitner",
     "teaser": "...",
     "image": "teilnehmer/deborah.png",
-    "lsastname": "Leitner",
-    "firstname": "Hannes",
+    "lastname": "Leitner",
+    "firstname": "Hanness",
     "preview": "##Hannes",
     "basename": "hannes_leitner"
   },
@@ -34,7 +34,7 @@
     "title": "Martin Hermann",
     "teaser": "...",
     "image": "teilnehmer/deborah.png",
-    "lsastname": "Hermann",
+    "lastname": "Hermann",
     "firstname": "Martin",
     "preview": "##Martin",
     "basename": "martin_hermann"
