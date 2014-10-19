@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 		watch: {
 			addContent: {
 				files: ['content/**'],
-				tasks: ['shell:mdToJson'],
+				tasks: ['shell:mdToJson', 'shell:folderNamesToJson'],
 				options: {
 					event: ['added', 'changed', 'deleted']
 				}
@@ -15,7 +15,6 @@ module.exports = function(grunt) {
 		shell: {
 			mdToJson: {
 				command: function () {
-					grunt.log.writeln('mdToJson');
 					
 					var script = '';
 					script += 'for D in content/*;'
@@ -38,6 +37,38 @@ module.exports = function(grunt) {
 					script += '		fi;';
 					script += 'done;';
 					
+					return script;
+				}
+			},
+			folderNamesToJson: {
+				command: function(){
+
+					var script = '';
+					//create navi.json file with folder names as contents
+					script += 'json="";';
+					script += 'json+="{";';
+					script += 'json+="\\"contents\\": [";';
+					script += 'seperator="";';
+					script += 'for D in content/*;';
+					//for all directories in content folder
+					script += '	do if [ -d $D ];';
+					script += '		then';
+					//#exlude folders starting with _
+					script += '			if [ ${D:8:1} != "_" ];';
+					script += '				then';
+					//#strip of string "content/"';
+					script += '					json+=$seperator"\\""${D:8}"\\"";';
+					script += '					seperator=",";';
+					script += '				fi;';
+					script += '		fi; ';
+					script += 'done;';
+
+					script += 'json+="]";';
+					script += 'json+="}";';
+
+					script += 'rm public_html/content/contents.json;';
+					script += 'echo $json >> public_html/content/contents.json;';
+
 					return script;
 				}
 			}

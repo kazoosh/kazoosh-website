@@ -5,8 +5,9 @@ teaser: ...
 
 featured:
 - projekte/digitaler_voyeurismus
+- projekte/binärers_im_buschwerk
 - teilnehmer/brian_eschrich
-- other/irgendeine_neuigkeit
+- _news/irgendeine_neuigkeit
 
 ---
 

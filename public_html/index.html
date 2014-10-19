@@ -7,11 +7,14 @@
 </head>
 <body ng-app="kazoosh" ng-controller="MainCtrl">
 
-	<ul class="menu">
-		<li><a ui-sref="home">home</a></li>
-		<li><a ui-sref="list({type: 'projekte'})">projekte</a></li>
-		<li><a ui-sref="list({type: 'teilnehmer'})">teilnehmer</a></li>
-	</ul>
+	<div class="menu" ng-controller="NavigationCtrl">
+		<ul>
+			<li><a ui-sref="home">home</a></li>
+			<li ng-repeat="content in contents">
+				<a ui-sref="list({type: '{{content}}'})">{{content}}</a></li>
+			</li>
+		</ul>
+	</div>
 
 	<div ui-view></div>
 
@@ -30,6 +33,7 @@
 
 	<script src="js/controllers/MainCtrl.js"></script>
 	
+	<script src="js/controllers/NavigationCtrl.js"></script>
 	<script src="js/controllers/HomeCtrl.js"></script>
 	<script src="js/controllers/ListCtrl.js"></script>
 	<script src="js/controllers/DetailCtrl.js"></script>
