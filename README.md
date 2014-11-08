@@ -1,8 +1,9 @@
 
 # INSTALL
 
-* bower install
+* sudo gem install sass
 * npm install
+* bower install
 
 
 # RUN

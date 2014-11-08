@@ -10,5 +10,8 @@ public_html/content
 # node dependency directory
 node_modules
 
+# sass
+.sass-cache/
+
 # mac
 .DS_Store
