@@ -1,5 +1,4 @@
 ---
-type: teilnehmer
 title: Hanness Leitner
 teaser: ...
 image: teilnehmer/deborah.png

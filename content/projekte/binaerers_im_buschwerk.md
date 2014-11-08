@@ -1,5 +1,4 @@
 ---
-type: projekte
 title: Binäres...
 teaser: Am 16.-26. November 2011 fand die CYNETART im Festspielhaus Hellerau statt. Wir hatten die Möglichkeit, dort eine Projektwoche veranstalten. Das bedeutet, dass wir eine Woche im Festspielhaus Hellerau verbracht und zusammen ditigal und analog gebastelt haben. Anschließend wurde zwei Wochenenden im Rahmen der CYNETART ausgestellt.
 image: projekte/digitaler_voyeurismus.png

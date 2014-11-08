@@ -1,5 +1,4 @@
 ---
-type: home
 title: Home
 teaser: ...
 

@@ -1,5 +1,4 @@
 ---
-type: teilnehmer
 title: Martin Hermann
 teaser: ...
 image: teilnehmer/deborah.png

@@ -1,5 +1,4 @@
 ---
-type: news
 title: Blablubb
 teaser: asndsadnajsdn
 

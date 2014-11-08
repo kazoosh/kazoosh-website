@@ -25,7 +25,7 @@ angular.module('kazoosh')
 					.success(function(list){
 
 						for(var id in list){
-							list[id] = that._extendAttributes(list[id], {id: id});
+							list[id] = that._extendAttributes(list[id], {type: type, id: id});
 						}
 
 						deferred.resolve(list);
@@ -47,7 +47,7 @@ angular.module('kazoosh')
 						var detail = list[id];
 
 						if(detail){
-							detail = that._extendAttributes(detail, {id: id});
+							detail = that._extendAttributes(detail, {type: type, id: id});
 						}
 						
 						deferred.resolve(detail);
@@ -68,9 +68,11 @@ angular.module('kazoosh')
 				//parse markdown
 				content[CONF.markdown_to_html_attribute] = converter.makeHtml(content[CONF.markdown_attribute]);
 
-				//add id attribute
-				if(!content.id && attributes.id){
-					content.id = attributes.id;
+				// add attributes to content
+				for(var key in attributes){
+					if(!content[key]){
+						content[key] = attributes[key];
+					}
 				}
 
 				//extend image path
