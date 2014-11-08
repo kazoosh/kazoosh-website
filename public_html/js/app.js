@@ -12,15 +12,15 @@ kazoosh.config(function(CONF, $stateProvider, $urlRouterProvider, templateProvid
 		})
 		.state('list', {
 			url: '/:type',
-			templateProvider: function ($stateParams, $templateCache, $http) {
-				return templateProvider.getTemplate('list', $stateParams, $templateCache, $http);
+			templateProvider: function ($stateParams, $templateCache, $http, $q) {
+				return templateProvider.getListTemplate($stateParams, $templateCache, $http, $q);
 			},
 			controller: 'ListCtrl'
 		})
 		.state('detail', {
 			url: '/:type/:id',
-			templateProvider: function ($stateParams, $templateCache, $http) {
-				return templateProvider.getTemplate('detail', $stateParams, $templateCache, $http);
+			templateProvider: function ($stateParams, $templateCache, $http, ContentService, $q) {
+				return templateProvider.getDetailTemplate($stateParams, $templateCache, $http, ContentService, $q);
 			},
 			controller: 'DetailCtrl'
 		})
