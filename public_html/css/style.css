@@ -8,15 +8,6 @@ GRID
 /**************************************************************************************************
 COLORS
 **************************************************************************************************/
-li {
-  list-style: none;
-}
-
-ul, ol {
-  margin: 0px;
-  padding: 0px;
-}
-
 a {
   text-decoration: none;
 }
@@ -27,6 +18,38 @@ h1, h2, h3, h4, h5 {
 
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 11pt;
+  font-weight: 300;
+  background-color: #1A1A1A;
+  color: #ffffff;
 }
+
+.menu {
+  width: 100%;
+  height: 27px;
+  position: absolute;
+  top: 273px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.menu li {
+  float: left;
+  margin-right: 10px;
+  line-height: 27px;
+}
+.menu li a {
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.banner {
+  width: 100%;
+  height: 300px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+/**************************************************************************************************
+...
+**************************************************************************************************/
 
 /*# sourceMappingURL=style.css.map */

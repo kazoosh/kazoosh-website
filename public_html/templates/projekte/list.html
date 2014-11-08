@@ -1,3 +1,9 @@
+<header class="banner" style="background-image: url('{{content.images[0]}}');">
+	<h2>{{content.title}}</h2>
+
+	<div>{{content.teaser}}</div>
+</header>
+
 <h2>Projekt</h2>
 
 <ul>
@@ -7,6 +13,6 @@
 		<p>
 			{{content.teaser}}
 		</p>
-		<img ng-src="{{content.image}}" ng-hide="content.image == ''"/>
+		<img ng-src="{{content.images[0]}}" ng-hide="content.images[0] == ''"/>
 	</li>
 </ul>

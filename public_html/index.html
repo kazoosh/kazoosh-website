@@ -1,20 +1,51 @@
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
 	<title>Kazoosh!</title>
+	<meta name="description" content="...">
+	<meta name="keywords" content="...">
+	<meta name="author" content="...">
+
+	<meta http-equiv="cleartype" content="on">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<!-- Responsive and mobile friendly stuff -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/html5reset.css" media="all">
+	<link rel="stylesheet" href="css/col.css" media="all">
+	<link rel="stylesheet" href="css/12cols.css" media="all">
+
+	<!-- Responsive Stylesheets -->
+	<link rel="stylesheet" media="only screen and (max-width: 1024px) and (min-width: 769px)" href="/css/1024.css">
+	<link rel="stylesheet" media="only screen and (max-width: 768px) and (min-width: 481px)" href="/css/768.css">
+	<link rel="stylesheet" media="only screen and (max-width: 480px)" href="/css/480.css">
+
 	<link rel="stylesheet" href="css/style.css"/>
+
 </head>
 <body ng-app="kazoosh" ng-controller="MainCtrl">
 
-	<div class="menu" ng-controller="NavigationCtrl">
+	<nav class="menu" ng-controller="NavigationCtrl">
 		<ul>
 			<li><a ui-sref="home">home</a></li>
 			<li ng-repeat="content in contents">
 				<a ui-sref="list({type: '{{content}}'})">{{content}}</a></li>
 			</li>
 		</ul>
-	</div>
+	</nav>
 
 	<div ui-view></div>
 

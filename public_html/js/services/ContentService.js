@@ -76,8 +76,10 @@ angular.module('kazoosh')
 				}
 
 				//extend image path
-				if(content.image){
-					content.image = CONF.image_folder + content.image;
+				if(content.images){
+					content.images.forEach(function(value, key){
+						content.images[key] = CONF.image_folder + value;
+					});
 				}
 
 				return content;

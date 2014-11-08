@@ -1,16 +1,16 @@
 ---
-title: Home
-teaser: ...
+title: Kazoosh!
+teaser: Kazoosh! ist eine freie Plattform für jeden, der sich für digitales und elektronisches Basteln interessiert.
+
+images:
+- home/banner1.png
 
 featured:
 - projekte/digitaler_voyeurismus
-- projekte/binärers_im_buschwerk
+- projekte/binaerers_im_buschwerk
 - mitglieder/brian_eschrich
 - news/irgendeine_neuigkeit
 
 ---
 
-##Hallo
 
-* nummer eins
-* nummer zwei
