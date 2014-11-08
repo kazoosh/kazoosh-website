@@ -1,6 +1,6 @@
 kazoosh.controller('HomeCtrl', ['CONF', '$scope', '$state', 'ContentService', '$q', function(CONF, $scope, $state, ContentService, $q) {
 
-	ContentService.getList('_home').then(
+	ContentService.getList('home').then(
 
 		function(list){
 

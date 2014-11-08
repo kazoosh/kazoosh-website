@@ -5,11 +5,11 @@ angular.module('config', [])
 		'templates_folder': '/templates/',
 		'image_folder': '/img/',
 
+		'exlude_from_navigation': ['news', 'home'],
+
 		'error_template': '404.html',
 		'default_list_template': 'list.html',
 		'default_detail_template': 'detail.html',
-
-		'exlude_from_navigation': ['other'],
 		
 		'markdown_attribute': 'preview',
 		'markdown_to_html_attribute': 'html',

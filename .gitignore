@@ -4,6 +4,9 @@
 # bower dependency directory (defined in .bowerrc)
 public_html/lib
 
+# gernerated content json files
+public_html/content
+
 # node dependency directory
 node_modules
 

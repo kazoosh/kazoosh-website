@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 				command: function () {
 					
 					var script = '';
+					script += 'rm public_html/content/*;'
 					script += 'for D in content/*;'
 					//for all directories in content folder
 					script += '	do if [ -d $D ]; ';
@@ -54,12 +55,12 @@ module.exports = function(grunt) {
 					script += '	do if [ -d $D ];';
 					script += '		then';
 					//#exlude folders starting with _
-					script += '			if [ ${D:8:1} != "_" ];';
-					script += '				then';
+					//script += '			if [ ${D:8:1} != "_" ];';
+					//script += '				then';
 					//#strip of string "content/"';
 					script += '					json+=$seperator"\\""${D:8}"\\"";';
 					script += '					seperator=",";';
-					script += '				fi;';
+					//script += '				fi;';
 					script += '		fi; ';
 					script += 'done;';
 
