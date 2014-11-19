@@ -16,6 +16,9 @@ body {
   color: #ffffff;
 }
 
+/**************************************************************************************************
+navigation
+**************************************************************************************************/
 .menu {
   width: 100%;
   height: 27px;
@@ -25,12 +28,28 @@ body {
 }
 .menu li {
   float: left;
-  margin-right: 10px;
-  line-height: 27px;
+  margin-right: 1rem;
+  line-height: 1.9rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 10pt;
 }
 .menu li a {
   color: #ffffff;
   font-weight: 300;
+}
+.menu .home {
+  background-image: url("../img/kazoosh_logo_white.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: 7px;
+}
+.menu .home a {
+  display: block;
+  width: 60px;
+}
+.menu .home a span {
+  visibility: hidden;
 }
 
 .banner {
@@ -45,6 +64,54 @@ rewrite foundation rules
 **************************************************************************************************/
 .row {
   max-width: none;
+}
+
+/**************************************************************************************************
+text formatting
+**************************************************************************************************/
+.grid-box,
+.grid-box-large {
+  display: block;
+  height: 12em;
+  overflow: hidden;
+  margin-top: 1rem;
+  background-size: auto 100%;
+  background-color: #222;
+  background-repeat: no-repeat;
+}
+.grid-box h3,
+.grid-box-large h3 {
+  margin-top: 0rem;
+  margin-left: 2rem;
+  padding: 0.2em;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 11pt;
+  color: #ffffff;
+}
+.grid-box p,
+.grid-box-large p {
+  display: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 10pt;
+  color: #ffffff;
+}
+
+.grid-box:hover p {
+  display: block;
+}
+
+.grid-box-large {
+  height: 18em;
+}
+.grid-box-large p {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  margin-left: 0.9375rem;
+  margin-right: 1.875rem;
 }
 
 /*# sourceMappingURL=style.css.map */

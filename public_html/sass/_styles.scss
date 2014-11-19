@@ -7,6 +7,10 @@ body {
 	color: #ffffff;
 }
 
+/**************************************************************************************************
+navigation
+**************************************************************************************************/
+
 
 .menu{
 
@@ -18,12 +22,32 @@ body {
 
 	li{
 		float: left;
-		margin-right: 10px;
-		line-height: 27px;
+		margin-right: 1rem;
+
+		line-height: 1.9rem;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		font-size: 10pt;
 
 		a{
 			color: #ffffff;
 			font-weight: 300;
+		}
+	}
+
+	.home{
+		background-image: url('../img/kazoosh_logo_white.png');
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-position-y: 7px;
+
+		a{
+			display: block;
+			width: 60px;
+
+			span{
+				visibility: hidden;
+			}
 		}
 	}
 }
@@ -43,4 +67,69 @@ rewrite foundation rules
 
 .row{
 	max-width: none;	
+}
+
+
+
+
+
+/**************************************************************************************************
+text formatting
+**************************************************************************************************/
+
+
+
+
+
+
+.grid-box,
+.grid-box-large{
+	display: block;
+	height: 12em;
+	overflow: hidden;
+	margin-top: 1rem;
+
+	background-size: auto 100%;
+	background-color: #222;
+	background-repeat: no-repeat;
+
+	h3{
+		margin-top: 0rem;
+		margin-left: 2rem;
+		padding: 0.2em;
+
+		background-color: rgba(0, 0, 0, .3);
+
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		font-size: 11pt;
+		color: #ffffff;
+	}
+	
+	
+	p{
+		display: none;
+
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		font-size: 10pt;
+		color: #ffffff;
+	}
+}
+
+.grid-box:hover p{
+		display: block;
+}
+
+.grid-box-large{
+	height: 18em;
+
+	p{
+		display: block;
+		position: absolute;
+		bottom: 0;
+
+		margin-left: $gutter/2;
+		margin-right: $gutter;
+	}
 }

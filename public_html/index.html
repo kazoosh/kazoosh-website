@@ -37,9 +37,9 @@
 
 	<nav class="menu" ng-controller="NavigationCtrl">
 		<ul>
-			<li><a ui-sref="home">home</a></li>
-			<li ng-repeat="content in contents">
-				<a ui-sref="list({type: '{{content}}'})">{{content}}</a></li>
+			<li class="home"><a ui-sref="home"><span>home</span></a></li>
+			<li ng-repeat="content in contents" class="{{content}}">
+				<a ui-sref="list({type: '{{content}}'})"><span>{{content}}</span></a>
 			</li>
 		</ul>
 	</nav>

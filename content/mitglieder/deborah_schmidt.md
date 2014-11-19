@@ -1,7 +1,8 @@
 ---
 title: Deborah Schmidt
 teaser: ...
-image: teilnehmer/deborah.png
+images:
+- teilnehmer/deborah.png
 
 lastname: Schmidt
 firstname: Deborah

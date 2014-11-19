@@ -9,6 +9,6 @@
 <ul>
 	<li ng-repeat="content in contents">
 		<h3><a ui-sref="detail({type: content.type, id: content.id})">{{content.title}}</a></h3>
-		<img ng-src="{{content.image}}" ng-hide="content.image == ''"/>
+		<img ng-src="{{content.images[0]}}" ng-hide="content.images[0] == ''"/>
 	</li>
 </ul>

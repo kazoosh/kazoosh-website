@@ -6,13 +6,29 @@
 
 <article>
 
+
 	<ul class="row">
-		<li ng-repeat="content in featured" class="small-12 medium-6 large-3 columns">
-			<h3><a ui-sref="detail({type: content.type, id: content.id})">{{content.title}}</a></h3>
-			<p>
-				{{content.teaser}}
-			</p>
+		<li ng-repeat="content in featured | limitTo : 2" class="small-12 medium-12 large-6 columns">
+			<a ui-sref="detail({type: content.type, id: content.id})" class="grid-box-large"style="background-image: url('{{content.images[0]}}');">
+				<h3>&bdquo;{{content.title}}&ldquo;</h3>
+				<p>
+					{{content.teaser}}
+				</p>
+			</a>
 		</li>
 	</ul>
+
+	<ul class="row">
+		<li ng-repeat="content in featured | limitTo : -(featured.length-2)" class="small-12 medium-6 large-3 columns end">
+			<a ui-sref="detail({type: content.type, id: content.id})" class="grid-box"style="background-image: url('{{content.images[0]}}');">
+				<h3>&bdquo;{{content.title}}&ldquo;</h3>
+				<p>
+					{{content.teaser}}
+				</p>
+			</a>
+		</li>
+	</ul>
+
+	
 
 </article>

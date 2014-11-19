@@ -1,7 +1,8 @@
 ---
 title: Hanness Leitner
 teaser: ...
-image: teilnehmer/deborah.png
+images:
+- teilnehmer/deborah.png
 
 lastname: Leitner
 firstname: Hanness
