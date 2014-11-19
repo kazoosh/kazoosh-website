@@ -1,5 +1,4 @@
 
-
 * projekt einzelseite stylen
 
 * md/json umstrukturieren
@@ -8,6 +7,7 @@
 
 
 * bilder in grid-box durchblättern und teaser als extra "bild" am ende anzeigen
+* grid-box abhänig vom content-typ als externes template
 
 
 * Änderungsdatum für Inhalte

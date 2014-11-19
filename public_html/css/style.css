@@ -135,10 +135,10 @@ text boxes
   background-color: #222;
   background-repeat: no-repeat;
 }
-.grid-box h3,
-.grid-box-large h3 {
-  margin-top: 0rem;
-  margin-left: 2rem;
+.grid-box h3, .grid-box h4,
+.grid-box-large h3,
+.grid-box-large h4 {
+  margin: 0rem 0rem 0rem 2rem;
   padding: 0.2em;
   background-color: rgba(0, 0, 0, 0.3);
   font-family: 'Open Sans', sans-serif;
