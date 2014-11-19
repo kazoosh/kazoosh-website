@@ -8,6 +8,8 @@
     "angular-ui-router": "~0.2.11",
     "showdown": "~0.3.1",
     "underscore": "~1.7.0",
-    "angular-underscore-module": "~1.0.1"
+    "angular-underscore-module": "~1.0.1",
+    "foundation": "~5.4.7",
+    "HTML5-Reset": "~2.1.2"
   }
 }

@@ -6,8 +6,8 @@
 
 <article>
 
-	<ul class="section group">
-		<li ng-repeat="content in featured" class="col span_3_of_12">
+	<ul class="row">
+		<li ng-repeat="content in featured" class="small-12 medium-6 large-3 columns">
 			<h3><a ui-sref="detail({type: content.type, id: content.id})">{{content.title}}</a></h3>
 			<p>
 				{{content.teaser}}
