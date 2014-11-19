@@ -8,3 +8,10 @@
 
 <h3>{{content.title}}</h3>
 <div ng-bind-html="content.html"></div>
+
+<div class="gallery row">
+	<div ng-repeat="image in content.images | limitTo : -(content.images.length-1)" class="small-12 medium-6 large-3 end
+		columns" style="height: 12rem; overflow: hidden; margin-bottom: 1rem">
+		<img ng-src="{{image}}" />
+	</div>
+</div>

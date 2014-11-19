@@ -10,6 +10,19 @@
 * grid-box abhänig vom content-typ als externes template
 
 
+# header
+* add breakpoint for large header > heigher
+
+# menu
+* make menu and header sticky when scrolling
+* mark current page in menu
+* maybe add page title to menu
+* move navigation on top for pages other then home page
+* add menu toggle for mobile view
+
+
+
+
 * Änderungsdatum für Inhalte
 
 * cache für json files
