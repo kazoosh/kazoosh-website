@@ -9,7 +9,13 @@ FONTS
 GRID
 **************************************************************************************************/
 /**************************************************************************************************
+BANNDER
+**************************************************************************************************/
+/**************************************************************************************************
 COLORS
+**************************************************************************************************/
+/**************************************************************************************************
+defaults
 **************************************************************************************************/
 body {
   font-family: 'Open Sans', sans-serif;
@@ -17,6 +23,28 @@ body {
   font-weight: 300;
   background-color: #1A1A1A;
   color: #ffffff;
+}
+
+/**************************************************************************************************
+rewrite foundation rules
+**************************************************************************************************/
+.row {
+  max-width: none;
+}
+
+/**************************************************************************************************
+banner
+**************************************************************************************************/
+.banner {
+  width: 100%;
+  height: 13rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media only screen and (min-width: 40.063em) {
+  .banner {
+    height: 17.5rem;
+  }
 }
 
 /**************************************************************************************************
@@ -37,7 +65,7 @@ navigation
 .menu li {
   float: left;
   margin-right: 1rem;
-  line-height: 1.9rem;
+  line-height: 2rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 10pt;
@@ -50,7 +78,7 @@ navigation
   background-image: url("../img/kazoosh_logo_white.png");
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position-y: 7px;
+  background-position-y: 9px;
 }
 .menu .home a {
   display: block;
@@ -61,27 +89,8 @@ navigation
 }
 
 /**************************************************************************************************
-banner
+page - home
 **************************************************************************************************/
-.banner {
-  width: 100%;
-  height: 13rem;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-@media only screen and (min-width: 40.063em) {
-  .banner {
-    height: 17.5rem;
-  }
-}
-
-/**************************************************************************************************
-rewrite foundation rules
-**************************************************************************************************/
-.row {
-  max-width: none;
-}
-
 .home header h2 {
   height: 3rem;
   background-image: url("../img/kazoosh_logo_white.png");
@@ -107,7 +116,7 @@ rewrite foundation rules
 }
 
 /**************************************************************************************************
-text formatting
+text boxes
 **************************************************************************************************/
 .content-box {
   display: block;
@@ -119,7 +128,7 @@ text formatting
 .grid-box,
 .grid-box-large {
   display: block;
-  height: 12em;
+  height: 13em;
   overflow: hidden;
   margin-top: 1rem;
   background-size: cover;
@@ -151,7 +160,7 @@ text formatting
 }
 
 .grid-box-large {
-  height: 18em;
+  height: 17.5em;
 }
 .grid-box-large p {
   display: block;

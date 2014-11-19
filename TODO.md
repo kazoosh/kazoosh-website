@@ -1,13 +1,24 @@
 
 
-* Seiten type und id als css Klassen in den html Baum einfügen
+* projekt einzelseite stylen
 
+* md/json umstrukturieren
+	* unterseiten als eigene json speichern
+	* md datei für hauptseite anlegen (wie bei home) und unterseiten als attribute einfügen (wie bei home featured)
+
+
+* bilder in grid-box durchblättern und teaser als extra "bild" am ende anzeigen
 
 
 * Änderungsdatum für Inhalte
 
 * cache für json files
 * fehler bei fehlerhaften oder fehlenden *.md files checken
+
+
+
+
+
 
 
 # ui frameworks
