@@ -1,7 +1,7 @@
 angular.module('config', [])
 	.constant('CONF', {
 		'name': 'development',
-		'content_folder': '/content/',
+		'content_folder': '/content2/',
 		'templates_folder': '/templates/',
 		'image_folder': '/img/',
 
@@ -11,6 +11,6 @@ angular.module('config', [])
 		'default_list_template': 'list.html',
 		'default_detail_template': 'detail.html',
 		
-		'markdown_attribute': 'preview',
+		'markdown_attribute': 'content',
 		'markdown_to_html_attribute': 'html',
 	});

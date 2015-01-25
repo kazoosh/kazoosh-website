@@ -28,6 +28,8 @@ angular.module('kazoosh')
 							list[id] = that._extendAttributes(list[id], {type: type, id: id});
 						}
 
+						list = that._extendAttributes(list, {type: type, id: id});
+
 						deferred.resolve(list);
 					})
 					.error(function(list, status, headers, config) {
@@ -41,10 +43,10 @@ angular.module('kazoosh')
 				var that = this;
 				var deferred = $q.defer();
 
-				$http.get(CONF.content_folder + type + '.json')
-					.success(function(list){
+				$http.get(CONF.content_folder + type + '/' + id + '.json')
+					.success(function(detail){
 
-						var detail = list[id];
+						//var detail = list[id];
 
 						if(detail){
 							detail = that._extendAttributes(detail, {type: type, id: id});
@@ -66,7 +68,9 @@ angular.module('kazoosh')
 				var converter = new Showdown.converter();
 
 				//parse markdown
-				content[CONF.markdown_to_html_attribute] = converter.makeHtml(content[CONF.markdown_attribute]);
+				if(content[CONF.markdown_attribute]){
+					content[CONF.markdown_to_html_attribute] = converter.makeHtml(content[CONF.markdown_attribute]);
+				}
 
 				// add attributes to content
 				for(var key in attributes){

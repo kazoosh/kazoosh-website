@@ -4,11 +4,11 @@ kazoosh.controller('HomeCtrl', ['CONF', '$scope', '$state', 'ContentService', '$
 
 		function(list){
 
-			$scope.content = list.home;
+			$scope.content = list;
 
 			//get featured items
 			var requests = [];
-			list.home.featured.forEach(function(value, i){
+			list.featured.forEach(function(value, i){
 				var path = value.split('/');
 				requests.push(ContentService.getDetail(path[0], path[1], function(){}));
 			});
