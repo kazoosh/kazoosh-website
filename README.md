@@ -1,4 +1,4 @@
-# INSTALL DEPENDENCIES
+# INSTALL TOOLS
 
 * node: http://nodejs.org/download/
 * rubygems: https://rubygems.org/pages/download
@@ -7,7 +7,7 @@
 * sass: sudo gem install sass
 
 
-# INSTALL APP
+# INSTALL APP DEPENDENCIES
 
 * npm install  (downloads node dependencies)
 * bower install (downloads javascript libraries)
