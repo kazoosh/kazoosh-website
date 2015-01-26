@@ -2,7 +2,7 @@
 title: Hanness Leitner
 teaser: ...
 images:
-- teilnehmer/deborah.png
+- mitglieder/deborah.png
 
 lastname: Leitner
 firstname: Hanness

@@ -3,5 +3,5 @@ title: Mitglieder
 teaser: ...
 
 images:
-- home/banner1.png
+- mitglieder/banner1.png
 ---

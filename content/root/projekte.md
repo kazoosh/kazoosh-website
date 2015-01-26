@@ -3,5 +3,5 @@ title: Projekte
 teaser: ...
 
 images:
-- home/banner1.png
+- projekte/banner1.png
 ---
