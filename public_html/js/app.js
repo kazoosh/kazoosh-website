@@ -7,22 +7,15 @@ kazoosh.config(function(CONF, $stateProvider, $urlRouterProvider, templateProvid
 	$stateProvider
 		.state('home', {
 			url: '/home',
-			templateUrl: 'templates/home.html',
+			templateUrl: 'templates/root/home.html',
 			controller: 'HomeCtrl'
 		})
-		.state('list', {
-			url: '/:type',
-			templateProvider: function ($stateParams, $templateCache, $http, $q) {
-				return templateProvider.getListTemplate($stateParams, $templateCache, $http, $q);
-			},
-			controller: 'ListCtrl'
-		})
-		.state('detail', {
-			url: '/:type/:id',
+		.state('content', {
+			url: '/{path:.*}',
 			templateProvider: function ($stateParams, $templateCache, $http, ContentService, $q) {
-				return templateProvider.getDetailTemplate($stateParams, $templateCache, $http, ContentService, $q);
+				return templateProvider.getContentTemplate($stateParams, $templateCache, $http, ContentService, $q);
 			},
-			controller: 'DetailCtrl'
+			controller: 'ContentCtrl'
 		})
 		.state('404', {
 			url: '/404',

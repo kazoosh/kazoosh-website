@@ -4,15 +4,15 @@ import frontmatter
 import json
 
 
-
-sourceDir = 'content2/'
-distDir = 'public_html'
-
+sourceDir = 'content'
+distDir = 'public_html/content'
 
 
-shutil.rmtree(os.path.join(distDir, sourceDir))
-os.makedirs(os.path.join(distDir, sourceDir))
-
+def refreshDir(dir):
+	if os.path.exists(dir):
+		shutil.rmtree(dir)
+	if not os.path.exists(dir):
+		os.makedirs(dir)
 
 def markdownToDict(markdownFilePath):
 	markdownData = frontmatter.load(markdownFilePath)
@@ -21,49 +21,54 @@ def markdownToDict(markdownFilePath):
 	return markdownDict
 
 def dictToJson(markdownDict, jsonFilePath):
+	#print jsonFilePath
 	jsonFile = open(jsonFilePath, 'w')
 	json.dump(markdownDict, jsonFile, indent=4)
 	jsonFile.close()
 
-def addSubpagePaths(markdownDict, subDir):
+def addSubpagePaths(markdownDict, sourceDir, subDir):
 	markdownDict['subpages'] = []
-	if os.path.isdir(subDir):
-		for subFileName in os.listdir(subDir):
-			if isFile(subDir, subFileName):
+	if os.path.isdir(os.path.join(sourceDir, subDir)):
+		for subFileName in os.listdir(os.path.join(sourceDir, subDir)):
+			if isFile(os.path.join(sourceDir, subDir), subFileName):
 				subFilePath = os.path.join(subDir, os.path.splitext(subFileName)[0])
-				subFilePath = os.path.join(*subFilePath.split("/")[1:])
+				subFilePath = os.path.join(*subFilePath.split("/")[0:])
 				markdownDict['subpages'].append(subFilePath)
-
-def convertSubpages(subDir):
-	if os.path.isdir(subDir):
-		for subFileName in os.listdir(subDir):
-			if isFile(subDir, subFileName):
-				
-				markdownDict = markdownToDict(os.path.join(subDir, subFileName))
-				if not os.path.exists(os.path.join(distDir, subDir)):
-					os.makedirs(os.path.join(distDir, subDir))
-
-				subFileNameWithoutExt = os.path.splitext(subFileName)[0]
-				dictToJson(markdownDict, os.path.join(distDir, subDir, subFileNameWithoutExt+'.json'))
-					
-
 
 def isFile(sourceDir, fileName):
 	return os.path.isfile(os.path.join(sourceDir, fileName)) and not fileName.startswith('.')
 
+def isDir(sourceDir, fileName):
+	return os.path.isdir(os.path.join(sourceDir, fileName))
 
-for fileName in os.listdir(sourceDir):
-	
-	fileNameWithoutExt = os.path.splitext(fileName)[0]
+def mdToJson(sourceDir, distDir, currentSubDir):
 
-	if isFile(sourceDir, fileName):
+	sourceDirPath = os.path.join(sourceDir, currentSubDir)
+	distDirPath = os.path.join(distDir, currentSubDir)
 
-		markdownDict = markdownToDict(os.path.join(sourceDir, fileName))
+	for fileName in os.listdir(sourceDirPath):
+		
+		#print os.path.join(sourceDirPath, fileName)
 
-		addSubpagePaths(markdownDict, os.path.join(sourceDir, fileNameWithoutExt))
+		if isFile(sourceDirPath, fileName):
 
-		dictToJson(markdownDict, os.path.join(distDir, sourceDir, fileNameWithoutExt+'.json'))
+			markdownDict = markdownToDict(os.path.join(sourceDirPath, fileName))
 
-	convertSubpages(os.path.join(sourceDir, fileNameWithoutExt));
+			if not os.path.exists(distDirPath):
+				os.makedirs(distDirPath)
+
+			fileNameWithoutExt = os.path.splitext(fileName)[0]
+			addSubpagePaths(markdownDict, sourceDir, os.path.join(currentSubDir, fileNameWithoutExt))
+
+			dictToJson(markdownDict, os.path.join(distDirPath, fileNameWithoutExt+'.json'))
+
+		if isDir(sourceDirPath, fileName):
+
+			mdToJson(sourceDir, distDir, os.path.join(currentSubDir, fileName))
+
+
+refreshDir(distDir)
+mdToJson(sourceDir, distDir, "")
+
 
 

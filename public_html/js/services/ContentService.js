@@ -1,60 +1,40 @@
 angular.module('kazoosh')
 	.factory('ContentService', ['CONF', '$http', '$q', '_', function(CONF, $http, $q, _) {
 		return{
-			getContents: function(){
+			getContent: function(path){
 
 				var that = this;
 				var deferred = $q.defer();
 
-				$http.get(CONF.content_folder + 'contents.json')
-					.success(function(list){
-						deferred.resolve(list);
-					})
-					.error(function(list, status, headers, config) {
-						deferred.reject(null);
-					});
+				var pathArray = path.split(CONF.DS);
+				var id = pathArray[pathArray.length-1]
+				var type = pathArray[pathArray.length-2]
 
-				return deferred.promise;
-			},
-			getList: function(type){
+				$http.get(CONF.content_folder + path + '.json')
+					.success(function(content){
 
-				var that = this;
-				var deferred = $q.defer();
+						content = that._extendAttributes(content, {path: path, type: type, id: id});
 
-				$http.get(CONF.content_folder + type + '.json')
-					.success(function(list){
-
-						for(var id in list){
-							list[id] = that._extendAttributes(list[id], {type: type, id: id});
-						}
-
-						list = that._extendAttributes(list, {type: type, id: id});
-
-						deferred.resolve(list);
-					})
-					.error(function(list, status, headers, config) {
-						deferred.reject(null);
-					});
-
-				return deferred.promise;
-			},
-			getDetail: function(type, id){
-
-				var that = this;
-				var deferred = $q.defer();
-
-				$http.get(CONF.content_folder + type + '/' + id + '.json')
-					.success(function(detail){
-
-						//var detail = list[id];
-
-						if(detail){
-							detail = that._extendAttributes(detail, {type: type, id: id});
+						//get subpages
+						var requests = [];
+						if(content[CONF.subpages_attribute]){
+							content[CONF.subpages_attribute].forEach(function(path, i){
+								requests.push(that.getContent(path, function(){}));
+							});
 						}
 						
-						deferred.resolve(detail);
+						$q.all(requests)
+							.then(
+								function(data){
+									content[CONF.subpages_attribute] = data;
+									deferred.resolve(content);
+								},
+								function(data){
+									deferred.reject(null);
+								}
+							);
 					})
-					.error(function(list, status, headers, config) {
+					.error(function(content, status, headers, config) {
 						deferred.reject(null);
 					});
 

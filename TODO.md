@@ -4,14 +4,8 @@
 * cache für json files
 
 # md2json
-* initial ausführen
 * Änderungsdatum für Inhalte
 * fehler bei fehlerhaften oder fehlenden *.md files checken
-* [inprogress] md/json umstrukturieren
-	* unterseiten als eigene json speichern
-	* md datei für hauptseite anlegen (wie bei home) und unterseiten als attribute einfügen (wie bei home featured
-	* belibig tiefe ordnerstruktur unterstützen (e.g. root/projekte/2014/blablub.md)
-
 
 
 # design

@@ -1,37 +1,7 @@
 angular.module('provider', [])
 	.provider('template', ['CONF', function(CONF) {
 		
-		
-		this.getListTemplate = function ($stateParams, $templateCache, $http, $q) {
-
-			var templateDeferred = $q.defer();
-
-			//priority ordered array of templates to use for content
-			var templateUrls = [];
-
-			//error template has least priority
-			templateUrls.push(CONF.templates_folder + CONF.error_template);
-
-			//receive template url from type given in url
-			if($stateParams.type && $stateParams.type != '404'){
-
-				//default list template has next priority
-				templateUrls.push(CONF.templates_folder + CONF.default_list_template);
-
-				//template for current content type has next priority
-				templateUrls.push(CONF.templates_folder + $stateParams.type + '/list.html');
-			}
-			
-			//reoder urls (last item should be first, because it has highest priority)
-			templateUrls.reverse();
-
-			//recurively try to load templates specified in templateUrls
-			this.loadTemplate(templateUrls, templateDeferred, $http, $templateCache);
-
-			return templateDeferred.promise;
-		};
-
-		this.getDetailTemplate = function ($stateParams, $templateCache, $http, ContentService, $q) {
+		this.getContentTemplate = function ($stateParams, $templateCache, $http, ContentService, $q) {
 
 			var that = this;
 			var contentDeferred = $q.defer();
@@ -41,23 +11,31 @@ angular.module('provider', [])
 			var templateUrls = [];
 
 			//error template has least priority
-			templateUrls.push(CONF.templates_folder + CONF.error_template);
-			
-			//receive template url from type given in url
-			if($stateParams.type && $stateParams.type != '404'){
+			templateUrls.push(CONF.templates_folder + CONF.DS + CONF.error_template + CONF.template_extension);
 
-				//default detail template has next priority
-				templateUrls.push(CONF.templates_folder + CONF.default_detail_template);
+			//receive template url from type given in url
+			if($stateParams.path && $stateParams.path != '404'){
+
+				//look for default templates in folder hierarchy
+				var pathArray = $stateParams.path.split(CONF.DS);
+				for (var i = 1; i < pathArray.length; i++) {
+					subPathArrray = pathArray.slice(0, i);
+					subPathString = subPathArrray.join(CONF.DS);
+					if(subPathString != ''){
+						subPathString = CONF.DS + subPathString;
+					}
+					templateUrls.push(CONF.templates_folder + subPathString + CONF.DS + CONF.default_template + CONF.template_extension);
+				};
 
 				//template for current content type has next priority
-				templateUrls.push(CONF.templates_folder + $stateParams.type + '/detail.html');
-
+				templateUrls.push(CONF.templates_folder + CONF.DS + $stateParams.path + CONF.template_extension);
+					
 				//check if there is a special template specified in current content
-				ContentService.getDetail($stateParams.type, $stateParams.id).then(
-					function(detail){
-						if(detail && detail.template){
+				ContentService.getContent($stateParams.path).then(
+					function(content){
+						if(content && content.template){
 							//template for current content has highest priority
-							templateUrls.push(CONF.templates_folder + detail.template);
+							templateUrls.push(CONF.templates_folder + CONF.DS + content.template);
 						}
 						contentDeferred.resolve();
 					},
@@ -80,7 +58,7 @@ angular.module('provider', [])
 			});
 
 			return templateDeferred.promise;
-		}
+		};
 
 		this.loadTemplate = function(templateUrls, templateDeferred, $http, $templateCache){
 
