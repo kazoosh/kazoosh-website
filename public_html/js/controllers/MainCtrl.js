@@ -7,5 +7,8 @@ kazoosh.controller('MainCtrl', ['CONF', '$scope', '$state', function(CONF, $scop
 			var id = pathArray[pathArray.length-1]
 			$scope.pageName = id;
 		}
+		else{
+			$scope.pageName = toState.name;	
+		}
 	})
 }]);
