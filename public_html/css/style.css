@@ -60,7 +60,7 @@ navigation
   height: 2rem;
   position: absolute;
   top: 11rem;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: transparent;
 }
 @media only screen and (min-width: 40.063em) {
   .menu {
@@ -127,7 +127,7 @@ text boxes
   display: block;
   margin-top: 0.9375rem;
   padding: 0.9375rem;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: transparent;
 }
 
 .grid-box,
@@ -145,7 +145,7 @@ text boxes
 .grid-box-large h4 {
   margin: 0rem 0rem 0rem 2rem;
   padding: 0.2em;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: transparent;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 11pt;
