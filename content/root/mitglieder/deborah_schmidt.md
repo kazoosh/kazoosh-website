@@ -2,7 +2,7 @@
 title: Deborah Schmidt
 teaser: ...
 images:
-- teilnehmer/deborah.png
+- mitglieder/deborah.png
 
 lastname: Schmidt
 firstname: Deborah

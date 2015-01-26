@@ -38,8 +38,8 @@
 	<nav class="menu" ng-controller="NavigationCtrl">
 		<ul>
 			<li class="home"><a ui-sref="home"><span>home</span></a></li>
-			<li ng-repeat="content in contents" class="{{content}}">
-				<a ui-sref="list({type: '{{content}}'})"><span>{{content}}</span></a>
+			<li ng-repeat="content in contents" class="{{content.id}}">
+				<a ui-sref="content({path: '{{content.path}}'})"><span>{{content.title}}</span></a>
 			</li>
 		</ul>
 	</nav>
@@ -66,8 +66,7 @@
 	
 	<script src="js/controllers/NavigationCtrl.js"></script>
 	<script src="js/controllers/HomeCtrl.js"></script>
-	<script src="js/controllers/ListCtrl.js"></script>
-	<script src="js/controllers/DetailCtrl.js"></script>
+	<script src="js/controllers/ContentCtrl.js"></script>
 	
 
 	<script src="js/config.js"></script>

@@ -1,0 +1,14 @@
+<header class="banner" style="background-image: url('{{content.images[0]}}');">
+	<h2>{{content.title}}</h2>
+
+	<div>{{content.teaser}}</div>
+</header>
+
+<h2>Teilnehmer</h2>
+
+<ul>
+	<li ng-repeat="subpage in content.subpages">
+		<h3><a ui-sref="content({path: subpage.path})">{{subpage.title}}</a></h3>
+		<img ng-src="{{subpage.images[0]}}" ng-hide="subpage.images[0] == ''"/>
+	</li>
+</ul>

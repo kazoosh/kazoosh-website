@@ -2,6 +2,13 @@ kazoosh.controller('MainCtrl', ['CONF', '$scope', '$state', function(CONF, $scop
 
 	$scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
 
-		$scope.pageName = toParams.type ? toParams.type : toState.name;
+		if(toParams.path){
+			var pathArray = toParams.path.split(CONF.DS);
+			var id = pathArray[pathArray.length-1]
+			$scope.pageName = id;
+		}
+		else{
+			$scope.pageName = toState.name;	
+		}
 	})
 }]);
