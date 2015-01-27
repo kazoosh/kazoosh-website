@@ -1,6 +1,7 @@
 # INSTALL TOOLS
 
 * python: https://www.python.org/downloads/
+* python modul frontmatter: https://pypi.python.org/pypi/python-frontmatter/0.1.1
 * node: http://nodejs.org/download/
 * rubygems: https://rubygems.org/pages/download
 * bower: npm install -g bower
@@ -12,7 +13,6 @@
 
 * npm install  (downloads node dependencies)
 * bower install (downloads javascript libraries)
-* https://pypi.python.org/pypi/python-frontmatter/0.1.1 (not needed, yet)
 
 
 # RUN
