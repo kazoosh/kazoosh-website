@@ -4,8 +4,8 @@ defaults
 **************************************************************************************************/
 
 body {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 11pt;
+	font-family: $font-family-text;
+	font-size: 12pt;
 	font-weight: 300;
 	background-color: #1A1A1A;
 	color: #ffffff;
@@ -48,16 +48,17 @@ navigation
 	top: ($banner-height-small - 2);
 	@media #{$medium-up} {top: ($banner-height-medium - 2);}
 
-	background-color: rgba(0, 0, 0, $back-alpha);
+	//background-color: rgba(0, 0, 0, $back-alpha);
+	background-color: rgba(0, 0, 0, 0.8);
 
 	li{
 		float: left;
 		margin-right: 1rem;
 
 		line-height: 2rem;
-		font-family: 'Open Sans', sans-serif;
+		font-family: $font-family-text;
 		font-weight: 300;
-		font-size: 10pt;
+		font-size: 11pt;
 
 		a{
 			color: #ffffff;
@@ -66,7 +67,7 @@ navigation
 	}
 
 	.home{
-		background-image: url('../img/kazoosh_logo_white.png');
+		background-image: url('../img/kazoosh_logo_detail_white.png');
 		background-size: 100%;
 		background-repeat: no-repeat;
 		background-position-y: 9px;
@@ -91,9 +92,9 @@ page - home
 	header{
 		h2{
 			height: 3rem;
-			@media #{$medium-up} {height: 7rem;}
+			@media #{$medium-up} {height: 9rem;}
 
-			background-image: url('../img/kazoosh_logo_white.png');
+			background-image: url('../img/kazoosh_logo_detail_white.png');
 			background-repeat: no-repeat;
 			background-size: auto 100%;
 
@@ -118,7 +119,7 @@ text boxes
 	margin-top: $gutter;
 	padding: $gutter;
 
-	background-color: rgba(0, 0, 0, $back-alpha);
+	//background-color: rgba(0, 0, 0, $back-alpha);
 }
 
 .grid-box,
@@ -136,18 +137,29 @@ text boxes
 		margin: 0rem 0rem 0rem 2rem;
 		padding: 0.2em;
 
+		background-color: rgba(255, 255, 255,1);
+		font-family: $font-family-text;
+		font-weight: 300;
+		font-size: 11pt;
+		color: #333;
+
+		/* old
+		margin: 0rem 0rem 0rem 2rem;
+		padding: 0.2em;
+
 		background-color: rgba(0, 0, 0, $back-alpha);
 
-		font-family: 'Open Sans', sans-serif;
+		font-family: $font-family-text;
 		font-weight: 300;
 		font-size: 11pt;
 		color: #ffffff;
+		*/
 	}
 	
 	p{
 		display: none;
 
-		font-family: 'Open Sans', sans-serif;
+		font-family: $font-family-text;
 		font-weight: 300;
 		font-size: 10pt;
 		color: #ffffff;

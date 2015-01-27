@@ -15,7 +15,7 @@
 
 * projekt einzelseite stylen
 
-## bidergalerie
+## bildergalerie
 
 ## menu
 * make menu and header sticky when scrolling
@@ -26,3 +26,7 @@
 
 ## header
 * add breakpoint for large header > heigher
+
+## Fonts
+* http://www.impallari.com/cabin/ - ähnlich Gil Sans (wie unsere bisherigen Präsentationen)
+* http://www.impallari.com/dosis (schick und gut lesbar, Mischung aus technisch und verspielt)

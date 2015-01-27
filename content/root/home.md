@@ -1,6 +1,6 @@
 ---
 title: Kazoosh!
-teaser: Kazoosh! ist eine freie Plattform für jeden, der sich für digitales und elektronisches Basteln interessiert.
+teaser: Freie Plattform für elektronisches und digitales Basteln
 
 images:
 - home/banner1.png

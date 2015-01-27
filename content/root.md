@@ -1,6 +1,6 @@
 ---
 title: 
-teaser: 
+teaser:
 
 ---
 

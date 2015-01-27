@@ -4,12 +4,12 @@ utils
 /**************************************************************************************************
 FONTS
 **************************************************************************************************/
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+@import url(http://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800);
 /**************************************************************************************************
 GRID
 **************************************************************************************************/
 /**************************************************************************************************
-BANNDER
+BANNER
 **************************************************************************************************/
 /**************************************************************************************************
 COLORS
@@ -18,8 +18,8 @@ COLORS
 defaults
 **************************************************************************************************/
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 11pt;
+  font-family: "Dosis", sans-serif;
+  font-size: 12pt;
   font-weight: 300;
   background-color: #1A1A1A;
   color: #ffffff;
@@ -60,7 +60,7 @@ navigation
   height: 2rem;
   position: absolute;
   top: 11rem;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 @media only screen and (min-width: 40.063em) {
   .menu {
@@ -71,16 +71,16 @@ navigation
   float: left;
   margin-right: 1rem;
   line-height: 2rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Dosis", sans-serif;
   font-weight: 300;
-  font-size: 10pt;
+  font-size: 11pt;
 }
 .menu li a {
   color: #ffffff;
   font-weight: 300;
 }
 .menu .home {
-  background-image: url("../img/kazoosh_logo_white.png");
+  background-image: url("../img/kazoosh_logo_detail_white.png");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position-y: 9px;
@@ -98,13 +98,13 @@ page - home
 **************************************************************************************************/
 .home header h2 {
   height: 3rem;
-  background-image: url("../img/kazoosh_logo_white.png");
+  background-image: url("../img/kazoosh_logo_detail_white.png");
   background-repeat: no-repeat;
   background-size: auto 100%;
 }
 @media only screen and (min-width: 40.063em) {
   .home header h2 {
-    height: 7rem;
+    height: 9rem;
   }
 }
 .home header h2 span {
@@ -127,7 +127,6 @@ text boxes
   display: block;
   margin-top: 0.9375rem;
   padding: 0.9375rem;
-  background-color: transparent;
 }
 
 .grid-box,
@@ -145,16 +144,27 @@ text boxes
 .grid-box-large h4 {
   margin: 0rem 0rem 0rem 2rem;
   padding: 0.2em;
-  background-color: transparent;
-  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+  font-family: "Dosis", sans-serif;
   font-weight: 300;
   font-size: 11pt;
-  color: #ffffff;
+  color: #333;
+  		/* old
+  		margin: 0rem 0rem 0rem 2rem;
+  		padding: 0.2em;
+  
+  		background-color: rgba(0, 0, 0, $back-alpha);
+  
+  		font-family: $font-family-text;
+  		font-weight: 300;
+  		font-size: 11pt;
+  		color: #ffffff;
+  		*/
 }
 .grid-box p,
 .grid-box-large p {
   display: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Dosis", sans-serif;
   font-weight: 300;
   font-size: 10pt;
   color: #ffffff;

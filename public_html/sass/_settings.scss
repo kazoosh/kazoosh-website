@@ -3,10 +3,16 @@
 /**************************************************************************************************
 FONTS
 **************************************************************************************************/
+//alt
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+//Dosis Variante 1
+@import url(http://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800);
+$font-family-text: 'Dosis', sans-serif;
 
-
+//Cabin Variante 2
+//@import url(http://fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic);
+//$font-family-text: 'Cabin', sans-serif;
 /**************************************************************************************************
 GRID
 **************************************************************************************************/
@@ -24,7 +30,7 @@ $gutter: 0.9375rem;
 
 
 /**************************************************************************************************
-BANNDER
+BANNER
 **************************************************************************************************/
 
 
@@ -40,4 +46,4 @@ $grid-box-height-large-small: 17.5em;
 COLORS
 **************************************************************************************************/
 
-$back-alpha: .0;
+$back-alpha: .5;
