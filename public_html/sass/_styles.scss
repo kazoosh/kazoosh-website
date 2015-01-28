@@ -58,7 +58,7 @@ navigation
 		line-height: 2rem;
 		font-family: $font-family-text;
 		font-weight: 300;
-		font-size: 11pt;
+		font-size: 12pt;
 
 		a{
 			color: #ffffff;
@@ -67,6 +67,7 @@ navigation
 	}
 
 	.home{
+		//float: left;
 		background-image: url('../img/kazoosh_logo_detail_white.png');
 		background-size: 100%;
 		background-repeat: no-repeat;
@@ -128,41 +129,47 @@ text boxes
 	height: $grid-box-height-small;
 	overflow: hidden;
 	margin-top: 1rem;
+	padding-bottom: 0rem;
 
 	background-size: cover;
 	background-color: #222;
 	background-repeat: no-repeat;
 
+	.caption{
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		padding-left: $gutter/2;
+		padding-bottom: $gutter;
+		display: block;
+	}
+
 	h3, h4{
-		margin: 0rem 0rem 0rem 2rem;
-		padding: 0.2em;
-
-		background-color: rgba(255, 255, 255,1);
-		font-family: $font-family-text;
-		font-weight: 300;
-		font-size: 11pt;
-		color: #333;
-
-		/* old
-		margin: 0rem 0rem 0rem 2rem;
-		padding: 0.2em;
-
+		display: inline;
+		padding: $textbox-padding;
+		margin: $textbox-margin;
+		
 		background-color: rgba(0, 0, 0, $back-alpha);
 
 		font-family: $font-family-text;
 		font-weight: 300;
-		font-size: 11pt;
+		font-size: 14pt;
 		color: #ffffff;
-		*/
+		//margin-left: $gutter/2;
 	}
 	
 	p{
 		display: none;
+		padding: $textbox-padding;
+		margin: $textbox-margin;
 
+		background-color: rgba(0, 0, 0, $back-alpha);
 		font-family: $font-family-text;
-		font-weight: 300;
+		font-weight: 400;
 		font-size: 10pt;
 		color: #ffffff;
+
+		//margin: 0.7rem $gutter/2 1rem $gutter*2;
 	}
 }
 
@@ -175,10 +182,36 @@ text boxes
 
 	p{
 		display: block;
-		position: absolute;
-		bottom: 0;
+		//position: absolute;
+		//bottom: 0;
 
-		margin-left: $gutter;
-		margin-right: $gutter*2;
+		//margin-left: $gutter/2;
+		//margin-right: $gutter/2*3;
 	}
+}
+.aspect_wrapper{
+	position: relative;
+	padding-top: 25px;
+	padding-bottom: $image-aspect_1x1;
+	height: 0;
+}
+
+.ratio_4x3{
+	position: relative;
+  	padding-bottom: $image-aspect_1x1 * 4 / 3;
+}
+/*.grid-box-ratio.before{
+	content: "";
+	display: block;
+	padding-top: 100%; 
+}*/
+.picture-content{
+	background-size: cover;
+	background-color: #222;
+	background-repeat: no-repeat;
+	position:  absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }

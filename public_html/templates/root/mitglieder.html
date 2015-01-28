@@ -4,11 +4,16 @@
 	<div>{{content.teaser}}</div>
 </header>
 
-<h2>Teilnehmer</h2>
-
-<ul>
-	<li ng-repeat="subpage in content.subpages">
-		<h3><a ui-sref="content({path: subpage.path})">{{subpage.title}}</a></h3>
-		<img ng-src="{{subpage.images[0]}}" ng-hide="subpage.images[0] == ''"/>
+<ul class="row">
+	<li ng-repeat="subpage in content.subpages" class="small-6 medium-6 large-3 columns end">
+		<a ui-sref="content({path: subpage.path})" class="grid-box" style="height:auto">	
+			<div class="aspect_wrapper ratio_4x3">
+				<div class="picture-content" style="background-image: url('{{subpage.images[0]}}');">
+					<div class="caption">
+						<h3>&bdquo;{{subpage.title}}&ldquo;</h3>
+					</div>
+				</div>
+			</div>
+		</a>
 	</li>
 </ul>

@@ -9,6 +9,9 @@ FONTS
 GRID
 **************************************************************************************************/
 /**************************************************************************************************
+TEXTBOX
+**************************************************************************************************/
+/**************************************************************************************************
 BANNER
 **************************************************************************************************/
 /**************************************************************************************************
@@ -73,7 +76,7 @@ navigation
   line-height: 2rem;
   font-family: "Dosis", sans-serif;
   font-weight: 300;
-  font-size: 11pt;
+  font-size: 12pt;
 }
 .menu li a {
   color: #ffffff;
@@ -135,37 +138,40 @@ text boxes
   height: 13em;
   overflow: hidden;
   margin-top: 1rem;
+  padding-bottom: 0rem;
   background-size: cover;
   background-color: #222;
   background-repeat: no-repeat;
 }
+.grid-box .caption,
+.grid-box-large .caption {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding-left: 0.46875rem;
+  padding-bottom: 0.9375rem;
+  display: block;
+}
 .grid-box h3, .grid-box h4,
 .grid-box-large h3,
 .grid-box-large h4 {
-  margin: 0rem 0rem 0rem 2rem;
-  padding: 0.2em;
-  background-color: white;
+  display: inline;
+  padding: 0.2rem 0.5rem 0.4rem 0.5rem;
+  margin: 0.7rem 1.40625rem -0.46875rem 0;
+  background-color: rgba(0, 0, 0, 0.7);
   font-family: "Dosis", sans-serif;
   font-weight: 300;
-  font-size: 11pt;
-  color: #333;
-  		/* old
-  		margin: 0rem 0rem 0rem 2rem;
-  		padding: 0.2em;
-  
-  		background-color: rgba(0, 0, 0, $back-alpha);
-  
-  		font-family: $font-family-text;
-  		font-weight: 300;
-  		font-size: 11pt;
-  		color: #ffffff;
-  		*/
+  font-size: 14pt;
+  color: #ffffff;
 }
 .grid-box p,
 .grid-box-large p {
   display: none;
+  padding: 0.2rem 0.5rem 0.4rem 0.5rem;
+  margin: 0.7rem 1.40625rem -0.46875rem 0;
+  background-color: rgba(0, 0, 0, 0.7);
   font-family: "Dosis", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 10pt;
   color: #ffffff;
 }
@@ -179,10 +185,34 @@ text boxes
 }
 .grid-box-large p {
   display: block;
+}
+
+.aspect_wrapper {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 93.75%;
+  height: 0;
+}
+
+.ratio_4x3 {
+  position: relative;
+  padding-bottom: 125%;
+}
+
+/*.grid-box-ratio.before{
+	content: "";
+	display: block;
+	padding-top: 100%; 
+}*/
+.picture-content {
+  background-size: cover;
+  background-color: #222;
+  background-repeat: no-repeat;
   position: absolute;
-  bottom: 0;
-  margin-left: 0.9375rem;
-  margin-right: 1.875rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

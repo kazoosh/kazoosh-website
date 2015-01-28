@@ -28,7 +28,8 @@
 		<li ng-repeat="content in featured | limitTo : 2" class="small-12 medium-12 large-6 columns">
 			<a ui-sref="detail({type: content.type, id: content.id})" class="grid-box-large">
 				<div style="background-image: url('{{content.images[0]}}');"></div>
-				<h3>&bdquo;{{content.title}}&ldquo; @{{content.festival}}</h3>
+				<h3>&bdquo;{{content.title}}&ldquo;</h3>
+				<h4 ng-hide="!content.festival">@{{content.festival}}</h4>
 				<p>
 					{{content.teaser}}
 				</p>
