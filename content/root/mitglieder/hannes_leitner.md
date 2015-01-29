@@ -1,11 +1,12 @@
 ---
-title: Hanness Leitner
+title: Hannes Leitner
 teaser: ...
 images:
 - mitglieder/deborah.png
 
 lastname: Leitner
-firstname: Hanness
+firstname: Hannes
+profession: Medieninformatiker
 
 ---
 

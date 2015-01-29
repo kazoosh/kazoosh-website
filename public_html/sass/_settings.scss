@@ -10,6 +10,17 @@ FONTS
 @import url(http://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800);
 $font-family-text: 'Dosis', sans-serif;
 
+@font-face {
+ font-family: Fat-Free;
+ src: url("fonts/Fat-Free.eot") /* EOT file for IE */
+}
+@font-face {
+ font-family: Fat-Free;
+ src: url("fonts/Fat-Free.ttf") /* TTF file for CSS3 browsers */
+}
+$font-family-header: Fat-Free, sans-serif;
+
+
 //Cabin Variante 2
 //@import url(http://fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic);
 //$font-family-text: 'Cabin', sans-serif;

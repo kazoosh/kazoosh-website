@@ -6,6 +6,7 @@ images:
 
 lastname: Schmidt
 firstname: Deborah
+profession: Medieninformatikerin
 
 ---
 

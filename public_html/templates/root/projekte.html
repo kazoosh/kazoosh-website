@@ -1,18 +1,23 @@
 <header class="banner" style="background-image: url('{{content.images[0]}}');">
-	<h2>{{content.title}}</h2>
-
-	<div>{{content.teaser}}</div>
+	<div class="large-12 columns">
+		<div class="content-box">
+			<h2><span>{{content.title}}</span></h2>
+			<p>{{content.teaser}}</p>
+		</div>
+	</div>
 </header>
 
-<h2>Projekt</h2>
-
-<ul>
-	<li ng-repeat="subpage in content.subpages">
-		<h3><a ui-sref="content({path: subpage.path})">{{subpage.title}}</a></h3>
-		<h4>{{subpage.date}}</h4>
-		<p>
-			{{subpage.teaser}}
-		</p>
-		<img ng-src="{{subpage.images[0]}}" ng-hide="subpage.images[0] == ''"/>
-	</li>
-</ul>
+	<ul class="row">
+		<li ng-repeat="subpage in content.subpages" class="small-12 medium-6 large-4 columns end">
+			<a ui-sref="content({path: subpage.path})" class="grid-box enable-hover" style="background-image: url('{{subpage.images[0]}}');">
+				<div class="caption">
+					<h3>{{subpage.title}}</h3>
+					<h4>{{subpage.date}}</h4>
+					<h4 ng-hide="!content.festival">@{{subpage.festival}}</h4>
+					<p>
+						{{subpage.teaser}}
+					</p>
+				</div>
+			</a>
+		</li>
+	</ul>

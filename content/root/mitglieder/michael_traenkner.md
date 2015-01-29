@@ -1,11 +1,11 @@
 ---
-title: Martin Hermann
+title: Michael Tränkner
 teaser: ...
 images:
 - mitglieder/martin_h.jpg
 
-lastname: Hermann
-firstname: Martin
+lastname: Tränkner
+firstname: Michael
 profession: Medieninformatiker
 
 ---

@@ -16,7 +16,11 @@ rewrite foundation rules
 **************************************************************************************************/
 
 .row{
-	max-width: none;	
+	box-sizing: border-box;
+	max-width: none;
+	width: 100%;
+	@media #{$medium-up} {width: 95%;}
+
 }
 
 .columns, column{
@@ -35,6 +39,23 @@ banner
 
 	background-size: cover;
 	background-repeat: no-repeat;
+
+	h2{
+		height: 5rem;
+			@media #{$medium-up} {height: 9rem;}
+			font-family: $font-family-header;
+			font-size: 54pt;
+			color: #ffffff;
+			@media #{$medium-up} {
+				font-size: 74pt;
+			}
+		}
+	p{		
+			margin: $gutter 0rem 0rem 0rem;
+			font-size: 12pt;
+			@media #{$medium-up} {font-size: 15pt;}
+	}
+
 }
 
 /**************************************************************************************************
@@ -48,8 +69,14 @@ navigation
 	top: ($banner-height-small - 2);
 	@media #{$medium-up} {top: ($banner-height-medium - 2);}
 
-	//background-color: rgba(0, 0, 0, $back-alpha);
+	padding: $gutter/2;
+	@media #{$medium-up} {
+				padding-left: 2.5%;
+	}
+
 	background-color: rgba(0, 0, 0, 0.8);
+
+
 
 	li{
 		float: left;
@@ -59,6 +86,8 @@ navigation
 		font-family: $font-family-text;
 		font-weight: 300;
 		font-size: 12pt;
+
+
 
 		a{
 			color: #ffffff;
@@ -85,42 +114,18 @@ navigation
 }
 
 /**************************************************************************************************
-page - home
-**************************************************************************************************/
-
-.home{
-
-	header{
-		h2{
-			height: 3rem;
-			@media #{$medium-up} {height: 9rem;}
-
-			background-image: url('../img/kazoosh_logo_detail_white.png');
-			background-repeat: no-repeat;
-			background-size: auto 100%;
-
-			span{
-				visibility: hidden;
-			}
-		}
-		p{
-			margin: $gutter 0rem 0rem 0rem;
-			font-size: 10pt;
-			@media #{$medium-up} {font-size: 15pt;}
-		}
-	}
-}
-
-/**************************************************************************************************
 text boxes
 **************************************************************************************************/
 
 .content-box{	
 	display: block;
 	margin-top: $gutter;
-	padding: $gutter;
+	padding: $gutter/2;
+	@media #{$medium-up} {
+				padding-left: 2.5%;
+	}
 
-	//background-color: rgba(0, 0, 0, $back-alpha);
+	background-color: rgba(0, 0, 0, 0);
 }
 
 .grid-box,
@@ -132,7 +137,7 @@ text boxes
 	padding-bottom: 0rem;
 
 	background-size: cover;
-	background-color: #222;
+	background-color: rgba(0, 0, 0, 0);
 	background-repeat: no-repeat;
 
 	.caption{
@@ -147,17 +152,16 @@ text boxes
 	h3, h4{
 		display: inline;
 		padding: $textbox-padding;
-		margin: $textbox-margin;
+		border: 4px;
 		
 		background-color: rgba(0, 0, 0, $back-alpha);
 
 		font-family: $font-family-text;
-		font-weight: 300;
+		font-weight: 400;
 		font-size: 14pt;
 		color: #ffffff;
 		//margin-left: $gutter/2;
-	}
-	
+	}	
 	p{
 		display: none;
 		padding: $textbox-padding;
@@ -170,26 +174,34 @@ text boxes
 		color: #ffffff;
 
 		//margin: 0.7rem $gutter/2 1rem $gutter*2;
+
 	}
 }
 
-.grid-box:hover p{
+.grid-box:hover,
+.grid-box-large:hover{
+	//transition: opacity 0.35s, transform 0.35s;
+	//opacity: 0.4;
+	p{
 		display: block;
+	}
+	
+} 
+
+.enable-hover:hover{
+	box-shadow:50rem 0px 0px 0px rgba(0, 0, 0, 0.3) inset;
+	//background-color: rgba(0, 0, 0, $back-alpha);
 }
+
 
 .grid-box-large{
 	height: $grid-box-height-large-small;
 
 	p{
 		display: block;
-		//position: absolute;
-		//bottom: 0;
-
-		//margin-left: $gutter/2;
-		//margin-right: $gutter/2*3;
 	}
 }
-.aspect_wrapper{
+.aspect-wrapper{
 	position: relative;
 	padding-top: 25px;
 	padding-bottom: $image-aspect_1x1;
@@ -200,18 +212,81 @@ text boxes
 	position: relative;
   	padding-bottom: $image-aspect_1x1 * 4 / 3;
 }
-/*.grid-box-ratio.before{
-	content: "";
-	display: block;
-	padding-top: 100%; 
-}*/
-.picture-content{
-	background-size: cover;
-	background-color: #222;
-	background-repeat: no-repeat;
-	position:  absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+
+
+/**************************************************************************************************
+page - home
+**************************************************************************************************/
+
+.home{
+
+	header{
+		h2{
+			/*height: 5rem;
+			@media #{$medium-up} {height: 9rem;}
+*/
+			background-image: url('../img/kazoosh_logo_detail_white.png');
+			background-repeat: no-repeat;
+			background-size: auto 100%;
+
+			span{
+				visibility: hidden;
+			}
+
+
+		}
+		/*p{
+			margin: $gutter 0rem 0rem 0rem;
+			font-size: 10pt;
+			@media #{$medium-up} {font-size: 15pt;}
+		}*/
+	}
+}
+
+/**************************************************************************************************
+page - mitglieder
+**************************************************************************************************/
+
+.mitglieder{
+	h3,h4{
+		padding: 0;
+		margin: 0;
+		display: block;
+		position: relative;
+		text-align: center;
+		background-color: rgba(0,0,0,0);
+	}
+	h3{
+		font-weight: 400;
+	}
+	h4{
+		font-size: 12pt;
+		//@media #{$medium-up}{font-size: 14pt;}
+	}
+
+	.caption{
+		height: 4rem;
+	}
+	.grid-box{
+		height: auto;
+	}
+
+	.picture-content{
+		background-size: cover;
+		background-color: #222;
+		background-repeat: no-repeat;
+		position:  absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.round-frame{
+		top: 15%;
+		left: 10%;
+		width: 80%;
+		height: 80%;
+		border-radius: 50%;
+	}
 }

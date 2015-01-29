@@ -4,8 +4,9 @@ teaser: ...
 images:
 - mitglieder/martin_h.jpg
 
-lastname: Hermann
-firstname: Flemming
+lastname: Flemming
+firstname: Martin
+profession: Architekt
 
 ---
 

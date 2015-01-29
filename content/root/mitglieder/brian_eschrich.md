@@ -6,6 +6,7 @@ images:
 
 lastname: Eschrich
 firstname: Brian
+profession: Medieninformatiker
 
 ---
 

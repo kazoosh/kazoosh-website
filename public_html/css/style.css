@@ -5,6 +5,14 @@ utils
 FONTS
 **************************************************************************************************/
 @import url(http://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800);
+@font-face {
+  font-family: Fat-Free;
+  src: url("fonts/Fat-Free.eot");
+}
+@font-face {
+  font-family: Fat-Free;
+  src: url("fonts/Fat-Free.ttf");
+}
 /**************************************************************************************************
 GRID
 **************************************************************************************************/
@@ -32,7 +40,14 @@ body {
 rewrite foundation rules
 **************************************************************************************************/
 .row {
+  box-sizing: border-box;
   max-width: none;
+  width: 100%;
+}
+@media only screen and (min-width: 40.063em) {
+  .row {
+    width: 95%;
+  }
 }
 
 .columns, column {
@@ -54,6 +69,31 @@ banner
     height: 17.5rem;
   }
 }
+.banner h2 {
+  height: 5rem;
+  font-family: Fat-Free, sans-serif;
+  font-size: 54pt;
+  color: #ffffff;
+}
+@media only screen and (min-width: 40.063em) {
+  .banner h2 {
+    height: 9rem;
+  }
+}
+@media only screen and (min-width: 40.063em) {
+  .banner h2 {
+    font-size: 74pt;
+  }
+}
+.banner p {
+  margin: 0.9375rem 0rem 0rem 0rem;
+  font-size: 12pt;
+}
+@media only screen and (min-width: 40.063em) {
+  .banner p {
+    font-size: 15pt;
+  }
+}
 
 /**************************************************************************************************
 navigation
@@ -63,11 +103,17 @@ navigation
   height: 2rem;
   position: absolute;
   top: 11rem;
+  padding: 0.46875rem;
   background-color: rgba(0, 0, 0, 0.8);
 }
 @media only screen and (min-width: 40.063em) {
   .menu {
     top: 15.5rem;
+  }
+}
+@media only screen and (min-width: 40.063em) {
+  .menu {
+    padding-left: 2.5%;
   }
 }
 .menu li {
@@ -97,39 +143,18 @@ navigation
 }
 
 /**************************************************************************************************
-page - home
-**************************************************************************************************/
-.home header h2 {
-  height: 3rem;
-  background-image: url("../img/kazoosh_logo_detail_white.png");
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-}
-@media only screen and (min-width: 40.063em) {
-  .home header h2 {
-    height: 9rem;
-  }
-}
-.home header h2 span {
-  visibility: hidden;
-}
-.home header p {
-  margin: 0.9375rem 0rem 0rem 0rem;
-  font-size: 10pt;
-}
-@media only screen and (min-width: 40.063em) {
-  .home header p {
-    font-size: 15pt;
-  }
-}
-
-/**************************************************************************************************
 text boxes
 **************************************************************************************************/
 .content-box {
   display: block;
   margin-top: 0.9375rem;
-  padding: 0.9375rem;
+  padding: 0.46875rem;
+  background-color: transparent;
+}
+@media only screen and (min-width: 40.063em) {
+  .content-box {
+    padding-left: 2.5%;
+  }
 }
 
 .grid-box,
@@ -140,7 +165,7 @@ text boxes
   margin-top: 1rem;
   padding-bottom: 0rem;
   background-size: cover;
-  background-color: #222;
+  background-color: transparent;
   background-repeat: no-repeat;
 }
 .grid-box .caption,
@@ -157,10 +182,10 @@ text boxes
 .grid-box-large h4 {
   display: inline;
   padding: 0.2rem 0.5rem 0.4rem 0.5rem;
-  margin: 0.7rem 1.40625rem -0.46875rem 0;
+  border: 4px;
   background-color: rgba(0, 0, 0, 0.7);
   font-family: "Dosis", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 14pt;
   color: #ffffff;
 }
@@ -176,8 +201,13 @@ text boxes
   color: #ffffff;
 }
 
-.grid-box:hover p {
+.grid-box:hover p,
+.grid-box-large:hover p {
   display: block;
+}
+
+.enable-hover:hover {
+  box-shadow: 50rem 0px 0px 0px rgba(0, 0, 0, 0.3) inset;
 }
 
 .grid-box-large {
@@ -187,7 +217,7 @@ text boxes
   display: block;
 }
 
-.aspect_wrapper {
+.aspect-wrapper {
   position: relative;
   padding-top: 25px;
   padding-bottom: 93.75%;
@@ -199,12 +229,52 @@ text boxes
   padding-bottom: 125%;
 }
 
-/*.grid-box-ratio.before{
-	content: "";
-	display: block;
-	padding-top: 100%; 
-}*/
-.picture-content {
+/**************************************************************************************************
+page - home
+**************************************************************************************************/
+.home header {
+  /*p{
+  	margin: $gutter 0rem 0rem 0rem;
+  	font-size: 10pt;
+  	@media only screen and (min-width:40.063em) {font-size: 15pt;}
+  }*/
+}
+.home header h2 {
+  			/*height: 5rem;
+  			@media only screen and (min-width:40.063em) {height: 9rem;}
+  */
+  background-image: url("../img/kazoosh_logo_detail_white.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+.home header h2 span {
+  visibility: hidden;
+}
+
+/**************************************************************************************************
+page - mitglieder
+**************************************************************************************************/
+.mitglieder h3, .mitglieder h4 {
+  padding: 0;
+  margin: 0;
+  display: block;
+  position: relative;
+  text-align: center;
+  background-color: transparent;
+}
+.mitglieder h3 {
+  font-weight: 400;
+}
+.mitglieder h4 {
+  font-size: 12pt;
+}
+.mitglieder .caption {
+  height: 4rem;
+}
+.mitglieder .grid-box {
+  height: auto;
+}
+.mitglieder .picture-content {
   background-size: cover;
   background-color: #222;
   background-repeat: no-repeat;
@@ -213,6 +283,13 @@ text boxes
   left: 0;
   width: 100%;
   height: 100%;
+}
+.mitglieder .round-frame {
+  top: 15%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */
