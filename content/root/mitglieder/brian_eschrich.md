@@ -2,7 +2,7 @@
 title: Brian Eschrich
 teaser: ...
 images:
-- mitglieder/deborah.png
+- mitglieder/michael_t.jpg
 
 lastname: Eschrich
 firstname: Brian

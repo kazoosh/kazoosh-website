@@ -2,7 +2,7 @@
 title: Hannes Leitner
 teaser: ...
 images:
-- mitglieder/deborah.png
+- mitglieder/michael_t.jpg
 
 lastname: Leitner
 firstname: Hannes

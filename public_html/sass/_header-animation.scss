@@ -1,0 +1,101 @@
+/**************************************************************************************************
+HEADER ANIMATION
+**************************************************************************************************/
+
+.home{
+
+	//change banner and menu size
+	.banner{
+	height: $banner-home-height-small;
+	@media #{$medium-up} {height: $banner-home-height-medium;}
+	@media #{$large-up} {height: $banner-home-height-large;}
+	}
+
+	.menu{
+		top: ($banner-home-height-small - 3);
+		@media #{$medium-up} {top: ($banner-home-height-medium - 3);}
+		@media #{$large-up} {top: ($banner-home-height-large - 3);}
+	}
+
+
+
+	
+
+	header{
+		h2{
+			/*height: 5rem;
+			@media #{$medium-up} {height: 9rem;}
+*/
+			background-image: url('../img/kazoosh_logo_detail_white.png');
+			background-repeat: no-repeat;
+			background-size: auto 100%;
+
+			span{
+				visibility: hidden;
+			}
+
+
+		}
+
+		.bg-wrapper{
+		height: $banner-home-height-small;
+		@media #{$medium-up} {height: $banner-home-height-medium;}
+		@media #{$large-up} {height: $banner-home-height-large;}
+		position: absolute;
+		top: 0px;
+		overflow: hidden;
+		z-index: 0;
+		width: 100%;
+
+			video { 
+				//position: fixed; right: 0; bottom: 0;
+				//min-width: 100%; min-height: 100%;
+				position: absolute;;
+				width: 100%;
+				//background: url(polina.jpg) no-repeat;
+				background-size: cover; 
+				}	
+
+			.static-layer,
+			.animation-layer{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background-size: cover;
+			background-repeat: no-repeat;
+			}
+
+			//animations
+			.fading{
+				animation: 	Fading 25s ease infinite alternate; 
+				animation-fill-mode:both;
+			}
+			.fading:nth-child(1){
+				//animation-delay: s;
+			}
+			.fading:nth-child(2){
+				animation-delay: -28s;
+			}
+			.fading:nth-child(3){
+				animation-delay: -14s;
+			}
+			@keyframes Fading{
+				0% { opacity:0;}
+				66% { opacity:0;}
+			  	81% {opacity:1;}
+			  	86% {opacity:0.8;}
+			  	91% {opacity:1;}
+			  	96% {opacity:0.8;}
+			  	98% {opacity:1;}
+			}
+
+		}
+		.text-wrapper{
+
+			position: absolute;
+			top: 0px;
+			z-index: 1;
+			width: 100%;
+		}
+	}
+}

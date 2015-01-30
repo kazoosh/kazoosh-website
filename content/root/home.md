@@ -3,7 +3,13 @@ title: Kazoosh!
 teaser: Freie Plattform für elektronisches und digitales Basteln
 
 images:
-- home/banner1.png
+- home/banner_bg.jpg
+- home/banner_1.gif
+- home/banner_2.gif
+- home/banner_3.gif
+
+videos:
+- /img/home/bg_ani.mp4
 
 featured:
 - root/projekte/digitaler_voyeurismus
@@ -18,5 +24,7 @@ featured:
 - root/news/irgendeine_neuigkeit
 - root/mitglieder/deborah_schmidt
 ---
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
 
 
