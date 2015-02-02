@@ -15,19 +15,6 @@
     <div>your content</div>
   </div-->
 
-<slick>
- <div ng-repeat="image in content.images | limitTo : -(content.images.length-1)" class="test123 small-12 medium-6 large-3 end
-		columns" style="height: 12rem; overflow: hidden; margin-bottom: 1rem">
-		<img ng-src="{{image}}" />
-	</div>
-</slick>
-<div class="gallery row">
-	<div ng-repeat="image in content.images | limitTo : -(content.images.length-1)" class="test123 small-12 medium-6 large-3 end
-		columns" style="height: 12rem; overflow: hidden; margin-bottom: 1rem">
-		<img ng-src="{{image}}" />
-	</div>
-</div>
-
 <!--script type="text/javascript">
     $(document).ready(function(){
       $('.your-class').slick({
@@ -37,6 +24,12 @@
 });
     });
   </script-->
+<slick infinite="true" slides-to-show="3" slides-to-scroll="3" init-onload=true data="content.images">
+	<div ng-repeat="image in content.images | limitTo : -(content.images.length-1)">
+		<img ng-src="{{image}}" />
+	</div>
+</slick>
+
 
 <!--old -->
 <!--header class="banner" style="background-image: url('{{content.images[0]}}');">
