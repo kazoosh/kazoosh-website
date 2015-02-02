@@ -10,6 +10,7 @@
     "underscore": "~1.7.0",
     "angular-underscore-module": "~1.0.1",
     "foundation": "~5.4.7",
-    "HTML5-Reset": "~2.1.2"
+    "HTML5-Reset": "~2.1.2",
+    "angular-slick": "0.1.18"
   }
 }
