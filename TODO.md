@@ -4,9 +4,12 @@
 * cache für json files
 
 # md2json
+* Reihenfolge definieren (-1 == unsichtbar in navi)
 * Änderungsdatum für Inhalte
 * fehler bei fehlerhaften oder fehlenden *.md files checken
 
+#css Klassen
+* bei url http://localhost:8000/#/root/projekte/digitaler_voyeurismus folgende Klassen: root root_default projekte projekte_default digitaler_voyeurismus
 
 # design
 * bilder in grid-box durchblättern und teaser als extra "bild" am ende anzeigen
