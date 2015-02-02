@@ -17,13 +17,37 @@
 
 
 <div class="gallery row">
-	<div ng-repeat="image in content.images | limitTo : -(content.images.length-1)" class="small-12 medium-6 large-3 end
+	<div ng-repeat="image in content.images | limitTo : -(content.images.length-1)" class="test123 small-12 medium-6 large-3 end
 		columns" style="height: 12rem; overflow: hidden; margin-bottom: 1rem">
 		<img ng-src="{{image}}" />
 	</div>
 </div>
 
+<div class="your-class">
+    <div>your content</div>
+    <div>your content</div>
+    <div>your content</div>
+  </div>
 
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.gallery').slick({
+  dots: true,
+  centerMode: true,
+  focusOnSelect: true
+});
+    });
+  </script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.your-class').slick({
+  dots: true,
+  centerMode: true,
+  focusOnSelect: true
+});
+    });
+  </script>
 
 <!--old -->
 <!--header class="banner" style="background-image: url('{{content.images[0]}}');">
