@@ -1,10 +1,35 @@
-<header class="banner" style="background-image: url('{{content.images[0]}}');">
-	<h2>{{content.title}}</h2>
+<header class="banner" style="background-image: url('{{content.images[1]}}');">
+	<!--h2>{{content.title}}</h2>
 
-	<div>{{content.teaser}}</div>
+	<div>{{content.teaser}}</div-->
 </header>
 
-<h2>Teilnehmer</h2>
+<div class = "description-box">
+	<a ui-sref="content({path: content.path})"><h3>Köpfe</h3></a>
+	<h2>{{content.firstname}} {{content.lastname}}</h2>
+</div>
 
-<h3>{{content.title}} {{content.lastname}}</h3>
-<div ng-bind-html="content.html"></div>
+<div class="row">
+		<div class="small-12 medium-8 large-9 columns end">
+			<p ng-bind-html="content.html"></p>
+			<h3>Interessen</h3>
+			<ul>
+				<li ng-repeat="interest in content.interests">{{interest}}</li>
+			</ul>
+			<h3>Mitarbeit in KAZOOSH!-Projekten</h3>
+			<p>Hier kommen Thumbnails</p>
+		</div>
+		<div class="small-12 medium-4 large-3 columns end">
+			<div class="aspect-wrapper ratio_4x3">
+				<div class="picture-content" style="background-image: url('{{content.images[0]}}');">	
+				</div>
+			</div>
+			<h3>{{content.firstname}} {{content.lastname}}</h3>
+			<p>{{content.profession}}<br>
+			Mail: <a href="{{content.email}}">{{content.email}}</a><br>
+			Homepage: <a href="{{content.homepage}}">{{content.homepage}}</a></p>
+
+		</div>
+	</div>
+
+

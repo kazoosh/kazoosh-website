@@ -5,7 +5,7 @@ defaults
 
 body {
 	font-family: $font-family-text;
-	font-size: 12pt;
+	font-size: 14pt;
 	font-weight: 300;
 	background-color: #1A1A1A;
 	color: #ffffff;
@@ -84,7 +84,9 @@ navigation
 
 	background-color: rgba(0, 0, 0, 0.8);
 
-
+	ul{
+		margin: 0px;
+	}
 
 	li{
 		float: left;
@@ -125,7 +127,7 @@ navigation
 text boxes
 **************************************************************************************************/
 
-.description-box{
+.teaser-box{
 	padding: $gutter/2;
 	@media #{$medium-up} {
 				padding-left: 2.5%;
@@ -140,6 +142,34 @@ text boxes
 	}
 }
 
+.description-box{
+		//position: absolute;
+		//top: $menu-height;
+		width: 100%;
+		padding: $gutter/2;
+		@media #{$medium-up} {
+					padding-left: 2.5%;
+					padding-right: 2.5%;
+		}
+		font-weight: 800;
+		background-color: #373737;
+		margin-bottom: $gutter;
+		//background-color: #eee;
+
+		h2{
+			color: #eee;
+		}
+		h3{
+			font-size: 14pt;
+			color: #eee;
+		}
+		p{
+			font-size: 14pt;
+			//color: #555;
+			color: #eee;
+		}
+	}
+
 .content-box{	
 	display: block;
 	margin-top: $gutter;
@@ -149,6 +179,31 @@ text boxes
 	}
 
 	background-color: rgba(0, 0, 0, 0);
+}
+
+.footer-box{
+	margin-top: $gutter;
+	background-color: #000;
+	//background-color: #1A1A1A;
+	a{
+		color: #3766ff;
+		}
+	p{
+		font-size: 12pt;
+	}
+	h2{
+		padding-top: $gutter/2;
+		padding-bottom: $gutter/2;
+		font-size: 14pt;
+		color: #eee;
+		font-weight: 500;
+	}
+	h3{
+		font-size: 12pt;
+		margin-bottom: 0rem;
+		color: #eee;
+		font-weight: 300;
+	}
 }
 
 .grid-box,
@@ -344,40 +399,42 @@ page - mitglieder
 }
 
 /**************************************************************************************************
-page - projekte
+page - projekte - subpages
 **************************************************************************************************/
 .digitaler_voyeurismus{
 	background-color: #eee;
-
-	p{
-		color: #000;
-	}
-
-
-	.description-box{
-		//position: absolute;
-		//top: $menu-height;
-		width: 100%;
-		padding: $gutter/2;
-		@media #{$medium-up} {
-					padding-left: 2.5%;
-					padding-right: 2.5%;
-		}
-		font-weight: 800;
-		background-color: #373737;
-		//background-color: #eee;
-
-		h2{
-			color: #eee;
-		}
-		h3{
-			font-size: 14pt;
-			color: #eee;
-		}
+	.row{
 		p{
+		color: #000;
+		}
+	}	
+}
+
+/**************************************************************************************************
+page - mitglieder - subpages
+**************************************************************************************************/
+.brian_eschrich{
+	background-color: #eee;
+	.row{
+		p{
+			color: #333;
 			font-size: 14pt;
-			//color: #555;
-			color: #eee;
+		}
+		.picture-content{
+			background-size: cover;
+			//background-color: rgba(255, 255, 255, 1);
+			//background-blend-mode: luminosity;
+			background-repeat: no-repeat;
+			position:  absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		li{
+			color: #333;
+			font-size: 14pt;
 		}
 	}
 }

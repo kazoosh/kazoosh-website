@@ -9,7 +9,12 @@
 	<h2>{{content.title}}</h2>
 </div>
 
-<p ng-bind-html="content.html"></p>
+<div class="row">
+	<div class="class=small-12 medium-12 large-12">
+		<p ng-bind-html="content.html"></p>
+	</div>
+</div>
+
 
 <div class="gallery row">
 	<div ng-repeat="image in content.images | limitTo : -(content.images.length-1)" class="small-12 medium-6 large-3 end

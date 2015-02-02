@@ -33,7 +33,7 @@ defaults
 **************************************************************************************************/
 body {
   font-family: "Dosis", sans-serif;
-  font-size: 12pt;
+  font-size: 14pt;
   font-weight: 300;
   background-color: #1A1A1A;
   color: #ffffff;
@@ -128,6 +128,9 @@ navigation
     padding-left: 2.5%;
   }
 }
+.menu ul {
+  margin: 0px;
+}
 .menu li {
   float: left;
   margin-right: 1rem;
@@ -157,9 +160,27 @@ navigation
 /**************************************************************************************************
 text boxes
 **************************************************************************************************/
-.description-box {
+.teaser-box {
   padding: 0.46875rem;
   background-color: #eee;
+}
+@media only screen and (min-width: 40.063em) {
+  .teaser-box {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
+}
+.teaser-box p {
+  font-size: 14pt;
+  color: #555;
+}
+
+.description-box {
+  width: 100%;
+  padding: 0.46875rem;
+  font-weight: 800;
+  background-color: #373737;
+  margin-bottom: 0.9375rem;
 }
 @media only screen and (min-width: 40.063em) {
   .description-box {
@@ -167,9 +188,16 @@ text boxes
     padding-right: 2.5%;
   }
 }
+.description-box h2 {
+  color: #eee;
+}
+.description-box h3 {
+  font-size: 14pt;
+  color: #eee;
+}
 .description-box p {
   font-size: 14pt;
-  color: #555;
+  color: #eee;
 }
 
 .content-box {
@@ -182,6 +210,30 @@ text boxes
   .content-box {
     padding-left: 2.5%;
   }
+}
+
+.footer-box {
+  margin-top: 0.9375rem;
+  background-color: #000;
+}
+.footer-box a {
+  color: #3766ff;
+}
+.footer-box p {
+  font-size: 12pt;
+}
+.footer-box h2 {
+  padding-top: 0.46875rem;
+  padding-bottom: 0.46875rem;
+  font-size: 14pt;
+  color: #eee;
+  font-weight: 500;
+}
+.footer-box h3 {
+  font-size: 12pt;
+  margin-bottom: 0rem;
+  color: #eee;
+  font-weight: 300;
 }
 
 .grid-box,
@@ -360,36 +412,37 @@ page - mitglieder
 }
 
 /**************************************************************************************************
-page - projekte
+page - projekte - subpages
 **************************************************************************************************/
 .digitaler_voyeurismus {
   background-color: #eee;
 }
-.digitaler_voyeurismus p {
+.digitaler_voyeurismus .row p {
   color: #000;
 }
-.digitaler_voyeurismus .description-box {
+
+/**************************************************************************************************
+page - mitglieder - subpages
+**************************************************************************************************/
+.brian_eschrich {
+  background-color: #eee;
+}
+.brian_eschrich .row p {
+  color: #333;
+  font-size: 14pt;
+}
+.brian_eschrich .row .picture-content {
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 0.46875rem;
-  font-weight: 800;
-  background-color: #373737;
+  height: 100%;
 }
-@media only screen and (min-width: 40.063em) {
-  .digitaler_voyeurismus .description-box {
-    padding-left: 2.5%;
-    padding-right: 2.5%;
-  }
-}
-.digitaler_voyeurismus .description-box h2 {
-  color: #eee;
-}
-.digitaler_voyeurismus .description-box h3 {
+.brian_eschrich .row li {
+  color: #333;
   font-size: 14pt;
-  color: #eee;
-}
-.digitaler_voyeurismus .description-box p {
-  font-size: 14pt;
-  color: #eee;
 }
 
 /**************************************************************************************************
