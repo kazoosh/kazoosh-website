@@ -11,6 +11,13 @@ body {
 	color: #ffffff;
 }
 
+h2 {
+	font-family: $font-family-text;
+}
+h3 {
+	font-family: $font-family-text;
+}
+
 /**************************************************************************************************
 rewrite foundation rules
 **************************************************************************************************/
@@ -65,7 +72,7 @@ navigation
 .menu{
 	z-index: 5;
 	width: 100%;
-	height: 3rem;
+	height: $menu-height;
 	position: absolute;
 	top: ($banner-height-small - 3);
 	@media #{$medium-up} {top: ($banner-height-medium - 3);}
@@ -119,7 +126,18 @@ text boxes
 **************************************************************************************************/
 
 .description-box{
-	
+	padding: $gutter/2;
+	@media #{$medium-up} {
+				padding-left: 2.5%;
+				padding-right: 2.5%;
+	}
+
+	background-color: #eee;
+
+	p{
+		font-size: 14pt;
+		color: #555;
+	}
 }
 
 .content-box{	
@@ -252,7 +270,31 @@ page - mitglieder
 **************************************************************************************************/
 
 .mitglieder{
-	//background-color: #ccc;
+	.banner{
+	width: 100%;
+	height: $banner-height-small;
+	@media #{$medium-up} {height: $banner-height-medium;}
+
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	h2{
+		height: 5rem;
+			@media #{$medium-up} {height: 9rem;}
+			font-family: $font-family-header;
+			font-size: 54pt;
+			color: #ffffff;
+			@media #{$medium-up} {
+				font-size: 74pt;
+			}
+		}
+	p{		
+			margin: $gutter 0rem 0rem 0rem;
+			font-size: 12pt;
+			@media #{$medium-up} {font-size: 15pt;}
+	}
+
+}
 
 	h3,h4{
 		padding: 0;
@@ -298,5 +340,44 @@ page - mitglieder
 		width: 80%;
 		height: 80%;
 		border-radius: 50%;
+	}
+}
+
+/**************************************************************************************************
+page - projekte
+**************************************************************************************************/
+.digitaler_voyeurismus{
+	background-color: #eee;
+
+	p{
+		color: #000;
+	}
+
+
+	.description-box{
+		//position: absolute;
+		//top: $menu-height;
+		width: 100%;
+		padding: $gutter/2;
+		@media #{$medium-up} {
+					padding-left: 2.5%;
+					padding-right: 2.5%;
+		}
+		font-weight: 800;
+		background-color: #373737;
+		//background-color: #eee;
+
+		h2{
+			color: #eee;
+		}
+		h3{
+			font-size: 14pt;
+			color: #eee;
+		}
+		p{
+			font-size: 14pt;
+			//color: #555;
+			color: #eee;
+		}
 	}
 }

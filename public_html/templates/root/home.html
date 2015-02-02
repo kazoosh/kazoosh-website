@@ -49,9 +49,6 @@
 </header-->
 
 <article>
-	<div class="description-box">
-		
-	</div>
 	<ul class="row">
 		<li ng-repeat="content in featured | limitTo : 2" class="small-12 medium-12 large-6 columns">
 			<a ui-sref="content({path: content.path})" class="grid-box-large enable-hover" style="background-image: url('{{content.images[0]}}');">

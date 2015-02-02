@@ -1,4 +1,25 @@
 <header class="banner" style="background-image: url('{{content.images[0]}}');">
+	<!--h2>{{content.title}}</h2>
+
+	<div>{{content.teaser}}</div-->
+</header>
+
+<div class = "description-box">
+	<a ui-sref="content({path: content.path})"><h3>Projekte</h3></a>
+	<h2>{{content.title}}</h2>
+</div>
+
+<p ng-bind-html="content.html"></p>
+
+<div class="gallery row">
+	<div ng-repeat="image in content.images | limitTo : -(content.images.length-1)" class="small-12 medium-6 large-3 end
+		columns" style="height: 12rem; overflow: hidden; margin-bottom: 1rem">
+		<img ng-src="{{image}}" />
+	</div>
+</div>
+
+<!--old -->
+<!--header class="banner" style="background-image: url('{{content.images[0]}}');">
 	<h2>{{content.title}}</h2>
 
 	<div>{{content.teaser}}</div>
@@ -14,4 +35,4 @@
 		columns" style="height: 12rem; overflow: hidden; margin-bottom: 1rem">
 		<img ng-src="{{image}}" />
 	</div>
-</div>
+</div-->
