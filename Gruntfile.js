@@ -3,6 +3,7 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		CONF: grunt.file.readJSON('config.json'),
 		sass: {
 			dist: {
 				options: {
@@ -14,9 +15,9 @@ module.exports = function(grunt) {
 			}
 		},
 		watch: {
-			addContent: {
+			content: {
 				files: ['content/**'],
-				tasks: ['shell:mdToJson'],
+				tasks: ['shell:mdToJson:<%= CONF.contentSourceDirectory %>:<%= CONF.contentDestinationDirectory %>'],
 				options: {
 					event: ['added', 'changed', 'deleted']
 				}
@@ -28,8 +29,8 @@ module.exports = function(grunt) {
 		},
 		shell: {
 			mdToJson: {
-				command: function () {
-					var script = 'python script/mdToJson.py content public_html/content';
+				command: function (sourceDirectory, destinationDirectory) {
+					var script = 'python script/mdToJson.py '+sourceDirectory+' '+destinationDirectory;
 					return script;
 				}
 			}
@@ -39,7 +40,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-contrib-sass');
-	
 
-	grunt.registerTask('observe', ['sass', 'shell', 'watch']);
+	grunt.registerTask('observe', ['sass', 'shell:mdToJson:<%= CONF.contentSourceDirectory %>:<%= CONF.contentDestinationDirectory %>', 'watch']);
 };
