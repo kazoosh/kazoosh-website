@@ -16,11 +16,15 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			content: {
-				files: ['content/**'],
-				tasks: ['shell:mdToJson:<%= CONF.contentSourceDirectory %>:<%= CONF.contentDestinationDirectory %>'],
+				files: ['<%= CONF.contentSourceDirectory %>/**'],
+				tasks: ['content'],
 				options: {
 					event: ['added', 'changed', 'deleted']
 				}
+			},
+			images: {
+				files: ['<%= CONF.imagesSourceDirectory %>/**'],
+				tasks: [],//images watch event is handeled below for performance issues
 			},
 			css: {
 				files: ['public_html/sass/*.scss'],
@@ -34,12 +38,47 @@ module.exports = function(grunt) {
 					return script;
 				}
 			}
+		},
+		clean: {
+			images: ['<%= CONF.imagesDestinationDirectory %>'],
+		},
+		copy: {
+			images: {
+				cwd: '<%= CONF.imagesSourceDirectory %>',
+				src: '**',
+				dest: '<%= CONF.imagesDestinationDirectory %>',
+				expand: true,
+			},
+		},
+	});
+
+	grunt.event.on('watch', function(action, filepath, target) {
+		
+		if (target === 'images') {
+			var pathArray = filepath.split("/");
+			var imgFilePath = pathArray.slice(1).join("/");//path without image folder
+			imgFilePath = grunt.config.get('CONF.imagesDestinationDirectory') +'/'+imgFilePath;
+
+			if (action === 'deleted') {
+				grunt.log.write("delete image "+imgFilePath);
+				grunt.file.delete(imgFilePath);
+			}
+			else if(action === 'added' || action === 'changed' || action === 'renamed'){
+				grunt.log.write("copy image from "+filepath+" to "+imgFilePath);
+				grunt.file.copy(filepath, imgFilePath)
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-shell');
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 
-	grunt.registerTask('observe', ['sass', 'shell:mdToJson:<%= CONF.contentSourceDirectory %>:<%= CONF.contentDestinationDirectory %>', 'watch']);
+	
+	grunt.registerTask('content', ['shell:mdToJson:<%= CONF.contentSourceDirectory %>:<%= CONF.contentDestinationDirectory %>']);
+	grunt.registerTask('images', ['clean:images', 'copy:images']);
+
+	grunt.registerTask('observe', ['sass', 'content', 'images', 'watch']);
 };

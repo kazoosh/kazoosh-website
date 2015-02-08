@@ -1,4 +1,6 @@
 {
   "contentSourceDirectory": "content",
-  "contentDestinationDirectory": "public_html/content"
+  "contentDestinationDirectory": "public_html/content",
+  "imagesSourceDirectory": "images",
+  "imagesDestinationDirectory": "public_html/img"
 }
