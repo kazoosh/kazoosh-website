@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 		shell: {
 			mdToJson: {
 				command: function () {
-					var script = 'python script/mdToJson.py';
+					var script = 'python script/mdToJson.py content public_html/content';
 					return script;
 				}
 			}
