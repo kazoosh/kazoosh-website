@@ -6,7 +6,7 @@ import frontmatter
 import json
 
 
-if len(sys.argv) < 2:
+if len(sys.argv) < 3:
 	print 'Please pass source and destination directory as arguments (e.g. python script/mdToJson.py content public_html/content). Arguments given: ', str(sys.argv)
 	sys.exit()
 
