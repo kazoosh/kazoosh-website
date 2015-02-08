@@ -12,6 +12,8 @@ angular.module('config', [])
 		'default_template': 'default',
 		'template_extension': '.html',
 		
+		'default_page_class_prefix': '_default',
+
 		'nav_order_attribute': 'order',
 		'subpages_attribute': 'subpages',
 		'markdown_attribute': 'content',
