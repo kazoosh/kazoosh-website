@@ -46,11 +46,20 @@
 
 # CONFIGURATION
 
+## "backend"
+* see config.js
+
+## angular app
+
 * see public_html/js/config.js
 
 # CONTENT
 
-Contents are taken from "content" folder, converted from markdown to json format and copied to "public_html/content". For files having a matching folder (with the same name in the same parent folder) the folder contents are listed in the subpages attribute.
+Contents are taken from "contentSourceDirectory" defined in config, converted from markdown to json format and copied to "contentDestinationDirectory". For files having a matching folder (with the same name in the same parent folder) the folder contents are listed in the subpages attribute.
+
+## content repository
+The content repository for kazoosh website is located here: git@github.com:barnholdy/kazoosh-website-content.git. Check it out and set "contentSourceDirectory" and "imagesSourceDirectory" in config.js.
+
 
 ## markdown file structure
 
