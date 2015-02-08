@@ -1,4 +1,5 @@
 import os
+import time
 import shutil
 import frontmatter
 import json
@@ -7,6 +8,7 @@ import json
 sourceDir = 'content'
 distDir = 'public_html/content'
 
+DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 def refreshDir(dir):
 	if os.path.exists(dir):
@@ -35,6 +37,10 @@ def addSubpagePaths(markdownDict, sourceDir, subDir):
 				subFilePath = os.path.join(*subFilePath.split("/")[0:])
 				markdownDict['subpages'].append(subFilePath)
 
+def addLastModifiedDate(markdownDict, filePath):
+	lastModified = time.strftime(DATE_FORMAT, time.localtime(os.path.getmtime(filePath)))
+	markdownDict['last-modified'] = lastModified
+
 def isFile(sourceDir, fileName):
 	return os.path.isfile(os.path.join(sourceDir, fileName)) and not fileName.startswith('.')
 
@@ -59,6 +65,7 @@ def mdToJson(sourceDir, distDir, currentSubDir):
 
 			fileNameWithoutExt = os.path.splitext(fileName)[0]
 			addSubpagePaths(markdownDict, sourceDir, os.path.join(currentSubDir, fileNameWithoutExt))
+			addLastModifiedDate(markdownDict, os.path.join(sourceDirPath, fileName))
 
 			dictToJson(markdownDict, os.path.join(distDirPath, fileNameWithoutExt+'.json'))
 

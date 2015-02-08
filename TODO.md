@@ -4,7 +4,6 @@
 * cache für json files
 
 # md2json
-* Änderungsdatum für Inhalte
 * fehler bei fehlerhaften oder fehlenden *.md files checken
 
 #css Klassen
