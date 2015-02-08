@@ -4,7 +4,6 @@
 * cache für json files
 
 # md2json
-* Reihenfolge definieren (-1 == unsichtbar in navi)
 * Änderungsdatum für Inhalte
 * fehler bei fehlerhaften oder fehlenden *.md files checken
 

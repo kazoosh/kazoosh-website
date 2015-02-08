@@ -48,10 +48,6 @@
 
 * see public_html/js/config.js
 
-## exlude_from_navigation
-
-* add folders in content folder to exclude from navigation
-
 # CONTENT
 
 Contents are taken from "content" folder, converted from markdown to json format and copied to "public_html/content". For files having a matching folder (with the same name in the same parent folder) the folder contents are listed in the subpages attribute.
@@ -93,6 +89,12 @@ Markdown files consit of two parts:
 ### images
 
 ...
+
+### page order in navgation
+
+* use order attribute (CONF.nav_order_attribute) to define order in navigation
+* pages with numbers smaller than zero are excluded from navigation
+
 
 # TEMPLATES
 

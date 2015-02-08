@@ -1,4 +1,5 @@
 ---
+order: 3
 title: Köpfe
 teaser: Toller knackiger Spruch
 
