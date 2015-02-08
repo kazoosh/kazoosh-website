@@ -1,9 +1,27 @@
 # INSTALL TOOLS
 
-* python: https://www.python.org/downloads/
-* python modul frontmatter: https://pypi.python.org/pypi/python-frontmatter/0.1.1
-* node: http://nodejs.org/download/
-* rubygems: https://rubygems.org/pages/download
+## python
+
+* https://www.python.org/downloads/
+* python packetmanager: pip: sudo easy_install pip 
+* python modul: frontmatter:
+	* pip install python-frontmatter
+	* or htps://pypi.python.org/pypi/python-frontmatter/0.1.1
+
+## node js
+
+* http://nodejs.org/download/
+
+
+## ruby
+
+* https://www.ruby-lang.org/de/downloads/
+* ruby packetmanager: rubygems: 
+	* https://rubygems.org/pages/download
+
+
+## web tools
+
 * bower: npm install -g bower
 * grunt: npm install -g grunt-cli
 * sass: sudo gem install sass
