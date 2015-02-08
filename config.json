@@ -1,6 +1,6 @@
 {
-  "contentSourceDirectory": "content",
+  "contentSourceDirectory": "../kazoosh-website-content/content",
   "contentDestinationDirectory": "public_html/content",
-  "imagesSourceDirectory": "images",
+  "imagesSourceDirectory": "../kazoosh-website-content/images",
   "imagesDestinationDirectory": "public_html/img"
 }
