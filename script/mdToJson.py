@@ -37,9 +37,15 @@ def addSubpagePaths(markdownDict, sourceDir, subDir):
 				subFilePath = os.path.join(*subFilePath.split("/")[0:])
 				markdownDict['subpages'].append(subFilePath)
 
-def addLastModifiedDate(markdownDict, filePath):
-	lastModified = time.strftime(DATE_FORMAT, time.localtime(os.path.getmtime(filePath)))
-	markdownDict['last-modified'] = lastModified
+def addLastModifiedTime(markdownDict, filePath):
+	if 'last-modified' not in markdownDict:
+		lastModified = time.strftime(DATE_FORMAT, time.localtime(os.stat(filePath).st_mtime))
+		markdownDict['last-modified'] = lastModified
+
+def addCreatedTime(markdownDict, filePath):
+	if 'created' not in markdownDict:
+		created = time.strftime(DATE_FORMAT, time.localtime(os.stat(filePath).st_birthtime))
+		markdownDict['created'] = created
 
 def isFile(sourceDir, fileName):
 	return os.path.isfile(os.path.join(sourceDir, fileName)) and not fileName.startswith('.')
@@ -65,7 +71,8 @@ def mdToJson(sourceDir, distDir, currentSubDir):
 
 			fileNameWithoutExt = os.path.splitext(fileName)[0]
 			addSubpagePaths(markdownDict, sourceDir, os.path.join(currentSubDir, fileNameWithoutExt))
-			addLastModifiedDate(markdownDict, os.path.join(sourceDirPath, fileName))
+			addLastModifiedTime(markdownDict, os.path.join(sourceDirPath, fileName))
+			addCreatedTime(markdownDict, os.path.join(sourceDirPath, fileName))
 
 			dictToJson(markdownDict, os.path.join(distDirPath, fileNameWithoutExt+'.json'))
 
