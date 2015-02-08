@@ -51,6 +51,12 @@ module.exports = function(grunt) {
 			},
 		},
 	});
+	
+	//merge local config
+	if(grunt.file.exists('config.local.json')){
+		grunt.config.merge({CONF: grunt.file.readJSON('config.local.json')});
+	}
+
 
 	grunt.event.on('watch', function(action, filepath, target) {
 		
