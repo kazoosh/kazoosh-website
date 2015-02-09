@@ -1,12 +1,22 @@
+import sys
 import os
+import time
 import shutil
 import frontmatter
 import json
 
 
-sourceDir = 'content'
-distDir = 'public_html/content'
+if len(sys.argv) < 3:
+	print 'Please pass source and destination directory as arguments (e.g. python script/mdToJson.py content public_html/content). Arguments given: ', str(sys.argv)
+	sys.exit()
 
+sourceDir = sys.argv[1]
+distDir = sys.argv[2]
+
+print 'source directory: '+sourceDir
+print 'destination directory: '+distDir
+
+DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 def refreshDir(dir):
 	if os.path.exists(dir):
@@ -35,6 +45,16 @@ def addSubpagePaths(markdownDict, sourceDir, subDir):
 				subFilePath = os.path.join(*subFilePath.split("/")[0:])
 				markdownDict['subpages'].append(subFilePath)
 
+def addLastModifiedTime(markdownDict, filePath):
+	if 'last-modified' not in markdownDict:
+		lastModified = time.strftime(DATE_FORMAT, time.localtime(os.stat(filePath).st_mtime))
+		markdownDict['last-modified'] = lastModified
+
+def addCreatedTime(markdownDict, filePath):
+	if 'created' not in markdownDict:
+		created = time.strftime(DATE_FORMAT, time.localtime(os.stat(filePath).st_birthtime))
+		markdownDict['created'] = created
+
 def isFile(sourceDir, fileName):
 	return os.path.isfile(os.path.join(sourceDir, fileName)) and not fileName.startswith('.')
 
@@ -59,6 +79,8 @@ def mdToJson(sourceDir, distDir, currentSubDir):
 
 			fileNameWithoutExt = os.path.splitext(fileName)[0]
 			addSubpagePaths(markdownDict, sourceDir, os.path.join(currentSubDir, fileNameWithoutExt))
+			addLastModifiedTime(markdownDict, os.path.join(sourceDirPath, fileName))
+			addCreatedTime(markdownDict, os.path.join(sourceDirPath, fileName))
 
 			dictToJson(markdownDict, os.path.join(distDirPath, fileNameWithoutExt+'.json'))
 

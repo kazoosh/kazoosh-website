@@ -1,3 +1,6 @@
+# local config
+config.local.json
+
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
@@ -6,6 +9,9 @@ public_html/lib
 
 # gernerated content json files
 public_html/content
+
+# copied images
+public_html/img
 
 # node dependency directory
 node_modules

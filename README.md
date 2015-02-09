@@ -1,9 +1,27 @@
 # INSTALL TOOLS
 
-* python: https://www.python.org/downloads/
-* python modul frontmatter: https://pypi.python.org/pypi/python-frontmatter/0.1.1
-* node: http://nodejs.org/download/
-* rubygems: https://rubygems.org/pages/download
+## python
+
+* https://www.python.org/downloads/
+* python packetmanager: pip: sudo easy_install pip 
+* python modul: frontmatter:
+	* pip install python-frontmatter
+	* or htps://pypi.python.org/pypi/python-frontmatter/0.1.1
+
+## node js
+
+* http://nodejs.org/download/
+
+
+## ruby
+
+* https://www.ruby-lang.org/de/downloads/
+* ruby packetmanager: rubygems: 
+	* https://rubygems.org/pages/download
+
+
+## web tools
+
 * bower: npm install -g bower
 * grunt: npm install -g grunt-cli
 * sass: sudo gem install sass
@@ -28,15 +46,21 @@
 
 # CONFIGURATION
 
+## "backend"
+* see config.js
+* for local configuration use config.local.default.json and copy it to config.local.json
+
+## angular app
+
 * see public_html/js/config.js
-
-## exlude_from_navigation
-
-* add folders in content folder to exclude from navigation
 
 # CONTENT
 
-Contents are taken from "content" folder, converted from markdown to json format and copied to "public_html/content". For files having a matching folder (with the same name in the same parent folder) the folder contents are listed in the subpages attribute.
+Contents are taken from "contentSourceDirectory" defined in config, converted from markdown to json format and copied to "contentDestinationDirectory". For files having a matching folder (with the same name in the same parent folder) the folder contents are listed in the subpages attribute.
+
+## content repository
+The content repository for kazoosh website is located here: git@github.com:barnholdy/kazoosh-website-content.git. Check it out and set "contentSourceDirectory" and "imagesSourceDirectory" in config.js.
+
 
 ## markdown file structure
 
@@ -75,6 +99,12 @@ Markdown files consit of two parts:
 ### images
 
 ...
+
+### page order in navgation
+
+* use order attribute (CONF.nav_order_attribute) to define order in navigation
+* pages with numbers smaller than zero are excluded from navigation
+
 
 # TEMPLATES
 

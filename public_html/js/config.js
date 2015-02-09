@@ -8,12 +8,13 @@ angular.module('config', [])
 		'templates_folder': '/templates',
 		'image_folder': '/img/',
 
-		'exlude_from_navigation': ['news', 'home'],
-
 		'error_template': '404',
 		'default_template': 'default',
 		'template_extension': '.html',
 		
+		'default_page_class_prefix': '_default',
+
+		'nav_order_attribute': 'order',
 		'subpages_attribute': 'subpages',
 		'markdown_attribute': 'content',
 		'markdown_to_html_attribute': 'html',

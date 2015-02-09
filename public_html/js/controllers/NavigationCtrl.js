@@ -3,9 +3,14 @@ kazoosh.controller('NavigationCtrl', ['CONF', '$scope', '$state', 'ContentServic
 	ContentService.getContent('root').then(
 		function(content){
 
+			//only show contents with order bigger or equal zero
 			$scope.contents = content[CONF.subpages_attribute].filter(function(value){
-				//return false if it is in exlude_from_navigation and should be excluded (if < 0)
-				return CONF.exlude_from_navigation.indexOf(value.id) < 0;
+				return value[CONF.nav_order_attribute] >= 0;
+			});
+
+			//sort by order
+			$scope.contents.sort(function(a, b){
+				return a[CONF.nav_order_attribute]-b[CONF.nav_order_attribute];
 			});
 		},
 		function(){
