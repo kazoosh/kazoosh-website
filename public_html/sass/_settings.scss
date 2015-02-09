@@ -20,6 +20,17 @@ $font-family-text: 'Dosis', sans-serif;
 }
 $font-family-header: Fat-Free, sans-serif;
 
+@font-face {
+ font-family: Icons;
+ src: url("fonts/foundation-icons.ttf")
+}
+@font-face {
+ font-family: Icons;
+ src: url("fonts/foundation-icons.eot") 
+}
+//$font-family-icon: Icons, sans-serif;
+
+
 
 //Cabin Variante 2
 //@import url(http://fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic);
@@ -43,18 +54,27 @@ $gutter: 0.9375rem;
 TEXTBOX
 **************************************************************************************************/
 
-$textbox-padding: 0.2rem 0.5rem 0.4rem 0.5rem;
-$textbox-margin: 0.7rem $gutter/2*3 0-$gutter/2 0;
+$textbox-padding: 0.3rem 0.7rem 0.4rem 0.7rem;
 
 $image-aspect_1x1: 0.9375 * 100%;
 
+@mixin footer-style($background-color,$link-color){
+	background-color: $background-color;
+	a{
+		color: $link-color;
+	}
+	.contact-icon{
+	  		color: $link-color;
+	}
+}
 /**************************************************************************************************
 BANNER
 **************************************************************************************************/
 
-$banner-home-height-small: 13rem;
-$banner-home-height-medium: 30rem;
-$banner-home-height-large: 40rem;
+$banner-home-height-small: 100vh;
+$banner-home-height-medium: 100vh;
+//$banner-home-height-large: 40rem;
+$banner-home-height-large: 100vh;
 //$banner-home-height-large: 59rem;
 
 $banner-height-small: 13rem;

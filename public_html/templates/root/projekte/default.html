@@ -9,6 +9,20 @@
 	<h2>{{content.title}}</h2>
 </div>
 
+<ul class="row">
+	<li class="small-12 medium-12 large-12 columns end">
+			<slick infinite="true" 
+				dots="true"  
+				variableWidth = "true"
+				mobileFirst="true"
+				slides-to-show="1" 
+				slides-to-scroll="1" init-onload=true data="content.images">
+			<div ng-repeat="image in content.images | limitTo : -(content.images.length-1)">
+				<img ng-src="{{image}}" />
+			</div>
+		</div>
+	</li>
+</ul>
 <!--div class="your-class">
     <div>your content</div>
     <div>your content</div>
@@ -24,11 +38,7 @@
 });
     });
   </script-->
-<slick infinite="true" slides-to-show="3" slides-to-scroll="3" init-onload=true data="content.images">
-	<div ng-repeat="image in content.images | limitTo : -(content.images.length-1)">
-		<img ng-src="{{image}}" />
-	</div>
-</slick>
+
 
 
 <!--old -->

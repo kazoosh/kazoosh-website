@@ -13,9 +13,10 @@
 		<div class="small-12 medium-8 large-9 columns end">
 			<p ng-bind-html="content.html"></p>
 			<h3>Interessen</h3>
-			<ul>
-				<li ng-repeat="interest in content.interests">{{interest}}</li>
-			</ul>
+			<p>
+				<span ng-repeat="interest in content.interests" class="interest-label">{{interest}}</span>
+			</p>
+			
 			<h3>Mitarbeit in KAZOOSH!-Projekten</h3>
 			<p>Hier kommen Thumbnails</p>
 		</div>
@@ -25,9 +26,13 @@
 				</div>
 			</div>
 			<h3>{{content.firstname}} {{content.lastname}}</h3>
-			<p>{{content.profession}}<br>
-			Mail: <a href="{{content.email}}">{{content.email}}</a><br>
-			Homepage: <a href="{{content.homepage}}">{{content.homepage}}</a></p>
+			<p>
+			<!-- how to automate ? -->
+				<a href="{{content.email}}"><span class="contact-icon">&#xf16d;</span></a>
+				<a href="{{content.homepage}}"><span class="contact-icon">&#xf15a;</span></a>
+				<a href="{{content.github}}"><span class="contact-icon">&#xf1c9;</span></a>
+				<a href="{{content.vimeo}}"><span class="contact-icon">&#xf1e5;</span></a>
+			</p>
 
 		</div>
 	</div>

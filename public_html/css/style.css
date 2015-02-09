@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**************************************************************************************************
 utils
 **************************************************************************************************/
@@ -12,6 +13,14 @@ FONTS
 @font-face {
   font-family: Fat-Free;
   src: url("fonts/Fat-Free.ttf");
+}
+@font-face {
+  font-family: Icons;
+  src: url("fonts/foundation-icons.ttf");
+}
+@font-face {
+  font-family: Icons;
+  src: url("fonts/foundation-icons.eot");
 }
 /**************************************************************************************************
 GRID
@@ -137,7 +146,12 @@ navigation
   line-height: 2rem;
   font-family: "Dosis", sans-serif;
   font-weight: 300;
-  font-size: 12pt;
+  font-size: 10pt;
+}
+@media only screen and (min-width: 40.063em) {
+  .menu li {
+    font-size: 12pt;
+  }
 }
 .menu li a {
   color: #ffffff;
@@ -151,7 +165,12 @@ navigation
 }
 .menu .home a {
   display: block;
-  width: 90px;
+  width: 70px;
+}
+@media only screen and (min-width: 40.063em) {
+  .menu .home a {
+    width: 90px;
+  }
 }
 .menu .home a span {
   visibility: hidden;
@@ -162,6 +181,7 @@ text boxes
 **************************************************************************************************/
 .teaser-box {
   padding: 0.46875rem;
+  padding-top: 0.9375rem;
   background-color: #eee;
 }
 @media only screen and (min-width: 40.063em) {
@@ -221,6 +241,7 @@ text boxes
 }
 .footer-box p {
   font-size: 12pt;
+  color: #fff;
 }
 .footer-box h2 {
   padding-top: 0.46875rem;
@@ -234,6 +255,17 @@ text boxes
   margin-bottom: 0rem;
   color: #eee;
   font-weight: 300;
+}
+.footer-box .contact-icon {
+  display: inline-block;
+  text-align: center;
+  border-radius: 0.5rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  font-family: Icons;
+  font-size: 20pt;
+  background-color: transparent;
+  color: #3766ff;
 }
 
 .grid-box,
@@ -252,16 +284,14 @@ text boxes
   width: 100%;
   position: absolute;
   bottom: 0;
-  padding-left: 0.46875rem;
-  padding-bottom: 0.9375rem;
-  display: block;
+  padding-left: 0;
 }
 .grid-box h3, .grid-box h4,
 .grid-box-large h3,
 .grid-box-large h4 {
-  display: inline;
-  padding: 0.2rem 0.5rem 0.4rem 0.5rem;
-  border: 4px;
+  display: inline-block;
+  padding: 0.3rem 0.7rem 0.4rem 0.7rem;
+  margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
   font-family: "Dosis", sans-serif;
   font-weight: 400;
@@ -271,8 +301,9 @@ text boxes
 .grid-box p,
 .grid-box-large p {
   display: none;
-  padding: 0.2rem 0.5rem 0.4rem 0.5rem;
-  margin: 0.7rem 1.40625rem -0.46875rem 0;
+  padding: 0.3rem 0.7rem 0.4rem 0.7rem;
+  margin-right: 0.9375rem;
+  margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
   font-family: "Dosis", sans-serif;
   font-weight: 400;
@@ -309,15 +340,23 @@ text boxes
 }
 
 /**************************************************************************************************
+ICONS
+**************************************************************************************************/
+.contact-icon {
+  display: inline-block;
+  text-align: center;
+  border-radius: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-family: Icons;
+  font-size: 22pt;
+  background-color: #008cba;
+  color: #fff;
+}
+
+/**************************************************************************************************
 page - home
 **************************************************************************************************/
-.home header {
-  /*p{
-  	margin: $gutter 0rem 0rem 0rem;
-  	font-size: 10pt;
-  	@media only screen and (min-width:40.063em) {font-size: 15pt;}
-  }*/
-}
 .home header h2 {
   			/*height: 5rem;
   			@media only screen and (min-width:40.063em) {height: 9rem;}
@@ -420,6 +459,18 @@ page - projekte - subpages
 .digitaler_voyeurismus .row p {
   color: #000;
 }
+.digitaler_voyeurismus .footer-box {
+  background-color: #373737;
+}
+.digitaler_voyeurismus .footer-box a {
+  color: #008cba;
+}
+.digitaler_voyeurismus .footer-box .contact-icon {
+  color: #008cba;
+}
+.digitaler_voyeurismus .slick-container {
+  height: 10rem;
+}
 
 /**************************************************************************************************
 page - mitglieder - subpages
@@ -444,49 +495,83 @@ page - mitglieder - subpages
   color: #333;
   font-size: 14pt;
 }
+.brian_eschrich .interest-label {
+  display: inline-block;
+  padding: 0.3rem 0.5rem 0.4rem 0.5rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.4rem;
+  border-radius: 0.5rem;
+  background-color: #666;
+  color: #fff;
+}
+.brian_eschrich .footer-box {
+  background-color: #373737;
+}
+.brian_eschrich .footer-box a {
+  color: #008cba;
+}
+.brian_eschrich .footer-box .contact-icon {
+  color: #008cba;
+}
 
 /**************************************************************************************************
 HEADER ANIMATION
 **************************************************************************************************/
 .home .banner {
-  height: 13rem;
+  height: 100vh;
 }
 @media only screen and (min-width: 40.063em) {
   .home .banner {
-    height: 30rem;
+    height: 100vh;
   }
 }
 @media only screen and (min-width: 64.063em) {
   .home .banner {
-    height: 40rem;
+    height: 100vh;
   }
 }
 .home .menu {
-  top: 10rem;
+  top: 95vh;
 }
 @media only screen and (min-width: 40.063em) {
   .home .menu {
-    top: 27rem;
+    top: 95vh;
   }
 }
 @media only screen and (min-width: 64.063em) {
   .home .menu {
-    top: 37rem;
+    top: 95vh;
   }
 }
+.home .content-box {
+  position: absolute;
+  bottom: 5rem;
+}
 .home header h2 {
-  			/*height: 5rem;
-  			@media only screen and (min-width:40.063em) {height: 9rem;}
-  */
+  width: auto;
+  height: 5rem;
   background-image: url("../img/kazoosh_logo_detail_white.png");
   background-repeat: no-repeat;
   background-size: auto 100%;
 }
+@media only screen and (min-width: 40.063em) {
+  .home header h2 {
+    height: 9rem;
+  }
+}
 .home header h2 span {
   visibility: hidden;
 }
+.home header p {
+  font-size: 12pt;
+}
+@media only screen and (min-width: 40.063em) {
+  .home header p {
+    font-size: 17pt;
+  }
+}
 .home header .bg-wrapper {
-  height: 13rem;
+  height: 100vh;
   position: absolute;
   top: 0px;
   overflow: hidden;
@@ -495,12 +580,12 @@ HEADER ANIMATION
 }
 @media only screen and (min-width: 40.063em) {
   .home header .bg-wrapper {
-    height: 30rem;
+    height: 100vh;
   }
 }
 @media only screen and (min-width: 64.063em) {
   .home header .bg-wrapper {
-    height: 40rem;
+    height: 100vh;
   }
 }
 .home header .bg-wrapper video {
@@ -517,14 +602,14 @@ HEADER ANIMATION
   background-repeat: no-repeat;
 }
 .home header .bg-wrapper .fading {
-  animation: Fading 25s ease infinite alternate;
+  animation: Fading 16s ease infinite alternate;
   animation-fill-mode: both;
 }
 .home header .bg-wrapper .fading:nth-child(2) {
-  animation-delay: -28s;
+  animation-delay: -20s;
 }
 .home header .bg-wrapper .fading:nth-child(3) {
-  animation-delay: -14s;
+  animation-delay: -9s;
 }
 @keyframes Fading {
   0% {
@@ -554,6 +639,233 @@ HEADER ANIMATION
   top: 0px;
   z-index: 1;
   width: 100%;
+}
+
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-loading .slick-list {
+  background: #fff url("./ajax-loader.gif") center center no-repeat;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+}
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table;
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+/* Icons */
+/* Arrows */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  line-height: 0;
+  font-size: 0;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  margin-top: -10px;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+.slick-prev:hover, .slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  outline: none;
+  background: transparent;
+  color: transparent;
+}
+.slick-prev:hover:before, .slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.25;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-family: "Dosis", sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  color: black;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+  left: -25px;
+}
+[dir="rtl"] .slick-prev {
+  left: auto;
+  right: -25px;
+}
+.slick-prev:before {
+  content: "←";
+}
+[dir="rtl"] .slick-prev:before {
+  content: "→";
+}
+
+.slick-next {
+  right: -25px;
+}
+[dir="rtl"] .slick-next {
+  left: -25px;
+  right: auto;
+}
+.slick-next:before {
+  content: "→";
+}
+[dir="rtl"] .slick-next:before {
+  content: "←";
+}
+
+/* Dots */
+.slick-slider {
+  margin-bottom: 30px;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -45px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+}
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+.slick-dots li button {
+  border: 0;
+  background: transparent;
+  display: block;
+  height: 20px;
+  width: 20px;
+  outline: none;
+  line-height: 0;
+  font-size: 0;
+  color: transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+.slick-dots li button:hover, .slick-dots li button:focus {
+  outline: none;
+}
+.slick-dots li button:hover:before, .slick-dots li button:focus:before {
+  opacity: 1;
+}
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "•";
+  width: 20px;
+  height: 20px;
+  font-family: "Dosis", sans-serif;
+  font-size: 6px;
+  line-height: 20px;
+  text-align: center;
+  color: black;
+  opacity: 0.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before {
+  color: black;
+  opacity: 0.75;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,6 +3,7 @@ title: Digitaler Voyeurismus
 teaser: Am 16.-26. November 2011 fand die CYNETART im Festspielhaus Hellerau statt. Wir hatten die Möglichkeit, dort eine Projektwoche veranstalten. Das bedeutet, dass wir eine Woche im Festspielhaus Hellerau verbracht und zusammen ditigal und analog gebastelt haben. Anschließend wurde zwei Wochenenden im Rahmen der CYNETART ausgestellt.
 images:
 - projekte/digitaler_voyeurismus.png
+- projekte/digitaler_voyeurismus/IMG_3231.JPG
 - projekte/digitaler_voyeurismus/_MG_1309.jpg
 - projekte/digitaler_voyeurismus/_MG_1310.jpg
 - projekte/digitaler_voyeurismus/_MG_1315.jpg
@@ -10,7 +11,7 @@ images:
 - projekte/digitaler_voyeurismus/DSC00664.JPG
 - projekte/digitaler_voyeurismus/DSC00884.JPG
 - projekte/digitaler_voyeurismus/DSC01341.JPG
-- projekte/digitaler_voyeurismus/IMG_3231.JPG
+
 
 date: 2011
 location: Festspielhaus Hellerau
