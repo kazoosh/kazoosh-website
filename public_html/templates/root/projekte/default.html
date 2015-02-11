@@ -5,24 +5,84 @@
 </header>
 
 <div class = "description-box">
-	<a ui-sref="content({path: content.path})"><h3>Projekte</h3></a>
+	<a ui-sref="content({path: 'root/projekte'})"><h3>Projekte</h3></a>
 	<h2>{{content.title}}</h2>
 </div>
 
 <ul class="row">
+	<!--li class="small-12 medium-12 large-12 columns end">
+			<div id="carousel" class="carousel">
+				<div class="slick-slide" ng-repeat="image in content.images | limitTo : -(content.images.length-1)">
+					<img ng-src="{{image}}" />
+				</div>
+			</slick>
+	</li-->
 	<li class="small-12 medium-12 large-12 columns end">
-			<slick infinite="true" 
-				dots="true"  
-				variableWidth = "true"
-				mobileFirst="true"
-				slides-to-show="1" 
-				slides-to-scroll="1" init-onload=true data="content.images">
-			<div ng-repeat="image in content.images | limitTo : -(content.images.length-1)">
-				<img ng-src="{{image}}" />
+			<div id="carousel" class="carousel" 
+				> 
+				<div class="slick-slide" index="{{$index}}" ng-repeat="image in content.images | limitTo : -(content.images.length-1)">
+					<img ng-src="{{image}}"/>
+				</div>
 			</div>
-		</div>
+	</li>
+	<li class="small-12 medium-12 large-12 columns end">
+			<div id="carousel2" class="carousel" 
+				>
+				<div class="slick-slide">
+					<img src="http://placehold.it/650x150">
+					</div>
+					<div class="slick-slide">
+					<img src="http://placehold.it/350x650">
+					</div><div class="slick-slide">
+					<img src="http://placehold.it/550x550">
+					</div><div class="slick-slide">
+					<img src="http://placehold.it/250x450">
+					</div><div class="slick-slide">
+					<img src="http://placehold.it/750x350">
+				</div>
+			</div>
+	</li>
+
+	<li class="small-12 medium-8 large-9 columns end">
+	<h4>{{content.teaser}}</h4>
+		<div ng-bind-html="content.html"></div>
+	</li>
+	<li class="small-12 medium-4 large-3 columns end info-box">
+		<h5>{{content.title}}</h4>
+		<p>
+		{{content.location}} - {{content.date}}</p>
+		<h6>Im Rahmen von</h6>
+		<p>
+		<a href="{{content.festival_link}}">{{content.festival}}</a> - {{content.festival_teaser}}
+		</p>
+		<h6>Teilnehmer</h6>
+		<ul>
+			<li ng-repeat="participant in content.participants">
+			{{participant}}
+			</li>
+		</ul>
 	</li>
 </ul>
+
+<script type="text/javascript">
+	$('#carousel').slick({
+    arrows: true,
+    variableWidth: true,
+    infinite: true, 
+	//mobileFirst: true,
+	dots: true,
+	centerMode: true
+
+});
+	$('#carousel2').slick({
+    arrows: true,
+    variableWidth: true,
+    infinite: true, 
+	mobileFirst: true,
+	dots: true
+
+});
+</script>
 <!--div class="your-class">
     <div>your content</div>
     <div>your content</div>

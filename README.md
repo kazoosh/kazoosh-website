@@ -47,7 +47,7 @@
 # CONFIGURATION
 
 ## "backend"
-* see config.js
+* see config.json
 * for local configuration use config.local.default.json and copy it to config.local.json
 
 ## angular app

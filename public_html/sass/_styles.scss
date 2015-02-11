@@ -436,14 +436,66 @@ page - projekte - subpages
 	background-color: #eee;
 	.row{
 		p{
-		color: #000;
+		color: #222;;
 		}
 	}
 	.footer-box{
 		@include footer-style(#373737,#008cba)
 	}	
-	.slick-container{
-		height: 10rem;
+	.slick-slide {
+	   height: 200px;
+	   margin-right: 10px;
+	}
+	.slick-slide img{
+		height: 200px;
+	}
+	.slick-slider{
+		 border: 1px solid black; 
+		margin-right: 10px;
+	}
+	h4{
+		font-family: $font-family-text;
+		font-weight: 300;
+		font-size: 18pt;
+		margin-bottom: 3*$gutter;
+		color: #333;
+	}
+	.container-slick { width: 600px; margin-left: 20px;  }
+
+.container-slick:before, .container-slick:after {
+display: table;
+content: " ";
+}
+	
+	.info-box{
+		//background-color: #ccc;
+		border-radius: 0.2rem;
+		border-color: #ccc;
+
+		h5{
+		//color: #fff;
+		font-family: $font-family-text;
+		font-weight: 400;
+		font-size: 18pt;
+		color: #008cba;
+		}
+		h6{
+			font-family: $font-family-text;
+			font-weight: 400;
+			color: #555;
+		}
+		p{
+			color: #333;
+			font-weight: 400;
+		}
+
+		ul{
+			margin: 0;
+			color: #333;
+			li{
+				color: #333;
+			}
+		}
 	}
 }
 

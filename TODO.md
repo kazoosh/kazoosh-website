@@ -13,12 +13,14 @@
 * php: http://stackoverflow.com/questions/9132144/how-can-i-automatically-deploy-my-app-after-a-git-push-github-and-node-js
 
 # design
-* bilder in grid-box durchblättern und teaser als extra "bild" am ende anzeigen
+* Menüleiste in Hompage automatisch an untere Bildschirmkante anpassen
 * projekt einzelseite stylen
+* default css template für Mitglieder und Projekteinzelseiten
 * (grid-box abhänig vom content-typ als externes template)
+* (bilder in grid-box durchblättern und teaser als extra "bild" am ende anzeigen)
 
 ## bildergalerie
-* ???
+* slick slider update auf mind. version 1.3.8, für variable bildbreite
 
 ## menu
 * make menu and header sticky when scrolling
@@ -30,8 +32,8 @@
 * add breakpoint for large header > heigher ?
 
 ## Fonts
-* http://www.impallari.com/cabin/ - ähnlich Gil Sans (wie unsere bisherigen Präsentationen)
 * http://www.impallari.com/dosis (schick und gut lesbar, Mischung aus technisch und verspielt)
+* schnitte auswählen, nur benötigte schnitte laden
 
 # weiteres
 * cache für json files
