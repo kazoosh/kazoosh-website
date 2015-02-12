@@ -3,23 +3,15 @@ HEADER ANIMATION
 **************************************************************************************************/
 
 .home{
-
-	//change banner and menu size
 	.banner{
-	height: $banner-home-height-small;
-	@media #{$medium-up} {height: $banner-home-height-medium;}
-	@media #{$large-up} {height: $banner-home-height-large;}
+		@include banner-heigth($banner-home-height-small,$banner-home-height-large);	
 	}
-
 	.menu{
 		//need to be fixed
-		top: ($banner-home-height-small - 5vh);
-		@media #{$medium-up} {top: ($banner-home-height-medium - 5vh);}
-		@media #{$large-up} {top:$banner-home-height-large - 5vh;}
-
+		@include menu-position($banner-home-height-small - 5vh,$banner-home-height-large - 5vh);
 	}
 
-	.content-box{
+	.title-box{
 		position: absolute;
 		bottom: 5rem;
 	}
@@ -48,14 +40,12 @@ HEADER ANIMATION
 		}
 
 		.bg-wrapper{
-		height: $banner-home-height-small;
-		@media #{$medium-up} {height: $banner-home-height-medium;}
-		@media #{$large-up} {height: $banner-home-height-large;}
-		position: absolute;
-		top: 0px;
-		overflow: hidden;
-		z-index: 0;
-		width: 100%;
+			@include banner-heigth($banner-home-height-small,$banner-home-height-large);
+			position: absolute;
+			top: 0px;
+			overflow: hidden;
+			z-index: 0;
+			width: 100%;
 
 			video { 
 				//position: fixed; right: 0; bottom: 0;

@@ -27,14 +27,21 @@
 		
 	</div>
 		<!--div class="large-12 columns"-->
-			<div class="content-box">
+			<div class="title-box">
 				<h2><span>{{content.title}}</span></h2>
 				<p>{{content.teaser}}</p>
 			<!--/div-->
 	</div>
 </header>
 
-<div class="teaser-box" ng-bind-html="content.html"/>
+<div class="teaser-box">
+	<ul class="row">
+			<li class="small-12 medium-12 large-12 columns end">
+				<div ng-bind-html="content.html"/>
+			</li>
+	</ul>
+</div>
+
 <article>
 	<ul class="row">
 		<li ng-repeat="content in featured | limitTo : 2" class="small-12 medium-12 large-6 columns">

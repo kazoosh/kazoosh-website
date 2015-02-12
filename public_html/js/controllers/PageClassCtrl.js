@@ -20,6 +20,6 @@ kazoosh.controller('PageClassCtrl', ['CONF', '$scope', '$state', function(CONF, 
 			pageClasses.push(toState.name);
 		}
 
-		$scope.pageClasses = pageClasses.join(", ");
+		$scope.pageClasses = pageClasses.join(" ");
 	})
 }]);

@@ -14,10 +14,7 @@
 
 # design
 * Menüleiste in Hompage automatisch an untere Bildschirmkante anpassen
-* projekt einzelseite stylen
-* default css template für Mitglieder und Projekteinzelseiten
-* (grid-box abhänig vom content-typ als externes template)
-* (bilder in grid-box durchblättern und teaser als extra "bild" am ende anzeigen)
+* footer, wenn sichtbar, immer am unteren rand auch wenn seite zu kurz
 
 ## bildergalerie
 * slick slider update auf mind. version 1.3.8, für variable bildbreite

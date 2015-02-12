@@ -41,26 +41,24 @@ banner
 
 .banner{
 	width: 100%;
-	height: $banner-height-small;
-	@media #{$medium-up} {height: $banner-height-medium;}
-
+	@include banner-heigth($banner-page-height-small,$banner-page-height-medium);
 	background-size: cover;
 	background-repeat: no-repeat;
 
 	h2{
 		height: 5rem;
-			@media #{$medium-up} {height: 9rem;}
-			font-family: $font-family-header;
-			font-size: 54pt;
-			color: #ffffff;
-			@media #{$medium-up} {
-				font-size: 74pt;
-			}
+		@media #{$medium-up} {height: 9rem;}
+		font-family: $font-family-header;
+		font-size: 54pt;
+		color: #ffffff;
+		@media #{$medium-up} {
+			font-size: 74pt;
 		}
+	}
 	p{		
-			margin: $gutter 0rem 0rem 0rem;
-			font-size: 12pt;
-			@media #{$medium-up} {font-size: 15pt;}
+		margin: $gutter 0rem 0rem 0rem;
+		font-size: 12pt;
+		@media #{$medium-up} {font-size: 15pt;}
 	}
 
 }
@@ -74,12 +72,11 @@ navigation
 	width: 100%;
 	height: $menu-height;
 	position: absolute;
-	top: ($banner-height-small - 3);
-	@media #{$medium-up} {top: ($banner-height-medium - 3);}
-
+	@include menu-position($banner-page-height-small - 3,$banner-page-height-medium - 3);
+	
 	padding: $gutter/2;
 	@media #{$medium-up} {
-				padding-left: 2.5%;
+		padding-left: 2.5%;
 	}
 
 	background-color: rgba(0, 0, 0, 0.8);
@@ -130,29 +127,23 @@ text boxes
 **************************************************************************************************/
 
 .teaser-box{
-	padding: $gutter/2;
-	padding-top: $gutter;
-	@media #{$medium-up} {
-				padding-left: 2.5%;
-				padding-right: 2.5%;
+		padding-top: $gutter;
+		background-color: #eee;
+
+		p{
+			font-size: 14pt;
+			color: #555;
+		}
 	}
 
-	background-color: #eee;
-
-	p{
-		font-size: 14pt;
-		color: #555;
-	}
-}
-
-.description-box{
+	.description-box{
 		//position: absolute;
 		//top: $menu-height;
 		width: 100%;
 		padding: $gutter/2;
 		@media #{$medium-up} {
-					padding-left: 2.5%;
-					padding-right: 2.5%;
+			padding-left: 2.5%;
+			padding-right: 2.5%;
 		}
 		font-weight: 800;
 		background-color: #373737;
@@ -173,28 +164,21 @@ text boxes
 		}
 	}
 
-.content-box{	
-	display: block;
-	margin-top: $gutter;
-	padding: $gutter/2;
-	@media #{$medium-up} {
-				padding-left: 2.5%;
-	}
-
-	background-color: rgba(0, 0, 0, 0);
-}
-
-.footer-box{
-	margin-top: $gutter;
-	background-color: #000;
-	//background-color: #1A1A1A;
-	a{
-		color: #3766ff;
+	.title-box{	
+		display: block;
+		margin-top: $gutter;
+		padding: $gutter/2;
+		@media #{$medium-up} {
+			padding-left: 2.5%;
 		}
-	p{
-		font-size: 12pt;
-		color: #fff;
+
+		background-color: rgba(0, 0, 0, 0);
 	}
+
+	.footer-box{
+		@include footer-style($footer-bg-color-dark,$footer-link-color-dark);
+		margin-top: $gutter;
+	
 	h2{
 		padding-top: $gutter/2;
 		padding-bottom: $gutter/2;
@@ -210,15 +194,14 @@ text boxes
 	}
 	.contact-icon{
 		display: inline-block;
-			text-align: center;
-	  		border-radius: 0.5rem;
-	  		width: 1.7rem;
-	  		height: 1.7rem;
+		text-align: center;
+		border-radius: 0.5rem;
+		width: 1.7rem;
+		height: 1.7rem;
 
-	  		font-family: Icons;
-	  		font-size: 20pt; 
-	  		background-color: rgba(0,0,0,0);
-	  		color: #3766ff;
+		font-family: Icons;
+		font-size: 20pt; 
+		background-color: rgba(0,0,0,0);
 	}
 }
 
@@ -285,7 +268,7 @@ text boxes
 } 
 
 .enable-hover:hover{
-	box-shadow:50rem 0px 0px 0px rgba(0, 0, 0, 0.3) inset;
+	box-shadow:9999rem 0px 0px 0px rgba(0, 0, 0, 0.3) inset;
 }
 
 
@@ -303,11 +286,25 @@ text boxes
 	height: 0;
 }
 
-.ratio_4x3{
+.ratio_3x4{
 	position: relative;
-  	padding-bottom: $image-aspect_1x1 * 4 / 3;
+	padding-bottom: $image-aspect_1x1 * 4 / 3;
 }
 
+.ratio_16x9{
+	position: relative;
+	padding-bottom: $image-aspect_1x1 * 9 / 16;
+}
+
+.picture-content{
+	background-size: cover;
+	background-repeat: no-repeat;
+	position:  absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 
 /**************************************************************************************************
 ICONS
@@ -315,17 +312,17 @@ ICONS
 
 
 .contact-icon{
-		display: inline-block;
-			text-align: center;
-	  		border-radius: 0.5rem;
-	  		width: 2.5rem;
-	  		height: 2.5rem;
+	display: inline-block;
+	text-align: center;
+	border-radius: 0.5rem;
+	width: 2.5rem;
+	height: 2.5rem;
 
-	  		font-family: Icons;
-	  		font-size: 22pt; 
-	  		background-color: #008cba;
-	  		color: #fff;
-	}
+	font-family: Icons;
+	font-size: 22pt; 
+	background-color: #008cba;
+	color: #fff;
+}
 
 
 /**************************************************************************************************
@@ -339,16 +336,16 @@ page - home
 			/*height: 5rem;
 			@media #{$medium-up} {height: 9rem;}
 */
-			background-image: url('../img/kazoosh_logo_detail_white.png');
-			background-repeat: no-repeat;
-			background-size: auto 100%;
+background-image: url('../img/kazoosh_logo_detail_white.png');
+background-repeat: no-repeat;
+background-size: auto 100%;
 
-			span{
-				visibility: hidden;
-			}
+span{
+	visibility: hidden;
+}
 
-		}
-	}
+}
+}
 }
 
 /**************************************************************************************************
@@ -356,31 +353,6 @@ page - mitglieder
 **************************************************************************************************/
 
 .mitglieder{
-	.banner{
-	width: 100%;
-	height: $banner-height-small;
-	@media #{$medium-up} {height: $banner-height-medium;}
-
-	background-size: cover;
-	background-repeat: no-repeat;
-
-	h2{
-		height: 5rem;
-			@media #{$medium-up} {height: 9rem;}
-			font-family: $font-family-header;
-			font-size: 54pt;
-			color: #ffffff;
-			@media #{$medium-up} {
-				font-size: 74pt;
-			}
-		}
-	p{		
-			margin: $gutter 0rem 0rem 0rem;
-			font-size: 12pt;
-			@media #{$medium-up} {font-size: 15pt;}
-	}
-
-}
 
 	h3,h4{
 		padding: 0;
@@ -430,44 +402,46 @@ page - mitglieder
 }
 
 /**************************************************************************************************
+page - kontakt
+**************************************************************************************************/
+
+
+/**************************************************************************************************
 page - projekte - subpages
 **************************************************************************************************/
-.digitaler_voyeurismus{
-	background-color: #eee;
+.workshops_default,
+.projekte_default{
+	@include subpage-template();
+
+	.banner{
+		@include banner-heigth($banner-subpage-height-small,$banner-subpage-height-large);
+		background-color: rgba(50, 50, 50, .7);
+		background-blend-mode: overlay;
+	}
+	.menu{
+		@include menu-position($banner-subpage-height-small - 3,$banner-subpage-height-large - 3);
+	}
+	
 	.row{
 		p{
-		color: #222;;
+			color: #222;
 		}
-	}
-	.footer-box{
-		@include footer-style(#373737,#008cba)
 	}	
-	.slick-slide {
-	   height: 200px;
-	   margin-right: 10px;
-	}
-	.slick-slide img{
-		height: 200px;
-	}
-	.slick-slider{
-		 border: 1px solid black; 
-		margin-right: 10px;
-	}
-	h4{
-		font-family: $font-family-text;
-		font-weight: 300;
-		font-size: 18pt;
-		margin-bottom: 3*$gutter;
-		color: #333;
-	}
-	.container-slick { width: 600px; margin-left: 20px;  }
+		.swipebox-container{
+			width: 100%;
+			height: 20rem;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		h4{
+			font-family: $font-family-text;
+			font-weight: 300;
+			font-size: 18pt;
+			margin-bottom: 3*$gutter;
+			color: #333;
+		}
 
-.container-slick:before, .container-slick:after {
-display: table;
-content: " ";
-}
-	
-	.info-box{
+		.info-box{
 		//background-color: #ccc;
 		border-radius: 0.2rem;
 		border-color: #ccc;
@@ -478,33 +452,47 @@ content: " ";
 		font-weight: 400;
 		font-size: 18pt;
 		color: #008cba;
-		}
-		h6{
-			font-family: $font-family-text;
-			font-weight: 400;
-			color: #555;
-		}
-		p{
-			color: #333;
-			font-weight: 400;
-		}
+	}
+	h6{
+		font-family: $font-family-text;
+		font-weight: 400;
+		color: #555;
+	}
+	p{
+		color: #333;
+		font-weight: 400;
+	}
 
-		ul{
-			margin: 0;
+	ul{
+		margin: 0;
+		color: #333;
+		li{
 			color: #333;
-			li{
-				color: #333;
-			}
 		}
 	}
+}
 }
 
 /**************************************************************************************************
 page - mitglieder - subpages
 **************************************************************************************************/
-.brian_eschrich{
-	background-color: #eee;
+.mitglieder_default{
+	@include subpage-template();
+	
+	h3{
+		text-align: left;
+	}
+	.banner{
+		@include banner-heigth($banner-subpage-height-small,$banner-subpage-height-large);
+		background-color: rgba(50, 50, 50, .7);
+		background-blend-mode: overlay;
+	}
+	.menu{
+		@include menu-position($banner-subpage-height-small - 3,$banner-subpage-height-large - 3);
+	}
+
 	.row{
+		margin-top: $gutter;
 		p{
 			color: #333;
 			font-size: 14pt;
@@ -529,18 +517,17 @@ page - mitglieder - subpages
 
 	.interest-label{
 		display: inline-block;
-			padding: 0.3rem 0.5rem 0.4rem 0.5rem;
-			margin-right: 0.3rem;
-			margin-bottom: 0.4rem;
-	  		border-radius: 0.5rem;
+		padding: 0.3rem 0.5rem 0.4rem 0.5rem;
+		margin-right: 0.3rem;
+		margin-bottom: 0.4rem;
+		border-radius: 0.5rem;
 
 	  		//background-color: #373737;
 	  		background-color: #666;
 	  		color: #fff;
-	}
-	.footer-box{
-		@include footer-style(#373737,#008cba)
-	}
+	  	}
+	 .picture-content{
+		background-blend-mode: normal;
 
-
+	}
 }

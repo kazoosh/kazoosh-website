@@ -3,38 +3,40 @@
 /**************************************************************************************************
 FONTS
 **************************************************************************************************/
-//alt
-//@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
-
-//Dosis Variante 1
 @import url(http://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800);
 $font-family-text: 'Dosis', sans-serif;
 
 @font-face {
  font-family: Fat-Free;
- src: url("fonts/Fat-Free.eot") /* EOT file for IE */
-}
-@font-face {
- font-family: Fat-Free;
- src: url("fonts/Fat-Free.ttf") /* TTF file for CSS3 browsers */
+ src: url("fonts/Fat-Free.eot"); /* EOT file for IE */
+ src: url("fonts/Fat-Free.ttf") format('truetype');
 }
 $font-family-header: Fat-Free, sans-serif;
 
 @font-face {
  font-family: Icons;
- src: url("fonts/foundation-icons.ttf")
+ src: url('fonts/foundation-icons.eot'); 
+ src: url('fonts/foundation-icons.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
 }
-@font-face {
- font-family: Icons;
- src: url("fonts/foundation-icons.eot") 
+
+/**************************************************************************************************
+TEMPLATES
+**************************************************************************************************/
+@mixin subpage-template{
+	background-color: #eee;
+	.teaser-box{
+		@include teaser-box-subpage();
+	}
+	.title-box{
+		@include title-box-subpage();
+	}
+	.footer-box{
+		@include footer-style($footer-bg-color-light,$footer-link-color-light);
+	}
 }
-//$font-family-icon: Icons, sans-serif;
 
-
-
-//Cabin Variante 2
-//@import url(http://fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic);
-//$font-family-text: 'Cabin', sans-serif;
 /**************************************************************************************************
 GRID
 **************************************************************************************************/
@@ -58,27 +60,53 @@ $textbox-padding: 0.3rem 0.7rem 0.4rem 0.7rem;
 
 $image-aspect_1x1: 0.9375 * 100%;
 
-@mixin footer-style($background-color,$link-color){
-	background-color: $background-color;
-	a{
-		color: $link-color;
-	}
-	.contact-icon{
-	  		color: $link-color;
-	}
+@mixin title-box-subpage{
+	font-weight: 800;
+		h2{
+			font-family: $font-family-text;
+			color: #eee;
+			font-size:  28pt;
+			@media #{$medium-up} {font-size: 44pt;}
+			-webkit-text-shadow: 0px 0px 5px 1px rgba(0,0,0,0.71);
+			-moz-text-shadow: 0px 0px 5px 1px rgba(0,0,0,0.71);
+			text-shadow: 0px 0px 5px 1px rgba(0,0,0,0.71);
+		}
+		h3{
+			font-size: 12pt;
+			@media #{$medium-up} {font-size: 14pt;}
+			color: #eee;
+		}
 }
+
+@mixin teaser-box-subpage{
+		background-color: #eee;
+			p{
+				font-size: 14pt;
+				color: #555;
+			}
+}
+
 /**************************************************************************************************
 BANNER
 **************************************************************************************************/
+@mixin banner-heigth($banner-height-small,$banner-height-large){
+	height: $banner-height-small;
+	@media #{$medium-up} {height: $banner-height-large;}
+}
 
+//homescreen
 $banner-home-height-small: 100vh;
-$banner-home-height-medium: 100vh;
-//$banner-home-height-large: 40rem;
 $banner-home-height-large: 100vh;
-//$banner-home-height-large: 59rem;
 
-$banner-height-small: 13rem;
-$banner-height-medium: 17.5rem;
+//menu pages 
+$banner-page-height-small: 13rem;
+$banner-page-height-medium: 17.5rem;
+
+//project pages
+$banner-subpage-height-small: 10rem;
+$banner-subpage-height-large: 13rem;
+
+
 
 
 $grid-box-height-small: 13em;
@@ -87,11 +115,50 @@ $grid-box-height-large-small: 17.5em;
 /**************************************************************************************************
 MENU
 **************************************************************************************************/
+@mixin menu-position($top-small-banner,$top-large-banner){
+		top: $top-small-banner;
+		@media #{$medium-up} {top: $top-large-banner;}
+}
 
 $menu-height: 3rem;
+
+
+
+/**************************************************************************************************
+FOOTER
+**************************************************************************************************/
+//for main pages
+$footer-link-color-dark: #3766ff;
+$footer-link-color-light: #008cba;
+
+//for subpages
+$footer-bg-color-dark: #000;
+$footer-bg-color-light: #333;
+
+@mixin footer-style($background-color,$link-color){
+	background-color: $background-color;
+	.row{
+		a{
+			color: $link-color;
+		}
+		p{	
+			font-size: 12pt;
+			color: #fff;
+		}
+		h3{
+			text-align: left;
+		}
+		.contact-icon{
+		  		color: $link-color;
+		}
+	}
+	
+
+}
 
 /**************************************************************************************************
 COLORS
 **************************************************************************************************/
 
 $back-alpha: .7;
+
