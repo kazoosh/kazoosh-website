@@ -17,8 +17,10 @@
 
 <ul class="row">
 	<li ng-hide="!content.video" class="small-12 medium-12 large-6  columns end">
-		<div class="flex-video widescreen vimeo">
-			<iframe ng-src="{{content.video | trustAsResourceUrl}}" height="100%" width="100%"></iframe>
+		<div class="aspect-wrapper ratio_16x9">
+				<div class="picture-content">	
+					<iframe ng-src="{{content.video | trustAsResourceUrl}}" height="100%" width="100%"></iframe>
+				</div>
 		</div>
 	</li>
 	<li ng-hide="content.video" class="small-12 medium-12 large-6  columns end">

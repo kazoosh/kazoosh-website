@@ -15,16 +15,11 @@
 # design
 * Menüleiste in Hompage automatisch an untere Bildschirmkante anpassen
 * footer, wenn sichtbar, immer am unteren rand auch wenn seite zu kurz
-* video in projektseiten auf "richtige" 16/9 skalieren
 * kontaktseite stylen
-
-## bildergalerie
-* slick slider update auf mind. version 1.3.8, für variable bildbreite
 
 ## menu
 * make menu and header sticky when scrolling
-* mark current page in menu
-* move navigation on top for pages other then home page
+* needed? (mark current page in menu)
 * ~~add menu toggle for mobile view~~
 
 ## header
