@@ -18,9 +18,10 @@
 <ul class="row">
 	<li class="small-12 medium-12 large-12  columns end">
 		<a href="{{content.images[1]}}" class="swipebox">
-			<h3>Bilder</h3>
 		</a>
-		<!--div class="flex-video widescreen vimeo"> <iframe ng-src="{{content.video}}" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> </div-->
+		<!--div class="flex-video widescreen vimeo"> <iframe ng-src="http://player.vimeo.com/video/{{content.video}}" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> </div-->
+<div class="flex-video widescreen vimeo">
+		<iframe ng-src="{{content.video | trustAsResourceUrl}}" height="100%" width="100%"></iframe></div>
 		<p>{{content.video}}</p>
 	</li>
 	<li class="small-12 medium-12 large-6  columns end">
