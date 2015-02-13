@@ -15,6 +15,8 @@
 # design
 * Menüleiste in Hompage automatisch an untere Bildschirmkante anpassen
 * footer, wenn sichtbar, immer am unteren rand auch wenn seite zu kurz
+* video in projektseiten auf "richtige" 16/9 skalieren
+* kontaktseite stylen
 
 ## bildergalerie
 * slick slider update auf mind. version 1.3.8, für variable bildbreite
