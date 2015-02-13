@@ -821,6 +821,23 @@ page - projekte - subpages
 .projekte_default .info-box ul li {
   color: #333;
 }
+.workshops_default .button,
+.projekte_default .button {
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
+  font-size: 12;
+  display: inline-block;
+  padding: 0.5rem 0.7rem 0.6rem 0.7rem;
+  margin-right: 0.3rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.2rem;
+  background-color: #666;
+  color: #fff;
+}
+.workshops_default .button:hover,
+.projekte_default .button:hover {
+  background-color: #008cba;
+}
 
 /**************************************************************************************************
 page - mitglieder - subpages
@@ -922,7 +939,7 @@ page - mitglieder - subpages
   padding: 0.3rem 0.5rem 0.4rem 0.5rem;
   margin-right: 0.3rem;
   margin-bottom: 0.4rem;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   background-color: #666;
   color: #fff;
 }

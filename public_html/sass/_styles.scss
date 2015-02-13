@@ -471,6 +471,27 @@ page - projekte - subpages
 		}
 	}
 }
+	.button{
+		font-family: $font-family-text;
+		font-weight: 500;
+		font-size: 12;
+
+		display: inline-block;
+		padding: 0.5rem 0.7rem 0.6rem 0.7rem;
+		margin-right: 0.3rem;
+		margin-bottom: 1.5rem;
+		border-radius: 0.2rem;
+
+	  		//background-color: #373737;
+	  		background-color: #666;
+	  		color: #fff;
+
+	  	&:hover{
+	  		background-color:$footer-link-color-light;
+	  	}
+
+	  	}
+
 }
 
 /**************************************************************************************************
@@ -520,7 +541,7 @@ page - mitglieder - subpages
 		padding: 0.3rem 0.5rem 0.4rem 0.5rem;
 		margin-right: 0.3rem;
 		margin-bottom: 0.4rem;
-		border-radius: 0.5rem;
+		border-radius: 0.2rem;
 
 	  		//background-color: #373737;
 	  		background-color: #666;
