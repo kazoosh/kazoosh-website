@@ -830,6 +830,7 @@ page - projekte - subpages
   padding: 0.5rem 0.7rem 0.6rem 0.7rem;
   margin-right: 0.3rem;
   margin-bottom: 1.5rem;
+  margin-top: 0.8rem;
   border-radius: 0.2rem;
   background-color: #666;
   color: #fff;
@@ -837,6 +838,10 @@ page - projekte - subpages
 .workshops_default .button:hover,
 .projekte_default .button:hover {
   background-color: #008cba;
+}
+.workshops_default .flex-video,
+.projekte_default .flex-video {
+  margin-bottom: 0.8rem;
 }
 
 /**************************************************************************************************

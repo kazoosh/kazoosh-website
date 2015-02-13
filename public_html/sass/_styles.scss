@@ -293,7 +293,7 @@ text boxes
 
 .ratio_16x9{
 	position: relative;
-	padding-bottom: $image-aspect_1x1 * 9 / 16;
+	padding-bottom: $image-aspect_1x1 * 9/16;
 }
 
 .picture-content{
@@ -480,6 +480,7 @@ page - projekte - subpages
 		padding: 0.5rem 0.7rem 0.6rem 0.7rem;
 		margin-right: 0.3rem;
 		margin-bottom: 1.5rem;
+		margin-top: 0.8rem;
 		border-radius: 0.2rem;
 
 	  		//background-color: #373737;
@@ -491,6 +492,10 @@ page - projekte - subpages
 	  	}
 
 	  	}
+
+	  .flex-video{
+	  	margin-bottom: 0.8rem;
+	  }
 
 }
 

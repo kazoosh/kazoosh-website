@@ -1,52 +1,52 @@
 <header class="banner" style="background-image: url('{{content.images[0]}}');">
-	<!--h2>{{content.title}}</h2>
-
-	<div>{{content.teaser}}</div-->
+	<div class="large-12 columns">
+		<div class="title-box">
+			<a ui-sref="content({path: 'root/workshops'})"><h3>Workshops</h3></a>
+			<h2><span>{{content.title}}</span></h2>
+		</div>
+	</div>
 </header>
 
-<div class = "description-box">
-	<a ui-sref="content({path: 'root/projekte'})"><h3>Projekte</h3></a>
-	<h2>{{content.title}}</h2>
+<div class="teaser-box">
+	<ul class="row">
+		<li class="small-12 medium-12 large-12 columns end">
+			<p>{{content.teaser}}</p>
+		</li>
+	</ul>
 </div>
 
 <ul class="row">
-	<!--li class="small-12 medium-12 large-12 columns end">
-			<div id="carousel" class="carousel">
-				<div class="slick-slide" ng-repeat="image in content.images | limitTo : -(content.images.length-1)">
-					<img ng-src="{{image}}" />
-				</div>
-			</slick>
-	</li-->
-	<li class="small-12 medium-12 large-12 columns end">
-			<div id="carousel" class="carousel" 
-				> 
-				<div class="slick-slide" index="{{$index}}" ng-repeat="image in content.images | limitTo : -(content.images.length-1)">
-					<img ng-src="{{image}}"/>
+	<li ng-hide="!content.video" class="small-12 medium-12 large-6  columns end">
+		<div class="flex-video widescreen vimeo">
+			<iframe ng-src="{{content.video | trustAsResourceUrl}}" height="100%" width="100%"></iframe>
+		</div>
+	</li>
+	<li ng-hide="content.video" class="small-12 medium-12 large-6  columns end">
+		<a href="{{content.images[1]}}" class="swipebox">
+			<div class="aspect-wrapper ratio_16x9">
+				<div class="picture-content enable-hover" style="background-image: url('{{content.images[1]}}');">	
 				</div>
 			</div>
-	</li>
-	<li class="small-12 medium-12 large-12 columns end">
-			<div id="carousel2" class="carousel" 
-				>
-				<div class="slick-slide">
-					<img src="http://placehold.it/650x150">
-					</div>
-					<div class="slick-slide">
-					<img src="http://placehold.it/350x650">
-					</div><div class="slick-slide">
-					<img src="http://placehold.it/550x550">
-					</div><div class="slick-slide">
-					<img src="http://placehold.it/250x450">
-					</div><div class="slick-slide">
-					<img src="http://placehold.it/750x350">
+		</a>
+		</li>
+		<li class="show-for-large-up large-6 columns end">
+		<a href="{{content.images[2]}}" class="swipebox">
+			<div class="aspect-wrapper ratio_16x9">
+				<div class="picture-content enable-hover" style="background-image: url('{{content.images[2]}}');">	
 				</div>
 			</div>
+		</a>	
+		<li class="small-12 medium-12 large-12 columns end">
+		<a href="{{content.images[1]}}" class="swipebox button">Zur Gallerie</a>
+	</li>	
+		<a class="swipebox" href="{{image}}" ng-repeat="image in content.images | limitTo : -(content.images.length-3)">
+		</a>
 	</li>
-
+	</ul>
+	<ul class="row">
 	<li class="small-12 medium-8 large-9 columns end">
-	<h4>{{content.teaser}}</h4>
 		<div ng-bind-html="content.html"></div>
-	</li>
+	</li>	
 	<li class="small-12 medium-4 large-3 columns end info-box">
 		<h5>{{content.title}}</h4>
 		<p>
@@ -64,59 +64,13 @@
 	</li>
 </ul>
 
-<script type="text/javascript">
-	$('#carousel').slick({
-    arrows: true,
-    variableWidth: true,
-    infinite: true, 
-	//mobileFirst: true,
-	dots: true,
-	centerMode: true
+<script src="lib/swipebox/src/js/jquery.swipebox.js"></script>
+	<script type="text/javascript">
+;( function( $ ) {
 
-});
-	$('#carousel2').slick({
-    arrows: true,
-    variableWidth: true,
-    infinite: true, 
-	mobileFirst: true,
-	dots: true,
-	centerMode: true
+	$( '.swipebox' ).swipebox({
+		loopAtEnd: true
+	});
 
-});
+} )( jQuery );
 </script>
-<!--div class="your-class">
-    <div>your content</div>
-    <div>your content</div>
-    <div>your content</div>
-  </div-->
-
-<!--script type="text/javascript">
-    $(document).ready(function(){
-      $('.your-class').slick({
-  dots: true,
-  centerMode: true,
-  focusOnSelect: true
-});
-    });
-  </script-->
-
-
-
-<!--old -->
-<!--header class="banner" style="background-image: url('{{content.images[0]}}');">
-	<h2>{{content.title}}</h2>
-
-	<div>{{content.teaser}}</div>
-</header>
-
-<h2>Projekt</h2>
-
-<h3>{{content.title}}</h3>
-<div ng-bind-html="content.html"></div>
-
-<div class="gallery row">
-	<div ng-repeat="image in content.images | limitTo : -(content.images.length-1)" class="small-12 medium-6 large-3 end
-		columns" style="height: 12rem; overflow: hidden; margin-bottom: 1rem">
-		<img ng-src="{{image}}" />
-	</div>
-</div-->
