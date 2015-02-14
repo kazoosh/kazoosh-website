@@ -1,8 +1,9 @@
 angular.module('config', [])
 	.constant('CONF', {
+		'site_url': '',
 		'name': 'development',
 		'DS' : '/',
-		'content_folder': '/content/',
+		'content_folder': 'content/',
 		'root_folder': 'root/',
 		'root_file': 'root.json',
 		'templates_folder': '/templates',

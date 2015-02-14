@@ -10,7 +10,7 @@ angular.module('kazoosh')
 				var id = pathArray[pathArray.length-1]
 				var type = pathArray[pathArray.length-2]
 
-				$http.get(CONF.content_folder + path + '.json')
+				$http.get(CONF.site_url + CONF.content_folder + path + '.json')
 					.success(function(content){
 
 						content = that._extendAttributes(content, {path: path, type: type, id: id});
