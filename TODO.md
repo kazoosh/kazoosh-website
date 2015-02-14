@@ -1,3 +1,6 @@
+# content conversion
+* time.localtime(os.stat(filePath).st_birthtime does not work on server
+
 # deployment
 * auf server appache site anlegen und kazoosh-website auschecken
 * in owncloud ordner anlegen und kazoosh-website-content auschecken
