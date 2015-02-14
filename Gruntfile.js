@@ -87,4 +87,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('images', ['clean:images', 'copy:images']);
 
 	grunt.registerTask('observe', ['sass', 'content', 'images', 'watch']);
+
+	grunt.registerTask('observe-contents', ['content', 'images', 'watch:content', 'watch:images']);
 };
