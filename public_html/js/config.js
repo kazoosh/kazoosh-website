@@ -6,7 +6,7 @@ angular.module('config', [])
 		'content_folder': 'content/',
 		'root_folder': 'root/',
 		'root_file': 'root.json',
-		'templates_folder': '/templates',
+		'templates_folder': 'templates',
 		'image_folder': 'img/',
 
 		'error_template': '404',
