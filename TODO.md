@@ -2,10 +2,11 @@
 * time.localtime(os.stat(filePath).st_birthtime does not work on server
 
 # deployment
-* auf server appache site anlegen und kazoosh-website auschecken
-* in owncloud ordner anlegen und kazoosh-website-content auschecken
-* pfade in config.local.json anpassen
+* ~~auf server appache site anlegen und kazoosh-website auschecken~~
+* ~~in owncloud ordner anlegen und kazoosh-website-content auschecken~~
+* ~~pfade in config.local.json anpassen~~
 * grunt observe laufen lassen
+* owncloud ordner sharen
 
 ## content changes commiten und pushen
 * grunt job für kazoosh-website-content schreiben, der bei Änderungen automatisch commitet und pusht
