@@ -397,7 +397,7 @@ navigation
   line-height: 2rem;
   font-family: "Dosis", sans-serif;
   font-weight: 300;
-  font-size: 10pt;
+  font-size: 9pt;
 }
 @media only screen and (min-width: 40.063em) {
   .menu li {
@@ -482,6 +482,12 @@ text boxes
 }
 .footer-box .row a {
   color: #3766ff;
+  font-size: 10pt;
+}
+@media only screen and (min-width: 40.063em) {
+  .footer-box .row a {
+    font-size: 12pt;
+  }
 }
 .footer-box .row p {
   font-size: 12pt;
@@ -489,6 +495,12 @@ text boxes
 }
 .footer-box .row h3 {
   text-align: left;
+  font-size: 10pt;
+}
+@media only screen and (min-width: 40.063em) {
+  .footer-box .row h3 {
+    font-size: 12pt;
+  }
 }
 .footer-box .row .contact-icon {
   color: #3766ff;
@@ -681,6 +693,23 @@ page - mitglieder
 /**************************************************************************************************
 page - kontakt
 **************************************************************************************************/
+.kontakt h2 {
+  color: #fff;
+}
+.kontakt p {
+  font-size: 14pt;
+}
+.kontakt .map {
+  height: 17rem;
+  width: 100%;
+  margin-top: 0.9375rem;
+}
+@media only screen and (min-width: 40.063em) {
+  .kontakt .map {
+    height: 23rem;
+  }
+}
+
 /**************************************************************************************************
 page - projekte - subpages
 **************************************************************************************************/
@@ -734,6 +763,13 @@ page - projekte - subpages
 .workshops_default .footer-box .row a,
 .projekte_default .footer-box .row a {
   color: #008cba;
+  font-size: 10pt;
+}
+@media only screen and (min-width: 40.063em) {
+  .workshops_default .footer-box .row a,
+  .projekte_default .footer-box .row a {
+    font-size: 12pt;
+  }
 }
 .workshops_default .footer-box .row p,
 .projekte_default .footer-box .row p {
@@ -743,6 +779,13 @@ page - projekte - subpages
 .workshops_default .footer-box .row h3,
 .projekte_default .footer-box .row h3 {
   text-align: left;
+  font-size: 10pt;
+}
+@media only screen and (min-width: 40.063em) {
+  .workshops_default .footer-box .row h3,
+  .projekte_default .footer-box .row h3 {
+    font-size: 12pt;
+  }
 }
 .workshops_default .footer-box .row .contact-icon,
 .projekte_default .footer-box .row .contact-icon {
@@ -829,8 +872,8 @@ page - projekte - subpages
   display: inline-block;
   padding: 0.5rem 0.7rem 0.6rem 0.7rem;
   margin-right: 0.3rem;
-  margin-bottom: 1.5rem;
-  margin-top: 0.8rem;
+  margin-bottom: 1.40625rem;
+  margin-top: 0.46875rem;
   border-radius: 0.2rem;
   background-color: #666;
   color: #fff;
@@ -838,10 +881,6 @@ page - projekte - subpages
 .workshops_default .button:hover,
 .projekte_default .button:hover {
   background-color: #008cba;
-}
-.workshops_default .flex-video,
-.projekte_default .flex-video {
-  margin-bottom: 0.8rem;
 }
 
 /**************************************************************************************************
@@ -887,6 +926,12 @@ page - mitglieder - subpages
 }
 .mitglieder_default .footer-box .row a {
   color: #008cba;
+  font-size: 10pt;
+}
+@media only screen and (min-width: 40.063em) {
+  .mitglieder_default .footer-box .row a {
+    font-size: 12pt;
+  }
 }
 .mitglieder_default .footer-box .row p {
   font-size: 12pt;
@@ -894,6 +939,12 @@ page - mitglieder - subpages
 }
 .mitglieder_default .footer-box .row h3 {
   text-align: left;
+  font-size: 10pt;
+}
+@media only screen and (min-width: 40.063em) {
+  .mitglieder_default .footer-box .row h3 {
+    font-size: 12pt;
+  }
 }
 .mitglieder_default .footer-box .row .contact-icon {
   color: #008cba;

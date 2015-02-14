@@ -140,13 +140,18 @@ $footer-bg-color-light: #333;
 	.row{
 		a{
 			color: $link-color;
+			font-size: 10pt;
+			@media #{$medium-up} {font-size: 12pt}
 		}
 		p{	
+
 			font-size: 12pt;
 			color: #fff;
 		}
 		h3{
 			text-align: left;
+			font-size: 10pt;
+			@media #{$medium-up} {font-size: 12pt}
 		}
 		.contact-icon{
 		  		color: $link-color;

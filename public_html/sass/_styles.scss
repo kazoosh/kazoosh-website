@@ -93,7 +93,7 @@ navigation
 		font-family: $font-family-text;
 		font-weight: 300;
 
-		font-size: 10pt;
+		font-size: 9pt;
 		@media #{$medium-up}{font-size: 12pt;}
 
 
@@ -404,7 +404,21 @@ page - mitglieder
 /**************************************************************************************************
 page - kontakt
 **************************************************************************************************/
+.kontakt{
+	h2{
+		color: #fff;
+	}
+	p{
+		font-size: 14pt;
+	}
+	.map{
+		height: 17rem;
+		@media #{$medium-up} {height: 23rem}
+		width: 100%;
 
+		margin-top: $gutter;
+	}
+}
 
 /**************************************************************************************************
 page - projekte - subpages
@@ -479,8 +493,8 @@ page - projekte - subpages
 		display: inline-block;
 		padding: 0.5rem 0.7rem 0.6rem 0.7rem;
 		margin-right: 0.3rem;
-		margin-bottom: 1.5rem;
-		margin-top: 0.8rem;
+		margin-bottom: $gutter*3/2;
+		margin-top: $gutter/2;
 		border-radius: 0.2rem;
 
 	  		//background-color: #373737;
@@ -492,10 +506,6 @@ page - projekte - subpages
 	  	}
 
 	  	}
-
-	  .flex-video{
-	  	margin-bottom: 0.8rem;
-	  }
 
 }
 
