@@ -13,6 +13,7 @@
 
 ## code deployment automatisieren
 * github webhook anlegen, der website benachrichtigt, wenn release branch gepusht wird: https://developer.github.com/webhooks/
+* npm module: https://www.npmjs.com/package/webhook-deployer
 * nodejs: http://fideloper.com/node-github-autodeploy
 * php: http://stackoverflow.com/questions/9132144/how-can-i-automatically-deploy-my-app-after-a-git-push-github-and-node-js
 
