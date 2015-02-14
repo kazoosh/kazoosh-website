@@ -1,50 +1,59 @@
-# INSTALL TOOLS
+# GET READY!
 
-## python
+## python-frontmatter
 
 * https://www.python.org/downloads/
-* python packetmanager: pip: sudo easy_install pip 
-* python modul: frontmatter:
-	* pip install python-frontmatter
-	* or htps://pypi.python.org/pypi/python-frontmatter/0.1.1
 
-## node js
+### python packetmanager: pip
+	
+	sudo easy_install pip 
+
+### modul: frontmatter:
+	pip install python-frontmatter
+
+* or htps://pypi.python.org/pypi/python-frontmatter/0.1.1
+
+## bower & grunt
+
+### node js
 
 * http://nodejs.org/download/
 
+### bower:
+	
+	sudo npm install -g bower
 
-## ruby
+### grunt
+	
+	sudo npm install -g grunt-cli
+
+## Sass
+Needed, if you want to modify and compile sass files
+
+### ruby
 
 * https://www.ruby-lang.org/de/downloads/
-* ruby packetmanager: rubygems: 
-	* https://rubygems.org/pages/download
+
+### ruby packetmanager: rubygems
+
+* https://rubygems.org/pages/download
+
+### Sass
+
+	sudo gem install sass
 
 
-## web tools
+# GET STEADY!
 
-* bower: npm install -g bower
-* grunt: npm install -g grunt-cli
-* sass: sudo gem install sass
+## node package dependencies
 
+	npm install
+	
+## javascript dependencies
 
-# INSTALL APP DEPENDENCIES
+	bower install
 
-* npm install  (downloads node dependencies)
-* bower install (downloads javascript libraries)
-
-
-# RUN
-
-## convert contents and continuously watch for changes
-* grunt observe
-
-## start webserver
-* cd public_html/
-* python -m SimpleHTTPServer (or any other webserver)
-
-
-
-# CONFIGURATION
+# CONFIGURE..
 
 ## "backend"
 * see config.json
@@ -54,7 +63,26 @@
 
 * see public_html/js/config.js
 
-# CONTENT
+# RUN!
+
+## watch for all chnages (content, image and sass)
+
+	grunt observe
+
+## watch for content and image changes only
+
+	grunt observe-contents
+	
+Can be used if sass is not need or installed.
+
+## start webserver
+
+* for example using python:
+	
+		cd public_html/
+		python -m SimpleHTTPServer (or any other webserver)
+
+# CHANGE CONTENT
 
 Contents are taken from "contentSourceDirectory" defined in config, converted from markdown to json format and copied to "contentDestinationDirectory". For files having a matching folder (with the same name in the same parent folder) the folder contents are listed in the subpages attribute.
 
@@ -106,7 +134,7 @@ Markdown files consit of two parts:
 * pages with numbers smaller than zero are excluded from navigation
 
 
-# TEMPLATES
+# CHANGE TEMPLATES
 
 Templates are located in "public_html/templates" and are choosen using the following fallback mechanism:
 

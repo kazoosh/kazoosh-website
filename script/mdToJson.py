@@ -80,7 +80,7 @@ def mdToJson(sourceDir, distDir, currentSubDir):
 			fileNameWithoutExt = os.path.splitext(fileName)[0]
 			addSubpagePaths(markdownDict, sourceDir, os.path.join(currentSubDir, fileNameWithoutExt))
 			addLastModifiedTime(markdownDict, os.path.join(sourceDirPath, fileName))
-			addCreatedTime(markdownDict, os.path.join(sourceDirPath, fileName))
+			#addCreatedTime(markdownDict, os.path.join(sourceDirPath, fileName))
 
 			dictToJson(markdownDict, os.path.join(distDirPath, fileNameWithoutExt+'.json'))
 

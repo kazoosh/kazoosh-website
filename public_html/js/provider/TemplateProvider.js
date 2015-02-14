@@ -65,7 +65,7 @@ angular.module('provider', [])
 			//recurively try to load templates specified in templateUrls
 			(function recurse(i, templateUrls) {
 				
-				$http.get(templateUrls[i], {cache: $templateCache}).then(
+				$http.get(CONF.site_url + templateUrls[i], {cache: $templateCache}).then(
 					function(response) {
 						//template available
 						templateDeferred.resolve(response.data);
