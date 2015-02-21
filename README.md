@@ -168,3 +168,7 @@ Templates are located in "public_html/templates" and are choosen using the follo
 * check service status
 		
 		sudo initctl status kazoosh-website-content
+		
+* read log
+
+		sudo cat /var/log/upstart/kazoosh-website-content.log
