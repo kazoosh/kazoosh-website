@@ -141,3 +141,30 @@ Templates are located in "public_html/templates" and are choosen using the follo
 1. Template path from YAML front matter
 2. Template path corresponding the file path and name (e.g. for content/root/mitglieder.md it's public_html/templates/root/mitglieder.html) 
 3. Template path using "default.html" as name and file path as path (iteratively ascending the folder hierarchy) (e.g. for content/root/projekte/heat.md it's public_html/templates/root/projekte/default.html and then public_html/templates/root/default.html).
+
+
+# SERVER SETUP
+
+## Setup service to watch for content changes
+
+* create file: /etc/init/kazoosh-website-content.conf
+
+		#script located at /etc/init/kazoosh-website-content.conf
+
+		description "Upstart script for kazoosh website content observer."
+
+		start on (local-filesystems and net-device-up IFACE=eth0)
+		stop on shutdown
+
+		respawn
+
+		chdir /var/www/kazoosh.com
+		exec grunt observe-contents
+		
+* start service
+	
+		sudo service kazoosh-website-content start
+		
+* check service status
+		
+		sudo initctl status kazoosh-website-content
