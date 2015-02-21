@@ -199,17 +199,20 @@ Templates are located in "public_html/templates" and are choosen using the follo
 				"type": "github",
 				"repo": "https://github.com/barnholdy/kazoosh-website.git",
 				"basepath": "/var/www/kazoosh.com",
-				"command": "npn install"
+				"command": "npn install",
+				"branch": "master"				
 			},
 			{
 				"name": "Git Webhook bower",
 				"type": "github",
 				"repo": "https://github.com/barnholdy/kazoosh-website.git",
 				"basepath": "/var/www/kazoosh.com",
-				"command": "bower install"
+				"command": "bower install",
+				"branch": "master"
 			}]
 		}
 		
 * add webhook to github
 
-		http://<server>:<port>/incoming/webhook-deployer
+		Payload URL: http://<server>:<port>/incoming/webhook-deployer
+		Content type: application/x-www-form-urlencoded

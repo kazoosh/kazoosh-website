@@ -10,22 +10,20 @@
 
 
 ## code deployment automatisieren
+
+### Stand
+
+* ~~webhook-deployer installieren~~
+* ~~webhook-deployer configurieren (git pull, npn install, bower install)~~
+* webhook-deployer im hintergrund laufen lassen
+* config so anpassen, dass nur bei github releases deployt wird (in release branch mergen, taggen, github release erstellen)
+* prüfen, ob grunt neugestartet werden muss
+
+
 * github webhook anlegen, der website benachrichtigt, wenn release branch gepusht wird: https://developer.github.com/webhooks/
 * npm module: https://www.npmjs.com/package/webhook-deployer
 * nodejs: http://fideloper.com/node-github-autodeploy
 * php: http://stackoverflow.com/questions/9132144/how-can-i-automatically-deploy-my-app-after-a-git-push-github-and-node-js
-
-
-### Deploy Skript
-* git pull
-* npn install
-* bower install
-* restart grunt observe-contents
-
-### Workflow
-* in release branch mergen
-* taggen
-* github release erstellen
 
 
 # design
@@ -54,15 +52,6 @@
 # weiteres
 * cache für json files
 * md2json: fehler bei fehlerhaften oder fehlenden *.md files checken
-
-
-
-Kazoosh! Deployment
-
-
-Offene Fragen
-- wie wird der grund observe job gestartet und neugestartet?
-- muss ein Neustart erfolgen?
 
 
 
