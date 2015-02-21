@@ -172,3 +172,44 @@ Templates are located in "public_html/templates" and are choosen using the follo
 * read log
 
 		sudo cat /var/log/upstart/kazoosh-website-content.log
+		
+## automate deployment
+
+* install github webhook-deployer (https://github.com/Camme/webhook-deployer)
+
+		sudo npm install -g webhook-deployer
+		sudo npm install -g nunt
+		
+* create config: deploys.json
+
+		{
+			"port": 8080,
+			"username": "supercooluser",
+			"password": "with-a-LONG-password",
+			"deploys": [{
+				"name": "Git Webhook pull",
+				"type": "github",
+				"repo": "https://github.com/barnholdy/kazoosh-website.git",
+				"basepath": "/var/www/kazoosh.com",
+				"command": "git pull",
+				"branch": "master"
+			},
+			{
+				"name": "Git Webhook npn",
+				"type": "github",
+				"repo": "https://github.com/barnholdy/kazoosh-website.git",
+				"basepath": "/var/www/kazoosh.com",
+				"command": "npn install"
+			},
+			{
+				"name": "Git Webhook bower",
+				"type": "github",
+				"repo": "https://github.com/barnholdy/kazoosh-website.git",
+				"basepath": "/var/www/kazoosh.com",
+				"command": "bower install"
+			}]
+		}
+		
+* add webhook to github
+
+		http://<server>:<port>/incoming/webhook-deployer
