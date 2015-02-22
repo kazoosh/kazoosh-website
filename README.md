@@ -145,7 +145,7 @@ Templates are located in "public_html/templates" and are choosen using the follo
 
 # SERVER SETUP
 
-## Setup service to watch for content changes
+## setup service to watch for content changes
 
 * create file: /etc/init/kazoosh-website-content.conf
 
@@ -173,7 +173,7 @@ Templates are located in "public_html/templates" and are choosen using the follo
 
 		sudo cat /var/log/upstart/kazoosh-website-content.log
 		
-## automate deployment
+## setup automate deployment
 
 * install github webhook-deployer (https://github.com/Camme/webhook-deployer)
 
@@ -216,3 +216,22 @@ Templates are located in "public_html/templates" and are choosen using the follo
 
 		Payload URL: http://<server>:<port>/incoming/webhook-deployer
 		Content type: application/x-www-form-urlencoded
+		
+* run as deamon
+
+		webhook-deployer -c deploys.json -d
+		
+* stop deamon
+
+		webhook-deployer -s
+		
+	or
+	
+		ps aux | less
+		kill <pid>
+		
+## deploy
+
+	git checkout release
+	git merge master
+	git push
