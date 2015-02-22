@@ -6,6 +6,7 @@
 * ~~in owncloud ordner anlegen und kazoosh-website-content auschecken~~
 * ~~pfade in config.local.json anpassen~~
 * ~~grunt observe laufen lassen~~
+* ~~projekt auf kazoosh github account verschieben~~
 * owncloud ordner sharen
 
 
