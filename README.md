@@ -189,26 +189,26 @@ Templates are located in "public_html/templates" and are choosen using the follo
 			"deploys": [{
 				"name": "Git Webhook pull",
 				"type": "github",
-				"repo": "https://github.com/barnholdy/kazoosh-website.git",
+				"repo": "hhttps://github.com/kazoosh/kazoosh-website.git",
 				"basepath": "/var/www/kazoosh.com",
 				"command": "git pull",
-				"branch": "master"
+				"branch": "release"
 			},
 			{
 				"name": "Git Webhook npn",
 				"type": "github",
-				"repo": "https://github.com/barnholdy/kazoosh-website.git",
+				"repo": "https://github.com/kazoosh/kazoosh-website.git",
 				"basepath": "/var/www/kazoosh.com",
 				"command": "npn install",
-				"branch": "master"				
+				"branch": "release"				
 			},
 			{
 				"name": "Git Webhook bower",
 				"type": "github",
-				"repo": "https://github.com/barnholdy/kazoosh-website.git",
+				"repo": "https://github.com/kazoosh/kazoosh-website.git",
 				"basepath": "/var/www/kazoosh.com",
 				"command": "bower install",
-				"branch": "master"
+				"branch": "release"
 			}]
 		}
 		
