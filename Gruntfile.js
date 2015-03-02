@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 			},
 			images: {
 				files: ['<%= CONF.imagesSourceDirectory %>/**'],
-				tasks: [],//images watch event is handeled below for performance issues
+				tasks: ['clean:images', 'copy:images'],//use images watch event for performance issues
 			},
 			css: {
 				files: ['public_html/sass/*.scss'],
@@ -60,7 +60,8 @@ module.exports = function(grunt) {
 
 	grunt.event.on('watch', function(action, filepath, target) {
 		
-		grunt.log.write("watch: action:"+action+", filepath: "+filepath+", target: "+target);
+		//TODO: ony 'deleted' action seems to be working on server
+		/*grunt.log.write("watch: action:"+action+", filepath: "+filepath+", target: "+target);
 
 		if (target === 'images') {
 			var pathArray = filepath.split("/");
@@ -75,7 +76,7 @@ module.exports = function(grunt) {
 				grunt.log.write("copy image from "+filepath+" to "+imgFilePath);
 				grunt.file.copy(filepath, imgFilePath)
 			}
-		}
+		}*/
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
