@@ -60,6 +60,8 @@ module.exports = function(grunt) {
 
 	grunt.event.on('watch', function(action, filepath, target) {
 		
+		grunt.log.write("watch: action:"+action+", filepath: "+filepath+", target: "+target);
+
 		if (target === 'images') {
 			var pathArray = filepath.split("/");
 			var imgFilePath = pathArray.slice(1).join("/");//path without image folder
@@ -88,5 +90,5 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('observe', ['sass', 'content', 'images', 'watch']);
 
-	grunt.registerTask('observe-contents', ['content', 'images', 'watch:content', 'watch:images']);
+	grunt.registerTask('observe-contents', ['content', 'images', 'watch']);
 };
