@@ -4,9 +4,6 @@
   "private": true,
   "description": "",
   "author": "",
-  "dependencies": {
-    "markdown-to-json": "~0.4.2"
-  },
   "devDependencies": {
     "bower": "~1.3.12",
     "grunt": "~0.4.5",
