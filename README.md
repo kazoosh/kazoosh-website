@@ -164,6 +164,9 @@ Templates are located in "public_html/templates" and are choosen using the follo
 * start service
 	
 		sudo service kazoosh-website-content start
+* stop service
+	
+		sudo service kazoosh-website-content stop
 		
 * check service status
 		
@@ -172,6 +175,8 @@ Templates are located in "public_html/templates" and are choosen using the follo
 * read log
 
 		sudo cat /var/log/upstart/kazoosh-website-content.log
+
+		sudo gzip -d /var/log/upstart/kazoosh-website-content.log.gz
 		
 ## setup automate deployment
 
