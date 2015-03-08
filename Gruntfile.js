@@ -19,14 +19,12 @@ module.exports = function(grunt) {
 				files: ['<%= CONF.contentSourceDirectory %>/**'],
 				tasks: ['content'],
 				options: {
-					event: ['added', 'changed', 'deleted']
 				}
 			},
 			images: {
 				files: ['<%= CONF.imagesSourceDirectory %>/**'],
 				tasks: ['clean:images', 'copy:images'],//use images watch event for performance issues
 				options: {
-					event: ['added', 'changed', 'deleted']
 				}
 			},
 			css: {
