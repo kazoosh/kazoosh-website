@@ -25,6 +25,9 @@ module.exports = function(grunt) {
 			images: {
 				files: ['<%= CONF.imagesSourceDirectory %>/**'],
 				tasks: ['clean:images', 'copy:images'],//use images watch event for performance issues
+				options: {
+					event: ['added', 'changed', 'deleted']
+				}
 			},
 			css: {
 				files: ['public_html/sass/*.scss'],
