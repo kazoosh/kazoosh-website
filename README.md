@@ -160,17 +160,33 @@ Templates are located in "public_html/templates" and are choosen using the follo
 
 		chdir /var/www/kazoosh.com
 		exec grunt observe-contents
+
+* create file: /etc/init/kazoosh-website-deploy.conf
+
+		#script located at /etc/init/kazoosh-website-deploy.conf
+
+		description "Upstart script for kazoosh website deployment."
+
+		start on (local-filesystems and net-device-up IFACE=eth0)
+		stop on shutdown
+
+		respawn
+
+		exec webhook-deployer -c /var/www/kazoosh.com/deploys.json
 		
 * start service
 	
 		sudo service kazoosh-website-content start
+		sudo service kazoosh-website-deploy start
 * stop service
 	
 		sudo service kazoosh-website-content stop
+		sudo service kazoosh-website-deploy stop
 		
 * check service status
 		
 		sudo initctl status kazoosh-website-content
+		sudo initctl status kazoosh-website-deploy
 		
 * read log
 
@@ -188,33 +204,50 @@ Templates are located in "public_html/templates" and are choosen using the follo
 * create config: deploys.json
 
 		{
-			"port": 8080,
-			"username": "supercooluser",
-			"password": "with-a-LONG-password",
-			"deploys": [{
-				"name": "Git Webhook pull",
-				"type": "github",
-				"repo": "hhttps://github.com/kazoosh/kazoosh-website.git",
-				"basepath": "/var/www/kazoosh.com",
-				"command": "git pull",
-				"branch": "release"
-			},
-			{
-				"name": "Git Webhook npn",
-				"type": "github",
-				"repo": "https://github.com/kazoosh/kazoosh-website.git",
-				"basepath": "/var/www/kazoosh.com",
-				"command": "npn install",
-				"branch": "release"				
-			},
-			{
-				"name": "Git Webhook bower",
-				"type": "github",
-				"repo": "https://github.com/kazoosh/kazoosh-website.git",
-				"basepath": "/var/www/kazoosh.com",
-				"command": "bower install",
-				"branch": "release"
-			}]
+		    "port": 8080,
+		    "username": "supercooluser",
+		    "password": "...",
+		    "deploys": [
+		    {
+		        "name": "Git Webhook stop kazoosh-website-content service",
+		        "type": "github",
+		        "repo": "https://github.com/kazoosh/kazoosh-website.git",
+		        "basepath": "/var/www/kazoosh.com",
+		        "command": "sudo service kazoosh-website-content stop",
+		        "branch": "release"
+		    },
+		    {
+		        "name": "Git Webhook pull",
+		        "type": "github",
+		        "repo": "https://github.com/kazoosh/kazoosh-website.git",
+		        "basepath": "/var/www/kazoosh.com",
+		        "command": "sudo -u hannes git pull",
+		        "branch": "release"
+		    },
+		    {
+		        "name": "Git Webhook npm",
+		        "type": "github",
+		        "repo": "https://github.com/kazoosh/kazoosh-website.git",
+		        "basepath": "/var/www/kazoosh.com",
+		        "command": "sudo npm install",
+		        "branch": "release"
+		    },
+		    {
+		        "name": "Git Webhook bower",
+		        "type": "github",
+		        "repo": "https://github.com/kazoosh/kazoosh-website.git",
+		        "basepath": "/var/www/kazoosh.com",
+		        "command": "sudo -u hannes bower install",
+		        "branch": "release"
+		    },
+		    {
+		        "name": "Git Webhook start kazoosh-website-content service",
+		        "type": "github",
+		        "repo": "https://github.com/kazoosh/kazoosh-website.git",
+		        "basepath": "/var/www/kazoosh.com",
+		        "command": "sudo service kazoosh-website-content start",
+		        "branch": "release"
+		    }]
 		}
 		
 * add webhook to github
