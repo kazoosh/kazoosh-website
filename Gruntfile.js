@@ -19,12 +19,14 @@ module.exports = function(grunt) {
 				files: ['<%= CONF.contentSourceDirectory %>/**'],
 				tasks: ['content'],
 				options: {
+					spawn: false,
 				}
 			},
 			images: {
 				files: ['<%= CONF.imagesSourceDirectory %>/**'],
 				tasks: ['clean:images', 'copy:images'],//use images watch event for performance issues
 				options: {
+					spawn: false,
 				}
 			},
 			css: {
@@ -61,8 +63,10 @@ module.exports = function(grunt) {
 
 	grunt.event.on('watch', function(action, filepath, target) {
 		
+		grunt.log.write("watch: action:"+action+", filepath: "+filepath+", target: "+target);
+		
 		//TODO: ony 'deleted' action seems to be working on server
-		/*grunt.log.write("watch: action:"+action+", filepath: "+filepath+", target: "+target);
+		/*
 
 		if (target === 'images') {
 			var pathArray = filepath.split("/");
