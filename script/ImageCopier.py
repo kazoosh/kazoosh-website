@@ -13,4 +13,7 @@ class ImageCopier:
 
 	def copy(self, sourceDir, distDir):
 		distutils.dir_util._path_created = {}
-		distutils.dir_util.copy_tree(sourceDir, distDir)
+		try:
+			distutils.dir_util.copy_tree(sourceDir, distDir)
+		except Exception, e:
+			print e
