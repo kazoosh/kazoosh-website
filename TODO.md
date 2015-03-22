@@ -19,7 +19,6 @@
 * unterseiten titel auf mobil ist teils zu lang
 * auf Homepage logo nicht doppelt anzeigen
 * projekte/workshops Bilder breiter machen und Text anzeigen
-* auf Startseite bei Projekte Datum anzeigen
 
 
 
