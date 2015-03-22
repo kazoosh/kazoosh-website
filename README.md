@@ -173,7 +173,8 @@ Templates are located in "public_html/templates" and are choosen using the follo
 		respawn
 
 		chdir /var/www/kazoosh.com
-		exec grunt observe-contents
+		exec python script/watch.py
+		#exec grunt observe-contents
 
 * create file: /etc/init/kazoosh-website-deploy.conf
 
