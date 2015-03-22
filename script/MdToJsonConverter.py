@@ -3,6 +3,7 @@ import time
 import shutil
 import frontmatter
 import json
+import yaml.composer
 
 
 class MdToJsonConverter:
@@ -16,9 +17,24 @@ class MdToJsonConverter:
 			os.makedirs(dir)
 
 	def __markdownToDict(self, markdownFilePath):
-		markdownData = frontmatter.load(markdownFilePath)
-		markdownDict = markdownData.to_dict()
-		# convert markdown to html here already: http://pythonhosted.org//Markdown/siteindex.html
+		try:
+			markdownData = frontmatter.load(markdownFilePath)
+			markdownDict = markdownData.to_dict()
+		except yaml.composer.ComposerError, e:
+
+			print "ComposerError > Exception for: "+markdownFilePath
+			print e
+
+			markdownDict = {}
+			markdownDict['content'] = 'Fehler im Markdown Header: '+str(e)
+
+		except Exception, e:
+			print "Exception for: "+markdownFilePath
+			print e
+
+			markdownDict = {}
+			markdownDict['content'] = str(e)
+		
 		return markdownDict
 
 	def __dictToJson(self, markdownDict, jsonFilePath):
