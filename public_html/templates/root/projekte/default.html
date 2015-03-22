@@ -15,41 +15,52 @@
 	</ul>
 </div>
 
-<ul class="row">
-	<li ng-hide="!content.video" class="small-12 medium-12 large-6  columns end">
+<div class="row">
+	<div ng-hide="!content.video" class="small-12 medium-12 large-6  columns end">
 		<div class="aspect-wrapper ratio_16x9">
-				<div class="picture-content">	
-					<iframe ng-src="{{content.video | trustAsResourceUrl}}" height="100%" width="100%"></iframe>
-				</div>
+			<div class="picture-content">
+				<iframe ng-src="{{content.video | trustAsResourceUrl}}" height="100%" width="100%"></iframe>
+			</div>
 		</div>
-	</li>
-	<li ng-hide="content.video" class="small-12 medium-12 large-6  columns end">
+	</div>
+	<div ng-hide="content.video" class="small-12 medium-12 large-6  columns end">
 		<a href="{{content.images[1]}}" class="swipebox">
 			<div class="aspect-wrapper ratio_16x9">
-				<div class="picture-content enable-hover" style="background-image: url('{{content.images[1]}}');">	
-				</div>
+				<div class="picture-content enable-hover" style="background-image: url('{{content.images[1]}}');"></div>
 			</div>
 		</a>
-		</li>
-		<li class="show-for-large-up large-6 columns end">
+	</div>
+	<div class="show-for-large-up large-6 columns end">
 		<a href="{{content.images[2]}}" class="swipebox">
 			<div class="aspect-wrapper ratio_16x9">
-				<div class="picture-content enable-hover" style="background-image: url('{{content.images[2]}}');">	
-				</div>
+				<div class="picture-content enable-hover" style="background-image: url('{{content.images[2]}}');"></div>
 			</div>
-		</a>	
-		<li class="small-12 medium-12 large-12 columns end">
-		<a href="{{content.images[1]}}" class="swipebox button">Zur Galerie</a>
-	</li>	
-		<a class="swipebox" href="{{image}}" ng-repeat="image in content.images | limitTo : -(content.images.length-3)">
 		</a>
-	</li>
-	</ul>
-	<ul class="row">
-	<li class="small-12 medium-8 large-9 columns end">
+		<a class="swipebox" href="{{image}}" ng-repeat="image in content.images | limitTo : -(content.images.length-3)"></a>
+	</div>
+	<div class="show-for-large-up large-6 columns end">
+		<a href="{{content.images[1]}}" class="swipebox button">Zur Galerie</a>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 medium-8 large-9 columns end">
 		<div ng-bind-html="content.html"></div>
-	</li>	
-	<li class="small-12 medium-4 large-3 columns end info-box">
+
+		<h3>Teilnehmer</h3>
+		<ul ng-controller="ParticipantsCtrl" class="participants">
+			<li ng-repeat="participant in participants | orderBy:'toString()'" class="small-6 medium-3 large-2 columns end">
+				<a ui-sref="content({path: participant.path})">
+					<div class="aspect-wrapper">
+						<div class="picture-content round-frame" style="background-image: url('{{participant.images[0]}}');">	
+						</div>
+					</div>
+					<h4>{{participant.firstname}} {{participant.lastname}}</h4>
+					<h5>{{participant.profession}}</h5>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="small-12 medium-4 large-3 columns end info-box">
 		<h5>{{content.title}}</h4>
 		<p>
 		{{content.location}} - {{content.date}}</p>
@@ -57,14 +68,8 @@
 		<p>
 		<a href="{{content.festival_link}}">{{content.festival}}</a> - {{content.festival_teaser}}
 		</p>
-		<h6>Teilnehmer</h6>
-		<ul>
-			<li ng-repeat="participant in content.participants | orderBy:'toString()'">
-			{{participant}}
-			</li>
-		</ul>
-	</li>
-</ul>
+	</div>
+</div>
 
 <script src="lib/swipebox/src/js/jquery.swipebox.js"></script>
 	<script type="text/javascript">

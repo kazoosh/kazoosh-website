@@ -617,6 +617,31 @@ text boxes
 }
 
 /**************************************************************************************************
+IMAGES
+**************************************************************************************************/
+.picture-content {
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.picture-content:hover {
+  background-blend-mode: normal;
+}
+
+.round-frame {
+  top: 15%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+
+/**************************************************************************************************
 ICONS
 **************************************************************************************************/
 .contact-icon {
@@ -669,26 +694,9 @@ page - mitglieder
 .mitglieder .mitglieder-overview .grid-box {
   height: auto;
 }
-.mitglieder .picture-content {
-  background-size: cover;
+.mitglieder .mitglieder-overview .picture-content {
   background-color: white;
   background-blend-mode: luminosity;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.mitglieder .picture-content:hover {
-  background-blend-mode: normal;
-}
-.mitglieder .round-frame {
-  top: 15%;
-  left: 10%;
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
 }
 
 /**************************************************************************************************
@@ -882,6 +890,19 @@ page - projekte - subpages
 .workshops_default .button:hover,
 .projekte_default .button:hover {
   background-color: #008cba;
+}
+.workshops_default .participants h4,
+.projekte_default .participants h4 {
+  font-family: "Dosis", sans-serif;
+  font-size: 14pt;
+  text-align: center;
+  margin: 0rem;
+}
+.workshops_default .participants h5,
+.projekte_default .participants h5 {
+  font-family: "Dosis", sans-serif;
+  font-size: 12pt;
+  text-align: center;
 }
 
 /**************************************************************************************************

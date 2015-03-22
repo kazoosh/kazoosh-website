@@ -307,6 +307,32 @@ text boxes
 	height: 100%;
 }
 
+
+/**************************************************************************************************
+IMAGES
+**************************************************************************************************/
+
+.picture-content{
+	background-size: cover;
+	background-repeat: no-repeat;
+	position:  absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.picture-content:hover{
+	background-blend-mode: normal;
+}
+
+.round-frame{
+	top: 15%;
+	left: 10%;
+	width: 80%;
+	height: 80%;
+	border-radius: 50%;
+}
+
 /**************************************************************************************************
 ICONS
 **************************************************************************************************/
@@ -378,29 +404,11 @@ page - mitglieder
 		.grid-box{
 			height: auto;
 		}
-	}
 
-	.picture-content{
-		background-size: cover;
-		background-color: rgba(255, 255, 255, 1);
-		background-blend-mode: luminosity;
-		background-repeat: no-repeat;
-		position:  absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-	.picture-content:hover{
-		background-blend-mode: normal;
-	}
-
-	.round-frame{
-		top: 15%;
-		left: 10%;
-		width: 80%;
-		height: 80%;
-		border-radius: 50%;
+		.picture-content{
+			background-color: rgba(255, 255, 255, 1);
+			background-blend-mode: luminosity;
+		}
 	}
 }
 
@@ -444,21 +452,21 @@ page - projekte - subpages
 			color: #222;
 		}
 	}	
-		.swipebox-container{
-			width: 100%;
-			height: 20rem;
-			background-size: cover;
-			background-repeat: no-repeat;
-		}
-		h4{
-			font-family: $font-family-text;
-			font-weight: 300;
-			font-size: 18pt;
-			margin-bottom: 3*$gutter;
-			color: #333;
-		}
+	.swipebox-container{
+		width: 100%;
+		height: 20rem;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	h4{
+		font-family: $font-family-text;
+		font-weight: 300;
+		font-size: 18pt;
+		margin-bottom: 3*$gutter;
+		color: #333;
+	}
 
-		.info-box{
+	.info-box{
 		//background-color: #ccc;
 		border-radius: 0.2rem;
 		border-color: #ccc;
@@ -469,25 +477,25 @@ page - projekte - subpages
 		font-weight: 400;
 		font-size: 18pt;
 		color: #008cba;
-	}
-	h6{
-		font-family: $font-family-text;
-		font-weight: 400;
-		color: #555;
-	}
-	p{
-		color: #333;
-		font-weight: 400;
-	}
-
-	ul{
-		margin: 0;
-		color: #333;
-		li{
+		}
+		h6{
+			font-family: $font-family-text;
+			font-weight: 400;
+			color: #555;
+		}
+		p{
 			color: #333;
+			font-weight: 400;
+		}
+
+		ul{
+			margin: 0;
+			color: #333;
+			li{
+				color: #333;
+			}
 		}
 	}
-}
 	.button{
 		font-family: $font-family-text;
 		font-weight: 500;
@@ -508,7 +516,22 @@ page - projekte - subpages
 	  		background-color:$footer-link-color-light;
 	  	}
 
-	  	}
+	}
+
+	.participants{
+
+		h4{
+			font-family: "Dosis", sans-serif;
+			font-size: 14pt;
+			text-align: center;
+			margin: 0rem;
+		}
+		h5{
+			font-family: "Dosis", sans-serif;
+			font-size: 12pt;
+			text-align: center;
+		}
+	}
 
 }
 
