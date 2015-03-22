@@ -8,7 +8,6 @@
 * cache für json files?
 
 # design
-* projekte nach datum sortieren
 * menu und header sticky beim Scrollen
 * Menüleiste in Hompage automatisch an untere Bildschirmkante anpassen
 * footer, wenn sichtbar, immer am unteren rand auch wenn seite zu kurz
