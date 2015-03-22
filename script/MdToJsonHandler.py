@@ -1,6 +1,7 @@
 from watchdog.events import FileSystemEventHandler
 import MdToJsonConverter
 
+
 class MdToJsonHandler(FileSystemEventHandler):
 
     def __init__(self, sourceDir, distDir):
@@ -12,6 +13,3 @@ class MdToJsonHandler(FileSystemEventHandler):
         print event
         self.mdToJsonConverter.refreshDir(self.distDir)
         self.mdToJsonConverter.mdToJson(self.sourceDir, self.distDir, "")
-
-
-

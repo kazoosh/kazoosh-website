@@ -4,6 +4,8 @@ import time
 import json
 from watchdog.observers import Observer
 import MdToJsonHandler
+import ImageCopierHandler
+
 
 config_file_path = 'config.json'
 local_config_file_path = 'config.local.json'
@@ -31,16 +33,22 @@ else:
     config = merge_two_dicts(config, local_config);
 
 
-sourceDir = config['contentSourceDirectory']
-distDir = config['contentDestinationDirectory']
+contentSourceDir = config['contentSourceDirectory']
+contentDistDir = config['contentDestinationDirectory']
+imgSourceDir = config['imagesSourceDirectory']
+imgDistDir = config['imagesDestinationDirectory']
 
-print 'source directory: '+sourceDir
-print 'destination directory: '+distDir
+print 'content source directory: '+contentSourceDir
+print 'content destination directory: '+contentDistDir
+print 'image source directory: '+imgSourceDir
+print 'image destination directory: '+imgDistDir
 
 if __name__ == "__main__":
-    event_handler = MdToJsonHandler.MdToJsonHandler(sourceDir, distDir)
+    md_to_json_handler = MdToJsonHandler.MdToJsonHandler(contentSourceDir, contentDistDir)
+    image_copier_handler = ImageCopierHandler.ImageCopierHandler(imgSourceDir, imgDistDir)
     observer = Observer()
-    observer.schedule(event_handler, sourceDir, recursive=True)
+    observer.schedule(md_to_json_handler, contentSourceDir, recursive=True)
+    observer.schedule(image_copier_handler, imgSourceDir, recursive=True)
     observer.start()
     try:
         while True:

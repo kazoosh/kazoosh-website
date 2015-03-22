@@ -78,6 +78,3 @@ class MdToJsonConverter:
 			if self.__isDir(sourceDirPath, fileName):
 
 				self.mdToJson(sourceDir, distDir, os.path.join(currentSubDir, fileName))
-
-
-
