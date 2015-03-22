@@ -12,12 +12,12 @@
 	<h2>{{content.firstname}} {{content.lastname}}</h2>
 </div-->
 
-<div class="row" ng-controller="MitgliedCtrl">
+<div class="row">
 	<div class="small-12 medium-9 large-9 columns">
 		<p ng-bind-html="content.html"></p>
 		
 		<h3>Mitarbeit in Projekten</h3>
-		<ul class="row">
+		<ul class="row" ng-controller="MitarbeitCtrl">
 			<li ng-repeat="project in content.projects | orderBy: '-date'" class="small-12 medium-4 large-3 columns end project-label">
 				<a ui-sref="content({path: project.path})" class="grid-box enable-hover" style="background-image: url('{{project.images[0]}}');">
 					<div class="caption">

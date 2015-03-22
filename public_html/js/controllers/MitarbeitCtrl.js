@@ -1,4 +1,4 @@
-kazoosh.controller('MitgliedCtrl', ['CONF', '$scope', '$state', 'ContentService', '$q', function(CONF, $scope, $state, ContentService, $q) {
+kazoosh.controller('MitarbeitCtrl', ['CONF', '$scope', '$state', 'ContentService', '$q', function(CONF, $scope, $state, ContentService, $q) {
 
 
 	loadProject = function(content){
