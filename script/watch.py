@@ -1,14 +1,38 @@
 import sys
+import os
 import time
+import json
 from watchdog.observers import Observer
 import MdToJsonHandler
 
-if len(sys.argv) < 3:
-    print 'Please pass source and destination directory as arguments (e.g. python script/watcher.py content public_html/content). Arguments given: ', str(sys.argv)
-    sys.exit()
+config_file_path = 'config.json'
+local_config_file_path = 'config.local.json'
 
-sourceDir = sys.argv[1]
-distDir = sys.argv[2]
+def merge_two_dicts(x, y):
+    '''Given two dicts, merge them into a new dict as a shallow copy.'''
+    z = x.copy()
+    z.update(y)
+    return z
+
+if not os.path.isfile(config_file_path):
+    print 'Please specify config data in: '+config_file_path
+    sys.exit()
+else:
+    print 'Loading config data: '+config_file_path
+    with open(config_file_path) as config_file:
+        config = json.load(config_file)
+
+if not os.path.isfile(local_config_file_path):
+    print 'You may specify local config data in: '+local_config_file_path
+else:
+    print 'Loading and merging local config data: '+local_config_file_path
+    with open(local_config_file_path) as local_config_file:
+        local_config = json.load(local_config_file)
+    config = merge_two_dicts(config, local_config);
+
+
+sourceDir = config['contentSourceDirectory']
+distDir = config['contentDestinationDirectory']
 
 print 'source directory: '+sourceDir
 print 'destination directory: '+distDir
