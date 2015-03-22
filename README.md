@@ -13,6 +13,20 @@
 
 * or htps://pypi.python.org/pypi/python-frontmatter/0.1.1
 
+
+## watchdog
+
+* http://pythonhosted.org//watchdog/
+
+### python packetmanager: pip
+	
+	sudo easy_install pip 
+	
+### modul: watchdog:
+
+	sudo pip install watchdog
+
+
 ## bower & grunt
 
 ### node js

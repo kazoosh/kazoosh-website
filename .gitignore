@@ -16,6 +16,9 @@ public_html/img
 # node dependency directory
 node_modules
 
+#python
+*.pyc
+
 # sass
 .sass-cache/
 
