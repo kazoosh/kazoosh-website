@@ -466,6 +466,7 @@ text boxes
 
 .title-box {
   display: block;
+  width: 100%;
   margin-top: 0.9375rem;
   padding: 0.46875rem;
   background-color: transparent;

@@ -8,7 +8,6 @@
 * cache für json files?
 
 # design
-* kazoosh banner mit fester Breite
 * projekte nach datum sortieren
 * menu und header sticky beim Scrollen
 * Menüleiste in Hompage automatisch an untere Bildschirmkante anpassen

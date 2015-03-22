@@ -166,6 +166,7 @@ text boxes
 
 	.title-box{	
 		display: block;
+		width: 100%;
 		margin-top: $gutter;
 		padding: $gutter/2;
 		@media #{$medium-up} {
