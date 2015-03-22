@@ -649,7 +649,7 @@ page - home
 /**************************************************************************************************
 page - mitglieder
 **************************************************************************************************/
-.mitglieder h3, .mitglieder h4 {
+.mitglieder .mitglieder-overview h3, .mitglieder .mitglieder-overview h4 {
   padding: 0;
   margin: 0;
   display: block;
@@ -657,16 +657,16 @@ page - mitglieder
   text-align: center;
   background-color: transparent;
 }
-.mitglieder h3 {
+.mitglieder .mitglieder-overview h3 {
   font-weight: 400;
 }
-.mitglieder h4 {
+.mitglieder .mitglieder-overview h4 {
   font-size: 12pt;
 }
-.mitglieder .caption {
+.mitglieder .mitglieder-overview .caption {
   height: 4rem;
 }
-.mitglieder .grid-box {
+.mitglieder .mitglieder-overview .grid-box {
   height: auto;
 }
 .mitglieder .picture-content {
