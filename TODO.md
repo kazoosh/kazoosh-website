@@ -8,18 +8,12 @@
 * cache für json files?
 
 # design
+* unterseiten titel auf mobil ist teils zu lang
+* projekte/workshops Bilder breiter machen und Text anzeigen
 * menu und header sticky beim Scrollen
+* auf Homepage logo nicht doppelt anzeigen
 * Menüleiste in Hompage automatisch an untere Bildschirmkante anpassen
 * footer, wenn sichtbar, immer am unteren rand auch wenn seite zu kurz
 * kontaktseite stylen
-* aktuelle Seite im Menu markeiren
+* aktuelle Seite im Menu markieren
 * mobiles Menü?
-
-
-* unterseiten titel auf mobil ist teils zu lang
-* auf Homepage logo nicht doppelt anzeigen
-* projekte/workshops Bilder breiter machen und Text anzeigen
-
-
-
-
