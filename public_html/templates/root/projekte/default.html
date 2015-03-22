@@ -59,7 +59,7 @@
 		</p>
 		<h6>Teilnehmer</h6>
 		<ul>
-			<li ng-repeat="participant in content.participants">
+			<li ng-repeat="participant in content.participants | orderBy:'toString()'">
 			{{participant}}
 			</li>
 		</ul>
