@@ -1,8 +1,9 @@
-kazoosh.controller('MitarbeitCtrl', ['CONF', '$scope', '$state', 'ContentService', '$q', function(CONF, $scope, $state, ContentService, $q) {
+kazoosh.controller('ProjectsCtrl', ['CONF', '$scope', '$state', 'ContentService', '$q', function(CONF, $scope, $state, ContentService, $q) {
 
 
 	loadProject = function(content){
 
+		var requests = [];
 		content.projects.forEach(function(path, i){
 			requests.push(ContentService.getContent(path, function(){}));
 		});
@@ -18,15 +19,9 @@ kazoosh.controller('MitarbeitCtrl', ['CONF', '$scope', '$state', 'ContentService
 				}
 			);
 	}
-
-	//get featured items
-	var requests = [];
-
-
+	
 	if($scope.content == undefined){
-
-		$scope.$watch('content', function() {
-			
+		$scope.$watch('content', function() {		
 			if($scope.content != undefined){
 				loadProject($scope.content);
 			}
@@ -35,5 +30,4 @@ kazoosh.controller('MitarbeitCtrl', ['CONF', '$scope', '$state', 'ContentService
 	else{
 		loadProject($scope.content);
 	}
-	
 }]);
