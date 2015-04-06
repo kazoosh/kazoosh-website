@@ -8,6 +8,7 @@
 * cache für json files?
 
 # design
+* teilnehmer bei workshops
 * unterseiten titel auf mobil ist teils zu lang
 * projekte/workshops Bilder breiter machen und Text anzeigen
 * menu und header sticky beim Scrollen
@@ -17,3 +18,11 @@
 * kontaktseite stylen
 * aktuelle Seite im Menu markieren
 * mobiles Menü?
+
+* Metaangaben in root.md
+
+# BUG
+
+* bei Umlauten und Sonderzeichen im Dateiname in:
+	def __isFile(self, sourceDir, fileName):
+		return os.path.isfile(os.path.join(sourceDir, fileName)) and not fileName.startswith('.')

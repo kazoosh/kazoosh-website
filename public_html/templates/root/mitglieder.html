@@ -16,7 +16,7 @@
 
 
 <ul class="row mitglieder-overview">
-	<li ng-repeat="subpage in content.subpages" class="small-6 medium-3 large-2 columns end">
+	<li ng-repeat="subpage in content.subpages | orderBy: 'firstname'" class="small-6 medium-3 large-2 columns end">
 		<a ui-sref="content({path: subpage.path})" class="grid-box" >	
 			<div class="aspect-wrapper">
 				<div class="picture-content round-frame" style="background-image: url('{{subpage.images[0]}}');">	
