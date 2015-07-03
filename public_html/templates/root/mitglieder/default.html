@@ -2,15 +2,10 @@
 	<div class="large-12 columns">
 		<div class="title-box">
 			<a ui-sref="content({path: 'root/mitglieder'})"><h3>Köpfe</h3></a>
-			<h2><span>{{content.title}}</span></h2>
+			<h2><span>{{content.firstname}} {{content.lastname}}</span></h2>
 		</div>
 	</div>
 </header>
-
-<!--div class = "description-box">
-	<a ui-sref="content({path: 'root/mitglieder'})"><h3>Köpfe</h3></a>
-	<h2>{{content.firstname}} {{content.lastname}}</h2>
-</div-->
 
 <div class="row">
 	<div class="small-12 medium-9 large-9 columns">
@@ -18,15 +13,10 @@
 		
 		<h3>Mitarbeit in Projekten</h3>
 		<ul class="row" ng-controller="ProjectsCtrl">
-			<li ng-repeat="project in content.projects | orderBy: '-date'" class="small-12 medium-4 large-3 columns end project-label">
-				<a ui-sref="content({path: project.path})" class="grid-box enable-hover" style="background-image: url('{{project.images[0]}}');">
-					<div class="caption">
-					<h3>{{project.title}}</h3>
-					<h4>{{project.date}}</h4>
-					<p>
-						{{project.teaser}}
-					</p>
-				</div>
+			<li ng-repeat="project in content.projects | orderBy: '-date'" class="small-12 medium-6 large-6 columns end project-label">
+				{{project.date}}
+				<a ui-sref="content({path: project.path})">
+					{{project.title}}
 				</a>
 			</li>
 		</ul>
@@ -42,18 +32,20 @@
 				</div>
 		</div>
 
-		<h3>Interessen</h3>
-		<p>
-			<span ng-repeat="interest in content.interests" class="interest-label">{{interest}}</span>
-		</p>
-
-		<h3>Kontakt</h3>
-		<p>
-			<a href="{{content.email}}" ng-hide="!content.email"><span class="contact-icon">&#xf16d;</span></a>
-			<a href="{{content.homepage}}" ng-hide="!content.homepage"><span class="contact-icon">&#xf15a;</span></a>
-			<a href="{{content.github}}" ng-hide="!content.github"><span class="contact-icon">&#xf1c9;</span></a>
-			<a href="{{content.vimeo}}" ng-hide="!content.vimeo"><span class="contact-icon">&#xf1e5;</span></a>
-		</p>
-
+		<div ng-if="content.interests">
+			<h3>Interessen</h3>
+			<p>
+				<span ng-repeat="interest in content.interests" class="interest-label">{{interest}}</span>
+			</p>
+		</div>
+		<div ng-if="content.email || content.homepage || content.github || content.vimeo">
+			<h3>Kontakt</h3>
+			<p>
+				<a href="{{content.email}}" ng-if="content.email"><span class="contact-icon">&#xf16d;</span></a>
+				<a href="{{content.homepage}}" ng-if="content.homepage"><span class="contact-icon">&#xf15a;</span></a>
+				<a href="{{content.github}}" ng-if="content.github"><span class="contact-icon">&#xf1c9;</span></a>
+				<a href="{{content.vimeo}}" ng-if="content.vimeo"><span class="contact-icon">&#xf1e5;</span></a>
+			</p>
+		</div>
 	</div>
 </div>

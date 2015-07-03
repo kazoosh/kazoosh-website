@@ -137,6 +137,9 @@ $footer-bg-color-light: #333;
 
 @mixin footer-style($background-color,$link-color){
 	background-color: $background-color;
+	height: 10rem;
+	clear:both;
+	margin-top: -10rem;
 	.row{
 		a{
 			color: $link-color;

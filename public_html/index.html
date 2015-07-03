@@ -36,18 +36,17 @@
 
 </head>
 <body ng-app="kazoosh" ng-controller="PageClassCtrl" class="{{pageClasses}}">
-
-	<nav class="menu" ng-controller="NavigationCtrl">
-		<ul>
-			<li class="home"><a ui-sref="home"><span>home</span></a></li>
-			<li ng-repeat="content in contents" class="{{content.id}}">
-				<a ui-sref="content({path: '{{content.path}}'})"><span>{{content.title}}</span></a>
-			</li>
-		</ul>
-	</nav>
-
-	<div ui-view></div>
-
+	<div id="wrap-footer">
+		<nav class="menu" ng-controller="NavigationCtrl">
+			<ul>
+				<li class="home"><a ui-sref="home"><span>home</span></a></li>
+				<li ng-repeat="content in contents" class="{{content.id}}">
+					<a ui-sref="content({path: '{{content.path}}'})"><span>{{content.title}}</span></a>
+				</li>
+			</ul>
+		</nav>
+		<div ui-view></div>
+	</div>
 	<div class="footer-box">
 		<ul class="row">
 		<li class="small-12 medium-12 large-12 columns">

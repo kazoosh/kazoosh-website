@@ -292,6 +292,7 @@ html.swipebox-html.swipebox-touch {
 defaults
 **************************************************************************************************/
 body {
+  height: 100%;
   font-family: "Dosis", sans-serif;
   font-size: 14pt;
   font-weight: 300;
@@ -307,6 +308,15 @@ h3 {
   font-family: "Dosis", sans-serif;
 }
 
+#wrap-footer {
+  min-height: 100%;
+}
+
+#spacer {
+  height: 2rem;
+  margin-bottom: 2rem;
+}
+
 /**************************************************************************************************
 rewrite foundation rules
 **************************************************************************************************/
@@ -317,7 +327,8 @@ rewrite foundation rules
 }
 @media only screen and (min-width: 40.063em) {
   .row {
-    width: 95%;
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
   }
 }
 
@@ -334,6 +345,7 @@ banner
   height: 13rem;
   background-size: cover;
   background-repeat: no-repeat;
+  padding-left: 0;
 }
 @media only screen and (min-width: 40.063em) {
   .banner {
@@ -385,7 +397,7 @@ navigation
 }
 @media only screen and (min-width: 40.063em) {
   .menu {
-    padding-left: 2.5%;
+    padding-left: 2.375rem;
   }
 }
 .menu ul {
@@ -473,12 +485,15 @@ text boxes
 }
 @media only screen and (min-width: 40.063em) {
   .title-box {
-    padding-left: 2.5%;
+    padding-left: 2.375rem;
   }
 }
 
 .footer-box {
   background-color: #000;
+  height: 10rem;
+  clear: both;
+  margin-top: -10rem;
   margin-top: 0.9375rem;
 }
 .footer-box .row a {
@@ -629,15 +644,7 @@ IMAGES
   height: 100%;
 }
 
-.picture-content:hover {
-  background-blend-mode: normal;
-}
-
 .round-frame {
-  top: 15%;
-  left: 10%;
-  width: 80%;
-  height: 80%;
   border-radius: 50%;
 }
 
@@ -674,6 +681,9 @@ page - home
 /**************************************************************************************************
 page - mitglieder
 **************************************************************************************************/
+.mitglieder .mitglieder-overview {
+  padding-top: 0.9375rem;
+}
 .mitglieder .mitglieder-overview h3, .mitglieder .mitglieder-overview h4 {
   padding: 0;
   margin: 0;
@@ -693,10 +703,39 @@ page - mitglieder
 }
 .mitglieder .mitglieder-overview .grid-box {
   height: auto;
+  padding-right: 1.875rem;
+  padding-bottom: 0.9375rem;
 }
 .mitglieder .mitglieder-overview .picture-content {
   background-color: white;
   background-blend-mode: luminosity;
+}
+.mitglieder .mitglieder-overview .picture-content:hover {
+  background-blend-mode: normal;
+}
+.mitglieder .mitglieder-overview .aspect-wrapper {
+  margin-bottom: 0.46875rem;
+}
+.mitglieder .mitglieder-former-overview {
+  display: block;
+  overflow: hidden;
+  text-align: left;
+}
+.mitglieder .mitglieder-former-overview h2 {
+  margin-top: 2.8125rem;
+  color: #fff;
+}
+.mitglieder .mitglieder-former-overview li {
+  padding-bottom: 0.46875rem;
+}
+.mitglieder .mitglieder-former-overview a {
+  font-size: 14pt;
+  font-weight: 400;
+  display: inline;
+  color: #fff;
+}
+.mitglieder .mitglieder-former-overview a:hover {
+  color: #3766ff;
 }
 
 /**************************************************************************************************
@@ -768,6 +807,9 @@ page - projekte - subpages
 .workshops_default .footer-box,
 .projekte_default .footer-box {
   background-color: #333;
+  height: 10rem;
+  clear: both;
+  margin-top: -10rem;
 }
 .workshops_default .footer-box .row a,
 .projekte_default .footer-box .row a {
@@ -891,6 +933,17 @@ page - projekte - subpages
 .projekte_default .button:hover {
   background-color: #008cba;
 }
+.workshops_default .participants,
+.projekte_default .participants {
+  color: #555;
+  margin-left: 0;
+  padding-bottom: 2rem;
+}
+.workshops_default .participants li,
+.projekte_default .participants li {
+  padding-left: 0;
+  padding-bottom: 0.46875rem;
+}
 .workshops_default .participants h4,
 .projekte_default .participants h4 {
   font-family: "Dosis", sans-serif;
@@ -945,6 +998,9 @@ page - mitglieder - subpages
 }
 .mitglieder_default .footer-box {
   background-color: #333;
+  height: 10rem;
+  clear: both;
+  margin-top: -10rem;
 }
 .mitglieder_default .footer-box .row a {
   color: #008cba;
@@ -1008,9 +1064,14 @@ page - mitglieder - subpages
   width: 100%;
   height: 100%;
 }
+.mitglieder_default .row ul {
+  padding-left: 0;
+  margin-left: 0;
+}
 .mitglieder_default .row li {
   color: #333;
   font-size: 14pt;
+  padding-left: 0;
 }
 .mitglieder_default .interest-label {
   display: inline-block;
@@ -1075,6 +1136,7 @@ HEADER ANIMATION
   height: 100vh;
   position: absolute;
   top: 0px;
+  left: 0px;
   overflow: hidden;
   z-index: 0;
   width: 100%;
