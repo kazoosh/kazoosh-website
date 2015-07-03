@@ -317,7 +317,8 @@ rewrite foundation rules
 }
 @media only screen and (min-width: 40.063em) {
   .row {
-    width: 95%;
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
   }
 }
 
@@ -334,6 +335,7 @@ banner
   height: 13rem;
   background-size: cover;
   background-repeat: no-repeat;
+  padding-left: 0;
 }
 @media only screen and (min-width: 40.063em) {
   .banner {
@@ -385,7 +387,7 @@ navigation
 }
 @media only screen and (min-width: 40.063em) {
   .menu {
-    padding-left: 2.5%;
+    padding-left: 2.375rem;
   }
 }
 .menu ul {
@@ -473,7 +475,7 @@ text boxes
 }
 @media only screen and (min-width: 40.063em) {
   .title-box {
-    padding-left: 2.5%;
+    padding-left: 2.375rem;
   }
 }
 
@@ -629,15 +631,7 @@ IMAGES
   height: 100%;
 }
 
-.picture-content:hover {
-  background-blend-mode: normal;
-}
-
 .round-frame {
-  top: 15%;
-  left: 10%;
-  width: 80%;
-  height: 80%;
   border-radius: 50%;
 }
 
@@ -674,6 +668,13 @@ page - home
 /**************************************************************************************************
 page - mitglieder
 **************************************************************************************************/
+.mitglieder h2 {
+  margin-top: 2.8125rem;
+  color: #fff;
+}
+.mitglieder .mitglieder-overview {
+  padding-top: 0.9375rem;
+}
 .mitglieder .mitglieder-overview h3, .mitglieder .mitglieder-overview h4 {
   padding: 0;
   margin: 0;
@@ -693,10 +694,35 @@ page - mitglieder
 }
 .mitglieder .mitglieder-overview .grid-box {
   height: auto;
+  padding-right: 1.875rem;
+  padding-bottom: 0.9375rem;
 }
 .mitglieder .mitglieder-overview .picture-content {
   background-color: white;
   background-blend-mode: luminosity;
+}
+.mitglieder .mitglieder-overview .picture-content:hover {
+  background-blend-mode: normal;
+}
+.mitglieder .mitglieder-overview .aspect-wrapper {
+  margin-bottom: 0.46875rem;
+}
+.mitglieder .mitglieder-former-overview {
+  display: block;
+  overflow: hidden;
+  text-align: left;
+}
+.mitglieder .mitglieder-former-overview li {
+  padding-bottom: 0.46875rem;
+}
+.mitglieder .mitglieder-former-overview a {
+  font-size: 14pt;
+  font-weight: 400;
+  display: inline;
+  color: #fff;
+}
+.mitglieder .mitglieder-former-overview a:hover {
+  color: #3766ff;
 }
 
 /**************************************************************************************************
@@ -1075,6 +1101,7 @@ HEADER ANIMATION
   height: 100vh;
   position: absolute;
   top: 0px;
+  left: 0px;
   overflow: hidden;
   z-index: 0;
   width: 100%;

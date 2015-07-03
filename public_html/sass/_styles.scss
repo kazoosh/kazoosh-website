@@ -26,7 +26,11 @@ rewrite foundation rules
 	box-sizing: border-box;
 	max-width: none;
 	width: 100%;
-	@media #{$medium-up} {width: 95%;}
+	@media #{$medium-up} {
+		padding-left: $gutter*2;
+		padding-right: $gutter*2;
+		//width: 95%;
+	}
 
 }
 
@@ -44,6 +48,7 @@ banner
 	@include banner-heigth($banner-page-height-small,$banner-page-height-medium);
 	background-size: cover;
 	background-repeat: no-repeat;
+	padding-left: 0;
 
 	h2{
 		height: 5rem;
@@ -76,7 +81,7 @@ navigation
 	
 	padding: $gutter/2;
 	@media #{$medium-up} {
-		padding-left: 2.5%;
+		padding-left: $gutter*2 + 0.5rem;
 	}
 
 	background-color: rgba(0, 0, 0, 0.8);
@@ -170,7 +175,7 @@ text boxes
 		margin-top: $gutter;
 		padding: $gutter/2;
 		@media #{$medium-up} {
-			padding-left: 2.5%;
+			padding-left: $gutter * 2 + 0.5rem;
 		}
 
 		background-color: rgba(0, 0, 0, 0);
@@ -322,14 +327,15 @@ IMAGES
 	height: 100%;
 }
 .picture-content:hover{
-	background-blend-mode: normal;
+	//background-blend-mode: normal;
+
 }
 
 .round-frame{
-	top: 15%;
-	left: 10%;
-	width: 80%;
-	height: 80%;
+	//top: 15%;
+	//left: 10%;
+	//width: 80%;
+	//height: 80%;
 	border-radius: 50%;
 }
 
@@ -380,8 +386,14 @@ page - mitglieder
 **************************************************************************************************/
 
 .mitglieder{
+	h2{
+		margin-top: $gutter*3;
+		color: #fff;
+		}
 
 	.mitglieder-overview{
+		padding-top: $gutter;
+
 		h3,h4{
 			padding: 0;
 			margin: 0;
@@ -403,12 +415,41 @@ page - mitglieder
 		}
 		.grid-box{
 			height: auto;
+			padding-right: $gutter*2;
+			padding-bottom: $gutter;
 		}
 
 		.picture-content{
 			background-color: rgba(255, 255, 255, 1);
 			background-blend-mode: luminosity;
 		}
+		.picture-content:hover{
+			background-blend-mode: normal;
+		}
+		.aspect-wrapper{
+			margin-bottom: $gutter/2;
+		}
+	}
+
+	.mitglieder-former-overview{
+		display: block;
+		overflow: hidden;
+		text-align: left;
+		
+		li{
+			padding-bottom: $gutter/2;
+		}
+
+		a{
+			font-size: 14pt;
+			font-weight: 400;
+			display: inline;
+			color: #fff;
+		}
+		a:hover{
+			color: $footer-link-color-dark;
+		}
+		
 	}
 }
 

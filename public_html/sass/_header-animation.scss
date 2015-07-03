@@ -43,6 +43,7 @@ HEADER ANIMATION
 			@include banner-heigth($banner-home-height-small,$banner-home-height-large);
 			position: absolute;
 			top: 0px;
+			left: 0px;
 			overflow: hidden;
 			z-index: 0;
 			width: 100%;
