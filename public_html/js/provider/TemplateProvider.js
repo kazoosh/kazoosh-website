@@ -13,6 +13,9 @@ angular.module('provider', [])
 			//error template has least priority
 			templateUrls.push(CONF.templates_folder + CONF.DS + CONF.error_template + CONF.template_extension);
 
+			//decode URI, because angular is messing up URI somewhere, TODO@hannes: fix the real issue
+			$stateParams.path = decodeURIComponent($stateParams.path);
+
 			//receive template url from type given in url
 			if($stateParams.path && $stateParams.path != '404'){
 
