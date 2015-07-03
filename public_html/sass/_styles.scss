@@ -4,6 +4,7 @@ defaults
 **************************************************************************************************/
 
 body {
+	height: 100%;
 	font-family: $font-family-text;
 	font-size: 14pt;
 	font-weight: 300;
@@ -16,6 +17,14 @@ h2 {
 }
 h3 {
 	font-family: $font-family-text;
+}
+//divs for sticky footer
+#wrap-footer{
+	min-height: 100%;
+}
+#spacer{
+	height: 2rem;
+	margin-bottom: 2rem;
 }
 
 /**************************************************************************************************
@@ -564,6 +573,7 @@ page - projekte - subpages
 	.participants{
 		color: #555;
 		margin-left: 0;
+		padding-bottom: 2rem;
 		li{
 			padding-left: 0;
 			padding-bottom: $gutter/2;
