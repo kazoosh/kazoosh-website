@@ -386,10 +386,7 @@ page - mitglieder
 **************************************************************************************************/
 
 .mitglieder{
-	h2{
-		margin-top: $gutter*3;
-		color: #fff;
-		}
+	
 
 	.mitglieder-overview{
 		padding-top: $gutter;
@@ -435,6 +432,11 @@ page - mitglieder
 		display: block;
 		overflow: hidden;
 		text-align: left;
+		
+		h2{
+			margin-top: $gutter*3;
+			color: #fff;
+		}
 		
 		li{
 			padding-bottom: $gutter/2;
@@ -617,9 +619,14 @@ page - mitglieder - subpages
 			height: 100%;
 		}
 
+		ul{
+			padding-left: 0;
+			margin-left: 0;
+		}
 		li{
 			color: #333;
 			font-size: 14pt;
+			padding-left: 0;
 		}
 	}
 

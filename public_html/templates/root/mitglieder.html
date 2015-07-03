@@ -31,13 +31,11 @@
 </ul>
 
 <!-- inactive, former members -->
-<ul class="row">
+
+<ul class="row mitglieder-former-overview">
 	<li class="small-12 medium-12 large-12 columns end">
 		<h2>Ehemalige Köpfe</h2>
 	</li>
-</ul>
-
-<ul class="row mitglieder-former-overview">
 	<li ng-repeat="subpage in content.subpages | orderBy: 'firstname'" class="small-12 medium-6 large-4 columns end" ng-if="subpage.status != 'active'">
 		<a ui-sref="content({path: subpage.path})" >
 				{{subpage.firstname}} {{subpage.lastname}}
