@@ -560,7 +560,12 @@ page - projekte - subpages
 	}
 
 	.participants{
-
+		color: #555;
+		margin-left: 0;
+		li{
+			padding-left: 0;
+			padding-bottom: $gutter/2;
+		}
 		h4{
 			font-family: "Dosis", sans-serif;
 			font-size: 14pt;

@@ -917,6 +917,16 @@ page - projekte - subpages
 .projekte_default .button:hover {
   background-color: #008cba;
 }
+.workshops_default .participants,
+.projekte_default .participants {
+  color: #555;
+  margin-left: 0;
+}
+.workshops_default .participants li,
+.projekte_default .participants li {
+  padding-left: 0;
+  padding-bottom: 0.46875rem;
+}
 .workshops_default .participants h4,
 .projekte_default .participants h4 {
   font-family: "Dosis", sans-serif;
