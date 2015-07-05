@@ -63,7 +63,11 @@
 		<h6>Im Rahmen von</h6>
 		<p>
 		<a href="{{content.festival_link}}">{{content.festival}}</a> 
-		<div ng-if"content.festival_teaser"> - {{content.festival_teaser}}</div>
+		<span ng-if"content.festival_teaser"> - {{content.festival_teaser}}</span>
+		</p>
+		<h6 ng-if="content.partner">In Kooperation mit</h6>
+		<p>
+		<a href="{{content.partner_link}}">{{content.partner}}</a>
 		</p>
 		<p ng-if="content.material"> 
 			<a href="{{content.material}}">Workshop-Material</a>
