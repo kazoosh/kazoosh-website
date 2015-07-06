@@ -310,6 +310,7 @@ h3 {
 
 #wrap-footer {
   min-height: 100%;
+  padding-bottom: 10rem;
 }
 
 #spacer {
@@ -437,6 +438,12 @@ navigation
 }
 .menu .home a span {
   visibility: hidden;
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  top: 0rem;
 }
 
 /**************************************************************************************************
@@ -867,6 +874,12 @@ page - projekte - subpages
   .projekte_default .menu {
     top: 10rem;
   }
+}
+.workshops_default .sticky,
+.projekte_default .sticky {
+  position: fixed;
+  width: 100%;
+  top: 0rem;
 }
 .workshops_default .row p,
 .projekte_default .row p {
