@@ -7,8 +7,12 @@ HEADER ANIMATION
 		@include banner-heigth($banner-home-height-small,$banner-home-height-large);	
 	}
 	.menu{
-		//need to be fixed
-		@include menu-position($banner-home-height-small - 5vh,$banner-home-height-large - 5vh);
+		position: absolute;
+		top: auto; 
+		left: 0; 
+		right: 0;
+		bottom: 0; 
+		overflow: auto;
 	}
 	.sticky {
             position: fixed;

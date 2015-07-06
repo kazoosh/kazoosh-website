@@ -1115,12 +1115,12 @@ HEADER ANIMATION
   }
 }
 .home .menu {
-  top: 95vh;
-}
-@media only screen and (min-width: 40.063em) {
-  .home .menu {
-    top: 95vh;
-  }
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
 }
 .home .sticky {
   position: fixed;
