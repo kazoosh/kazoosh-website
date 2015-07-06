@@ -622,6 +622,9 @@ page - mitglieder - subpages
 	.menu{
 		@include menu-position($banner-subpage-height-small - 3,$banner-subpage-height-large - 3);
 	}
+	.sticky {
+            @include sticky-menu();
+    }
 
 	.row{
 		margin-top: $gutter;
