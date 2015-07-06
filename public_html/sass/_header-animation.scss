@@ -10,7 +10,11 @@ HEADER ANIMATION
 		//need to be fixed
 		@include menu-position($banner-home-height-small - 5vh,$banner-home-height-large - 5vh);
 	}
-
+	.sticky {
+            position: fixed;
+  			width: 100%;
+  			top: 0rem;
+        }
 	.title-box{
 		position: absolute;
 		bottom: 5rem;

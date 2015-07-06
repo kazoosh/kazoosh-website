@@ -1122,6 +1122,11 @@ HEADER ANIMATION
     top: 95vh;
   }
 }
+.home .sticky {
+  position: fixed;
+  width: 100%;
+  top: 0rem;
+}
 .home .title-box {
   position: absolute;
   bottom: 5rem;
