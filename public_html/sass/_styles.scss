@@ -138,9 +138,7 @@ navigation
 	}
 }
 .sticky {
-            position: fixed;
-  			width: 100%;
-  			top: 0rem;
+            @include sticky-menu();
         }
 
 /**************************************************************************************************
@@ -510,9 +508,7 @@ page - projekte - subpages
 		@include menu-position($banner-subpage-height-small - 3,$banner-subpage-height-large - 3);
 	}
 	.sticky {
-            position: fixed;
-  			width: 100%;
-  			top: 0rem;
+            @include sticky-menu();
         }
 	
 	.row{
