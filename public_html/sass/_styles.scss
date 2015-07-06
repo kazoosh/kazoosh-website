@@ -218,6 +218,10 @@ text boxes
 		font-size: 20pt; 
 		background-color: rgba(0,0,0,0);
 	}
+	#lnkMail {
+  		unicode-bidi: bidi-override;
+  		direction: rtl;
+	}
 }
 
 .grid-box,

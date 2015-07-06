@@ -544,6 +544,10 @@ text boxes
   font-size: 20pt;
   background-color: transparent;
 }
+.footer-box #lnkMail {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
 
 .grid-box,
 .grid-box-large {
