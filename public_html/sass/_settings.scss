@@ -122,6 +122,13 @@ MENU
 
 $menu-height: 3rem;
 
+@mixin sticky-menu(){
+	position: fixed;
+  	width: 100%;
+  	top: 0rem;
+  	font-weight: 400;
+}
+
 
 
 /**************************************************************************************************

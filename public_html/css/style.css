@@ -444,6 +444,7 @@ navigation
   position: fixed;
   width: 100%;
   top: 0rem;
+  font-weight: 400;
 }
 
 /**************************************************************************************************
@@ -880,6 +881,7 @@ page - projekte - subpages
   position: fixed;
   width: 100%;
   top: 0rem;
+  font-weight: 400;
 }
 .workshops_default .row p,
 .projekte_default .row p {
@@ -1126,6 +1128,7 @@ HEADER ANIMATION
   position: fixed;
   width: 100%;
   top: 0rem;
+  font-weight: 400;
 }
 .home .title-box {
   position: absolute;

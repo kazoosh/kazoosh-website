@@ -15,9 +15,7 @@ HEADER ANIMATION
 		overflow: auto;
 	}
 	.sticky {
-            position: fixed;
-  			width: 100%;
-  			top: 0rem;
+            @include sticky-menu();
         }
 	.title-box{
 		position: absolute;
