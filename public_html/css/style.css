@@ -1067,6 +1067,12 @@ page - mitglieder - subpages
     top: 10rem;
   }
 }
+.mitglieder_default .sticky {
+  position: fixed;
+  width: 100%;
+  top: 0rem;
+  font-weight: 400;
+}
 .mitglieder_default .row {
   margin-top: 0.9375rem;
 }
