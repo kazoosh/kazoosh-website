@@ -16,14 +16,14 @@
 </div>
 
 <div class="row">
-	<div ng-hide="!content.video" class="small-12 medium-12 large-6  columns end">
+	<div ng-if="content.video" class="small-12 medium-12 large-6  columns end">
 		<div class="aspect-wrapper ratio_16x9">
 			<div class="picture-content">
 				<iframe ng-src="{{content.video | trustAsResourceUrl}}" height="100%" width="100%"></iframe>
 			</div>
 		</div>
 	</div>
-	<div ng-hide="content.video" class="small-12 medium-12 large-6  columns end">
+	<div ng-if="!content.video" class="small-12 medium-12 large-6  columns end">
 		<a href="{{content.images[1]}}" class="swipebox">
 			<div class="aspect-wrapper ratio_16x9">
 				<div class="picture-content enable-hover" style="background-image: url('{{content.images[1]}}');"></div>
@@ -68,6 +68,9 @@
 		<h6 ng-if="content.partner">In Kooperation mit</h6>
 		<p>
 		<a href="{{content.partner_link}}">{{content.partner}}</a>
+		</p>
+		<p ng-if="content.material"> 
+			<a href="{{content.material}}">Projekt-Material</a>
 		</p>
 
 	</div>
