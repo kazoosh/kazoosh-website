@@ -59,10 +59,11 @@
 		<h5>{{content.title}}</h4>
 		<p>
 		{{content.location}} - {{content.date}}</p>
-		<h6>Im Rahmen von</h6>
-		<p>
-		<a href="{{content.festival_link}}">{{content.festival}}</a> 
-		<span ng-if"content.festival_teaser"> - {{content.festival_teaser}}</span>
+		<h6 ng-if="content.festival">Im Rahmen von</h6>
+		<p ng-if="content.festival_link">
+		<a ng-if="content.festival_link" href="{{content.festival_link}}">{{content.festival}}</a>
+		<p ng-if="!content.festival_link">{{content.festival}}
+		<span ng-if="content.festival_teaser"> - {{content.festival_teaser}}</span>
 		</p>
 		<h6 ng-if="content.partner">In Kooperation mit</h6>
 		<p>
