@@ -310,7 +310,7 @@ h3 {
 
 #wrap-footer {
   min-height: 100%;
-  padding-bottom: 10rem;
+  padding-bottom: 0rem;
 }
 
 #spacer {
@@ -777,6 +777,10 @@ page - projekte - subpages
 .projekte_default {
   background-color: #eee;
 }
+.workshops_default #wrap-footer,
+.projekte_default #wrap-footer {
+  padding-bottom: 12rem;
+}
 .workshops_default .teaser-box,
 .projekte_default .teaser-box {
   background-color: #eee;
@@ -982,6 +986,9 @@ page - mitglieder - subpages
 **************************************************************************************************/
 .mitglieder_default {
   background-color: #eee;
+}
+.mitglieder_default #wrap-footer {
+  padding-bottom: 12rem;
 }
 .mitglieder_default .teaser-box {
   background-color: #eee;

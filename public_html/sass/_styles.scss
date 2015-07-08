@@ -21,7 +21,7 @@ h3 {
 //divs for sticky footer
 #wrap-footer{
 	min-height: 100%;
-	padding-bottom: 10rem;
+	padding-bottom: 0rem;
 }
 #spacer{
 	height: 2rem;
@@ -498,7 +498,6 @@ page - projekte - subpages
 .workshops_default,
 .projekte_default{
 	@include subpage-template();
-
 	.banner{
 		@include banner-heigth($banner-subpage-height-small,$banner-subpage-height-large);
 		background-color: rgba(50, 50, 50, .7);
