@@ -773,27 +773,33 @@ page - kontakt
 /**************************************************************************************************
 page - projekte - subpages
 **************************************************************************************************/
+.news_default,
 .workshops_default,
 .projekte_default {
   background-color: #eee;
 }
+.news_default #wrap-footer,
 .workshops_default #wrap-footer,
 .projekte_default #wrap-footer {
   padding-bottom: 12rem;
 }
+.news_default .teaser-box,
 .workshops_default .teaser-box,
 .projekte_default .teaser-box {
   background-color: #eee;
 }
+.news_default .teaser-box p,
 .workshops_default .teaser-box p,
 .projekte_default .teaser-box p {
   font-size: 14pt;
   color: #555;
 }
+.news_default .title-box,
 .workshops_default .title-box,
 .projekte_default .title-box {
   font-weight: 800;
 }
+.news_default .title-box h2,
 .workshops_default .title-box h2,
 .projekte_default .title-box h2 {
   font-family: "Dosis", sans-serif;
@@ -804,22 +810,26 @@ page - projekte - subpages
   text-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.71);
 }
 @media only screen and (min-width: 40.063em) {
+  .news_default .title-box h2,
   .workshops_default .title-box h2,
   .projekte_default .title-box h2 {
     font-size: 44pt;
   }
 }
+.news_default .title-box h3,
 .workshops_default .title-box h3,
 .projekte_default .title-box h3 {
   font-size: 12pt;
   color: #eee;
 }
 @media only screen and (min-width: 40.063em) {
+  .news_default .title-box h3,
   .workshops_default .title-box h3,
   .projekte_default .title-box h3 {
     font-size: 14pt;
   }
 }
+.news_default .footer-box,
 .workshops_default .footer-box,
 .projekte_default .footer-box {
   background-color: #333;
@@ -827,37 +837,44 @@ page - projekte - subpages
   clear: both;
   margin-top: -10rem;
 }
+.news_default .footer-box .row a,
 .workshops_default .footer-box .row a,
 .projekte_default .footer-box .row a {
   color: #008cba;
   font-size: 10pt;
 }
 @media only screen and (min-width: 40.063em) {
+  .news_default .footer-box .row a,
   .workshops_default .footer-box .row a,
   .projekte_default .footer-box .row a {
     font-size: 12pt;
   }
 }
+.news_default .footer-box .row p,
 .workshops_default .footer-box .row p,
 .projekte_default .footer-box .row p {
   font-size: 12pt;
   color: #fff;
 }
+.news_default .footer-box .row h3,
 .workshops_default .footer-box .row h3,
 .projekte_default .footer-box .row h3 {
   text-align: left;
   font-size: 10pt;
 }
 @media only screen and (min-width: 40.063em) {
+  .news_default .footer-box .row h3,
   .workshops_default .footer-box .row h3,
   .projekte_default .footer-box .row h3 {
     font-size: 12pt;
   }
 }
+.news_default .footer-box .row .contact-icon,
 .workshops_default .footer-box .row .contact-icon,
 .projekte_default .footer-box .row .contact-icon {
   color: #008cba;
 }
+.news_default .banner,
 .workshops_default .banner,
 .projekte_default .banner {
   height: 10rem;
@@ -865,21 +882,25 @@ page - projekte - subpages
   background-blend-mode: overlay;
 }
 @media only screen and (min-width: 40.063em) {
+  .news_default .banner,
   .workshops_default .banner,
   .projekte_default .banner {
     height: 13rem;
   }
 }
+.news_default .menu,
 .workshops_default .menu,
 .projekte_default .menu {
   top: 7rem;
 }
 @media only screen and (min-width: 40.063em) {
+  .news_default .menu,
   .workshops_default .menu,
   .projekte_default .menu {
     top: 10rem;
   }
 }
+.news_default .sticky,
 .workshops_default .sticky,
 .projekte_default .sticky {
   position: fixed;
@@ -887,10 +908,12 @@ page - projekte - subpages
   top: 0rem;
   font-weight: 400;
 }
+.news_default .row p,
 .workshops_default .row p,
 .projekte_default .row p {
   color: #222;
 }
+.news_default .swipebox-container,
 .workshops_default .swipebox-container,
 .projekte_default .swipebox-container {
   width: 100%;
@@ -898,6 +921,7 @@ page - projekte - subpages
   background-size: cover;
   background-repeat: no-repeat;
 }
+.news_default h4,
 .workshops_default h4,
 .projekte_default h4 {
   font-family: "Dosis", sans-serif;
@@ -906,11 +930,13 @@ page - projekte - subpages
   margin-bottom: 2.8125rem;
   color: #333;
 }
+.news_default .info-box,
 .workshops_default .info-box,
 .projekte_default .info-box {
   border-radius: 0.2rem;
   border-color: #ccc;
 }
+.news_default .info-box h5,
 .workshops_default .info-box h5,
 .projekte_default .info-box h5 {
   font-family: "Dosis", sans-serif;
@@ -918,26 +944,31 @@ page - projekte - subpages
   font-size: 18pt;
   color: #008cba;
 }
+.news_default .info-box h6,
 .workshops_default .info-box h6,
 .projekte_default .info-box h6 {
   font-family: "Dosis", sans-serif;
   font-weight: 400;
   color: #555;
 }
+.news_default .info-box p,
 .workshops_default .info-box p,
 .projekte_default .info-box p {
   color: #333;
   font-weight: 400;
 }
+.news_default .info-box ul,
 .workshops_default .info-box ul,
 .projekte_default .info-box ul {
   margin: 0;
   color: #333;
 }
+.news_default .info-box ul li,
 .workshops_default .info-box ul li,
 .projekte_default .info-box ul li {
   color: #333;
 }
+.news_default .button,
 .workshops_default .button,
 .projekte_default .button {
   font-family: "Dosis", sans-serif;
@@ -952,21 +983,25 @@ page - projekte - subpages
   background-color: #666;
   color: #fff;
 }
+.news_default .button:hover,
 .workshops_default .button:hover,
 .projekte_default .button:hover {
   background-color: #008cba;
 }
+.news_default .participants,
 .workshops_default .participants,
 .projekte_default .participants {
   color: #555;
   margin-left: 0;
   padding-bottom: 2rem;
 }
+.news_default .participants li,
 .workshops_default .participants li,
 .projekte_default .participants li {
   padding-left: 0;
   padding-bottom: 0.46875rem;
 }
+.news_default .participants h4,
 .workshops_default .participants h4,
 .projekte_default .participants h4 {
   font-family: "Dosis", sans-serif;
@@ -974,6 +1009,7 @@ page - projekte - subpages
   text-align: center;
   margin: 0rem;
 }
+.news_default .participants h5,
 .workshops_default .participants h5,
 .projekte_default .participants h5 {
   font-family: "Dosis", sans-serif;
@@ -981,6 +1017,9 @@ page - projekte - subpages
   text-align: center;
 }
 
+/**************************************************************************************************
+page - news - subpages
+**************************************************************************************************/
 /**************************************************************************************************
 page - mitglieder - subpages
 **************************************************************************************************/
