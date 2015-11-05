@@ -219,7 +219,7 @@ Templates are located in "public_html/templates" and are choosen using the follo
 * create config: deploys.json
 
 		{
-		    "port": 8080,
+		    "port": 8888,
 		    "username": "supercooluser",
 		    "password": "...",
 		    "deploys": [
