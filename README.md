@@ -288,3 +288,4 @@ Templates are located in "public_html/templates" and are choosen using the follo
 	git checkout release
 	git merge master
 	git push
+	
