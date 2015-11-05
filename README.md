@@ -226,7 +226,7 @@ Templates are located in "public_html/templates" and are choosen using the follo
 		    {
 		        "name": "Git Webhook stop kazoosh-website-content service",
 		        "type": "github",
-		        "repo": "https://github.com/kazoosh/kazoosh-website.git",
+		        "repo": "https://github.com/kazooshwebsite/kazoosh-website.git",
 		        "basepath": "/var/www/kazoosh.com",
 		        "command": "sudo service kazoosh-website-content stop",
 		        "branch": "release"
@@ -234,7 +234,7 @@ Templates are located in "public_html/templates" and are choosen using the follo
 		    {
 		        "name": "Git Webhook pull",
 		        "type": "github",
-		        "repo": "https://github.com/kazoosh/kazoosh-website.git",
+		        "repo": "https://github.com/kazooshwebsite/kazoosh-website.git",
 		        "basepath": "/var/www/kazoosh.com",
 		        "command": "sudo -u hannes git pull",
 		        "branch": "release"
@@ -242,7 +242,7 @@ Templates are located in "public_html/templates" and are choosen using the follo
 		    {
 		        "name": "Git Webhook npm",
 		        "type": "github",
-		        "repo": "https://github.com/kazoosh/kazoosh-website.git",
+		        "repo": "https://github.com/kazooshwebsite/kazoosh-website.git",
 		        "basepath": "/var/www/kazoosh.com",
 		        "command": "sudo npm install",
 		        "branch": "release"
@@ -250,7 +250,7 @@ Templates are located in "public_html/templates" and are choosen using the follo
 		    {
 		        "name": "Git Webhook bower",
 		        "type": "github",
-		        "repo": "https://github.com/kazoosh/kazoosh-website.git",
+		        "repo": "https://github.com/kazooshwebsite/kazoosh-website.git",
 		        "basepath": "/var/www/kazoosh.com",
 		        "command": "sudo -u hannes bower install",
 		        "branch": "release"
@@ -258,7 +258,7 @@ Templates are located in "public_html/templates" and are choosen using the follo
 		    {
 		        "name": "Git Webhook start kazoosh-website-content service",
 		        "type": "github",
-		        "repo": "https://github.com/kazoosh/kazoosh-website.git",
+		        "repo": "https://github.com/kazooshwebsite/kazoosh-website.git",
 		        "basepath": "/var/www/kazoosh.com",
 		        "command": "sudo service kazoosh-website-content start",
 		        "branch": "release"
