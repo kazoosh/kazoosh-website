@@ -1,3 +1,10 @@
+#i18n
+* modify MdToJsonConverter to merge multiple langugaes into json
+* beautify URL (url encoding)
+* add language to url (detect from brwoser language or url)
+* add i18n lib to templates (there is some german in there); see https://angular-translate.github.io/docs/#/guide
+
+
 # content conversion
 * time.localtime(os.stat(filePath).st_birthtime does not work on server
 
