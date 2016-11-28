@@ -1,15 +1,20 @@
 # GET READY!
-
+================================================================
 ## python-frontmatter
 
 * https://www.python.org/downloads/
 
 ### python packetmanager: pip
 	
-	sudo easy_install pip 
+```
+$ sudo easy_install pip
+```
 
 ### modul: frontmatter:
-	pip install python-frontmatter
+
+```
+$ pip install python-frontmatter
+```
 
 * or htps://pypi.python.org/pypi/python-frontmatter/0.1.1
 
@@ -17,14 +22,12 @@
 ## watchdog
 
 * http://pythonhosted.org//watchdog/
-
-### python packetmanager: pip
-	
-	sudo easy_install pip 
 	
 ### modul: watchdog:
 
-	sudo pip install watchdog
+```
+$ sudo pip install watchdog
+```
 
 
 ## bower & grunt
@@ -35,11 +38,15 @@
 
 ### bower:
 	
-	sudo npm install -g bower
+```
+$ sudo npm install -g bower
+```
 
 ### grunt
-	
-	sudo npm install -g grunt-cli
+
+```
+$ sudo npm install -g grunt-cli
+```
 
 ## Sass
 Needed, if you want to modify and compile sass files
@@ -48,26 +55,44 @@ Needed, if you want to modify and compile sass files
 
 * https://www.ruby-lang.org/de/downloads/
 
+```
+$ brew install ruby
+```
+
+
 ### ruby packetmanager: rubygems
 
 * https://rubygems.org/pages/download
+* update:
+
+```
+$ gem update --system
+```
 
 ### Sass
 
-	sudo gem install sass
-
+```
+$ sudo gem install sass
+```
 
 # GET STEADY!
+================================================================
 
 ## node package dependencies
 
-	npm install
+```
+$ npm install
+```
+
 	
 ## javascript dependencies
 
-	bower install
+```
+$ bower install
+```
 
-# CONFIGURE..
+# CONFIGURE
+================================================================
 
 ## "backend"
 * see config.json
@@ -77,15 +102,20 @@ Needed, if you want to modify and compile sass files
 
 * see public_html/js/config.js
 
-# RUN!
+# RUN
+================================================================
 
-## watch for all chnages (content, image and sass)
+## watch for all changes (content, image and sass)
 
-	grunt observe
+```
+$ grunt observe
+```
 
 ## watch for content and image changes only
 
-	grunt observe-contents
+```
+$ grunt observe-contents
+```
 	
 Can be used if sass is not need or installed.
 
@@ -93,10 +123,13 @@ Can be used if sass is not need or installed.
 
 * for example using python:
 	
-		cd public_html/
-		python -m SimpleHTTPServer (or any other webserver)
+```
+$ cd public_html/
+$ python -m SimpleHTTPServer
+```
 
 # CHANGE CONTENT
+================================================================
 
 Contents are taken from "contentSourceDirectory" defined in config, converted from markdown to json format and copied to "contentDestinationDirectory". For files having a matching folder (with the same name in the same parent folder) the folder contents are listed in the subpages attribute.
 
@@ -149,6 +182,7 @@ Markdown files consit of two parts:
 
 
 # CHANGE TEMPLATES
+================================================================
 
 Templates are located in "public_html/templates" and are choosen using the following fallback mechanism:
 
@@ -158,6 +192,7 @@ Templates are located in "public_html/templates" and are choosen using the follo
 
 
 # SERVER SETUP
+================================================================
 
 ## setup service to watch for content changes
 
