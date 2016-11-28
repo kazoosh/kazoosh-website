@@ -9,7 +9,7 @@
 
 	<ul class="row">
 		<li ng-repeat="subpage in content.subpages | orderBy: '-date'" class="small-12 medium-6 large-4 columns end">
-			<a ui-sref="content({path: subpage.path})" class="grid-box enable-hover" style="background-image: url('{{subpage.images[0]}}');">
+			<a ui-sref="app.content({path: subpage.path})" class="grid-box enable-hover" style="background-image: url('{{subpage.images[0]}}');">
 				<div class="caption">
 					<h3>{{subpage.title}}</h3>
 					<h4>{{subpage.date}}</h4>

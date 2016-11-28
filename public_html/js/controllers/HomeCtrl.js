@@ -1,4 +1,4 @@
-kazoosh.controller('HomeCtrl', ['CONF', '$scope', '$state', 'ContentService', '$q', function(CONF, $scope, $state, ContentService, $q) {
+kazoosh.controller('HomeCtrl', ['CONF', '$scope', '$state', '$stateParams', 'ContentService', '$q', function(CONF, $scope, $state, $stateParams, ContentService, $q) {
 
 	ContentService.getContent('root/home').then(
 
@@ -24,7 +24,7 @@ kazoosh.controller('HomeCtrl', ['CONF', '$scope', '$state', 'ContentService', '$
 				);
 		},
 		function(){
-			$state.go('404');
+			$state.go('app.error');
 		}
 	);
 

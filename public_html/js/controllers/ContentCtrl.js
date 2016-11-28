@@ -5,7 +5,7 @@ kazoosh.controller('ContentCtrl', ['CONF', '$scope', '$state', 'ContentService',
 			$scope.content = content;
 		},
 		function(){
-			$state.go('404');
+			$state.go('app.error');
 		}
 	);
 
