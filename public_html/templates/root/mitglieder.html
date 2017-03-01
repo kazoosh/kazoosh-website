@@ -17,7 +17,7 @@
 <!-- active members -->
 <ul class="row mitglieder-overview">
 	<li ng-repeat="subpage in content.subpages | orderBy: 'firstname'" class="small-6 medium-3 large-2 columns end" ng-if="subpage.status == 'active'">
-		<a ui-sref="app.content({path: subpage.path})" class="grid-box" >
+		<a ui-sref="content({path: subpage.path})" class="grid-box" >
 			<div class="aspect-wrapper">
 				<div class="picture-content round-frame" style="background-image: url('{{subpage.images[0]}}');">
 				</div>
@@ -37,7 +37,7 @@
 		<h2>Ehemalige Köpfe</h2>
 	</li>
 	<li ng-repeat="subpage in content.subpages | orderBy: 'firstname'" class="small-12 medium-6 large-4 columns end" ng-if="subpage.status != 'active'">
-		<a ui-sref="app.content({path: subpage.path})" >
+		<a ui-sref="content({path: subpage.path})" >
 				{{subpage.firstname}} {{subpage.lastname}}
 				<span ng-if="subpage.profession"> . {{subpage.profession}}</span>
 

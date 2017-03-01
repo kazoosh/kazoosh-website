@@ -39,9 +39,9 @@
 	<div id="wrap-footer">
 		<nav class="menu" ng-controller="NavigationCtrl">
 			<ul>
-				<li class="home"><a ui-sref="app.home"><span>home</span></a></li>
+				<li class="home"><a ui-sref="home"><span>home</span></a></li>
 				<li ng-repeat="content in contents" class="{{content.id}}">
-					<a ui-sref="app.content({path: '{{content.path}}'})"><span>{{content.title}}</span></a>
+					<a ui-sref="content({path: '{{content.path}}'})"><span>{{content.title}}</span></a>
 				</li>
 			</ul>
 		</nav>
