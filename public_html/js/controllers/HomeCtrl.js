@@ -24,7 +24,7 @@ kazoosh.controller('HomeCtrl', ['CONF', '$scope', '$state', '$stateParams', 'Con
 				);
 		},
 		function(){
-			$state.go('app.error');
+			$state.go('error');
 		}
 	);
 

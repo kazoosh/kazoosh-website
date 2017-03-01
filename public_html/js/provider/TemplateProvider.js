@@ -17,7 +17,7 @@ angular.module('provider', [])
 			$stateParams.path = decodeURIComponent($stateParams.path);
 
 			//receive template url from type given in url
-			if($stateParams.path && $stateParams.path != 'app.error'){
+			if($stateParams.path && $stateParams.path != 'error'){
 
 				//look for default templates in folder hierarchy
 				var pathArray = $stateParams.path.split(CONF.DS);

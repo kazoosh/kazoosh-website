@@ -31,7 +31,7 @@ kazoosh.controller('ParticipantsCtrl', ['CONF', '$scope', '$state', 'ContentServ
 					);
 			},
 			function(){
-				$state.go('app.error');
+				$state.go('error');
 			}
 		);
 	}
