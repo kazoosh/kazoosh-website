@@ -2,29 +2,36 @@ var kazoosh = angular.module('kazoosh', ['config', 'provider', 'filters', 'ui.ro
 
 kazoosh.config(function(CONF, $stateProvider, $urlRouterProvider, templateProvider) {
 
-	$urlRouterProvider.otherwise('/de/home');
+	//TODO: detect from urlRouterProvider
 
 	$stateProvider
 		.state('app', {
-			abstract: true,
 			url: '/{lang:(?:de|en)}',
+			abstract: true,
 			template: '<div ui-view=""></div>',
-			params: {lang : { value: 'de' }}
-		})
-		.state('app.home', {
+			params: {lang : { squash : true, value: 'de' }}
+		});
+
+	$stateProvider
+		.state('home', {
+			parent: 'app',
 			url: '/home',
 			templateUrl: 'templates/root/home.html',
 			controller: 'HomeCtrl'
 		})
-		.state('app.content', {
+		.state('content', {
+			parent: 'app',
 			url: '/{path:.*}',
 			templateProvider: function ($stateParams, $templateCache, $http, ContentService, $q) {
 				return templateProvider.getContentTemplate($stateParams, $templateCache, $http, ContentService, $q);
 			},
 			controller: 'ContentCtrl'
 		})
-		.state('app.error', {
+		.state('error', {
+			parent: 'app',
 			url: '/404',
 			templateUrl: 'templates/404.html'
 		});
+
+	$urlRouterProvider.otherwise('/home');
 });
