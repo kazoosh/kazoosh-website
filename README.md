@@ -1,14 +1,14 @@
 # GET READY!
 ================================================================
-## python-frontmatter
-
-* https://www.python.org/downloads/
-
-### python packetmanager: pip
+## python packetmanager: pip
 	
 ```
 $ sudo easy_install pip
 ```
+
+## python-frontmatter
+
+* https://www.python.org/downloads/
 
 ### modul: frontmatter:
 
