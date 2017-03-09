@@ -1,7 +1,6 @@
 #i18n
 * detect language from browser language or url
 * load default jsons with de (add fix for home) and en jsons with en
-* add i18n lib to templates (there is some german in there); see https://angular-translate.github.io/docs/#/guide
 * fix url encoding
 
 
