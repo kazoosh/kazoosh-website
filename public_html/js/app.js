@@ -32,11 +32,19 @@ kazoosh.config(function(CONF, $stateProvider, $urlRouterProvider, templateProvid
 		});
 	$urlRouterProvider.otherwise('/home');
 
-	$translateProvider.useStaticFilesLoader({
-		prefix: '/locales/',
-		suffix: '.json'
-	});
-	$translateProvider.preferredLanguage('de').fallbackLanguage('de');
+	$translateProvider
+		.useStaticFilesLoader({
+			prefix: '/locales/',
+			suffix: '.json'
+		})
+		.registerAvailableLanguageKeys(['en', 'de'], {
+			'en_US': 'en',
+			'en_UK': 'en',
+			'de_DE': 'de',
+			'de_CH': 'de'
+		})
+		.determinePreferredLanguage()
+		.fallbackLanguage('de');
 	// 'sanitize' would render UTF8 chars wrong!
 	// 'escape' would not show HTML-tags which are inside our translations!
 	// @see https://github.com/angular-translate/angular-translate/issues/1101

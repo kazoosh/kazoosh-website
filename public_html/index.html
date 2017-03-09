@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	
+
 	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -28,15 +28,18 @@
 	<link rel="stylesheet" href="lib/foundation/css/normalize.css" />
 	<link rel="stylesheet" href="lib/foundation/css/foundation.css" />
 
-    <script src="lib/modernizr/modernizr.js"></script>
+	<script src="lib/modernizr/modernizr.js"></script>
 
 	<link rel="stylesheet" href="lib/slick-carousel/slick/slick.css"/>
 
 	<link rel="stylesheet" href="css/style.css"/>
 
 </head>
+
 <body ng-app="kazoosh" ng-controller="PageClassCtrl" class="{{pageClasses}}">
+
 	<div id="wrap-footer">
+
 		<nav class="menu" ng-controller="NavigationCtrl">
 			<ul>
 				<li class="home"><a ui-sref="home"><span>home</span></a></li>
@@ -44,34 +47,41 @@
 					<a ui-sref="content({path: '{{content.path}}'})"><span>{{content.title}}</span></a>
 				</li>
 			</ul>
+
+			<ul class="lang-chooser" ng-controller="AppCtrl">
+				<li class="de"><a href="" ng-click="changeLang('de')">{{ 'BUTTON_LANG_DE' | translate }}</a></li>
+				<li class="en"><a href="" ng-click="changeLang('en')">{{ 'BUTTON_LANG_EN' | translate }}</a></li>
+			</ul>
 		</nav>
 
-
-
 		<div ui-view></div>
+
 	</div>
+
 	<div class="footer-box">
+
 		<ul class="row">
-		<li class="small-12 medium-12 large-12 columns">
-			<h2>{{ 'CONTACT' | translate }}</h2>
-		</li>
-		<li class="small-4 medium-4 large-4 columns">
-					<h3>{{ 'WRITE' | translate }}</h3>
-					<a href="mailto:mail@example.spam" id="lnkMail">moc.hsoozak@liam</a>
-		</li>
-		<li class="small-4 medium-4 large-4 columns">
-					<h3>{{ 'VISIT' | translate }}</h3>
-					<a href="#/root%252Fkontakt#map">
-						Emerich-Ambros-Ufer 42<br>
-						01159 Dresden
-					</a>
-		</li>
-		<li class="small-4 medium-4 large-4 columns">
-					<h3>{{ 'LINKS' | translate }}</h3>
-					<a href="https://vimeo.com/kazoosh"><span class="contact-icon">&#xf1e5;</span></a>
-					<a href="https://github.com/kazoosh"><span class="contact-icon">&#xf1c9;</span></a>
-		</li>
-	</ul>		
+			<li class="small-12 medium-12 large-12 columns">
+				<h2>{{ 'CONTACT' | translate }}</h2>
+			</li>
+			<li class="small-4 medium-4 large-4 columns">
+						<h3>{{ 'WRITE' | translate }}</h3>
+						<a href="mailto:mail@example.spam" id="lnkMail">moc.hsoozak@liam</a>
+			</li>
+			<li class="small-4 medium-4 large-4 columns">
+						<h3>{{ 'VISIT' | translate }}</h3>
+						<a href="#/root%252Fkontakt#map">
+							Emerich-Ambros-Ufer 42<br>
+							01159 Dresden
+						</a>
+			</li>
+			<li class="small-4 medium-4 large-4 columns">
+						<h3>{{ 'LINKS' | translate }}</h3>
+						<a href="https://vimeo.com/kazoosh"><span class="contact-icon">&#xf1e5;</span></a>
+						<a href="https://github.com/kazoosh"><span class="contact-icon">&#xf1c9;</span></a>
+			</li>
+		</ul>
+
 	</div>
 
 	<script src="lib/jquery/dist/jquery.js"></script>
@@ -89,8 +99,6 @@
 	<script src="lib/slick-carousel/slick/slick.min.js"></script>
 	<script src="lib/angular-slick/dist/slick.min.js"></script>
 
-	
-	
 	<script src="js/app.js"></script>
 
 	<script src="js/provider/TemplateProvider.js"></script>
@@ -98,12 +106,12 @@
 	<script src="js/services/ContentService.js"></script>
 
 	<script src="js/controllers/PageClassCtrl.js"></script>
-	
+
 	<script src="js/controllers/AppCtrl.js"></script>
 	<script src="js/controllers/NavigationCtrl.js"></script>
 	<script src="js/controllers/HomeCtrl.js"></script>
 	<script src="js/controllers/ContentCtrl.js"></script>
-	
+
 	<script src="js/controllers/ProjectsCtrl.js"></script>
 	<script src="js/controllers/ParticipantsCtrl.js"></script>
 
@@ -112,7 +120,6 @@
 
 	<script src="js/non-angular/mail-protection.js"></script>
 	<script src="js/non-angular/sticky-header.js"></script>
-	
-	
+
 </body>
 </html>

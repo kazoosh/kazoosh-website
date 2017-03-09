@@ -2,5 +2,7 @@
     "CONTACT": "Contact",
     "WRITE": "Write us",
     "VISIT": "Visit us",
-    "LINKS": "Other places"
+    "LINKS": "Other places",
+    "BUTTON_LANG_DE": "german",
+    "BUTTON_LANG_EN": "english"
 }

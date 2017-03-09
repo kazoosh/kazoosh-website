@@ -439,6 +439,9 @@ navigation
 .menu .home a span {
   visibility: hidden;
 }
+.menu .lang-chooser {
+  float: right;
+}
 
 .sticky {
   position: fixed;

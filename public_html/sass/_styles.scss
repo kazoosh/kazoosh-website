@@ -136,6 +136,9 @@ navigation
 			}
 		}
 	}
+	.lang-chooser{
+		float: right;
+	}
 }
 .sticky {
             @include sticky-menu();
