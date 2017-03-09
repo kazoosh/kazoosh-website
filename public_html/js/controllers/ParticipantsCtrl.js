@@ -9,7 +9,7 @@ kazoosh.controller('ParticipantsCtrl', ['CONF', '$scope', '$state', 'ContentServ
 
 				var requests = [];
 				content.subpages.forEach(function(subpage, i){
-					requests.push(ContentService.getContent(subpage.path, function(){}));
+					requests.push(ContentService.getContent(subpage.path));
 				});
 
 				$q.all(requests)

@@ -9,7 +9,7 @@ kazoosh.controller('HomeCtrl', ['CONF', '$scope', '$state', '$stateParams', 'Con
 			//get featured items
 			var requests = [];
 			content.featured.forEach(function(path, i){
-				requests.push(ContentService.getContent(path, function(){}));
+				requests.push(ContentService.getContent(path));
 			});
 
 			

@@ -5,7 +5,7 @@ kazoosh.controller('ProjectsCtrl', ['CONF', '$scope', '$state', 'ContentService'
 
 		var requests = [];
 		content.projects.forEach(function(path, i){
-			requests.push(ContentService.getContent(path, function(){}));
+			requests.push(ContentService.getContent(path));
 		});
 
 		

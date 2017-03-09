@@ -1,5 +1,5 @@
 angular.module('kazoosh')
-	.factory('ContentService', ['CONF', '$http', '$q', '_', function(CONF, $http, $q, _) {
+	.factory('ContentService', ['CONF', '$http', '$q', '_', '$state', function(CONF, $http, $q, _, $state) {
 		return{
 			getContent: function(path){
 
@@ -7,10 +7,12 @@ angular.module('kazoosh')
 				var deferred = $q.defer();
 
 				var pathArray = path.split(CONF.DS);
-				var id = pathArray[pathArray.length-1]
-				var type = pathArray[pathArray.length-2]
+				var id = pathArray[pathArray.length-1];
+				var type = pathArray[pathArray.length-2];
 
-				$http.get(CONF.site_url + CONF.content_folder + path + '.json')
+				var lang = that._getLang();
+
+				$http.get(CONF.site_url + CONF.content_folder + path + lang + '.json')
 					.success(function(content){
 
 						content = that._extendAttributes(content, {path: path, type: type, id: id});
@@ -19,7 +21,7 @@ angular.module('kazoosh')
 						var requests = [];
 						if(content[CONF.subpages_attribute]){
 							content[CONF.subpages_attribute].forEach(function(path, i){
-								requests.push(that.getContent(path, function(){}));
+								requests.push(that.getContent(path));
 							});
 						}
 						
@@ -67,6 +69,11 @@ angular.module('kazoosh')
 				}
 
 				return content;
+			},
+
+			_getLang: function(){
+				var lang = $state.params.lang;
+				return (lang == undefined || lang == 'de') ? '' : '_' + lang;
 			}
 		};
 	}]);
