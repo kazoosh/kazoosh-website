@@ -1,5 +1,4 @@
 #i18n
-* fix url encoding
 
 
 BOWER vs. NPM

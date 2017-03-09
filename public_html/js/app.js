@@ -1,13 +1,28 @@
 var kazoosh = angular.module('kazoosh', ['config', 'provider', 'filters', 'ui.router', 'ngSanitize', 'underscore', 'slick', 'pascalprecht.translate']);
 
-kazoosh.config(function(CONF, $stateProvider, $urlRouterProvider, templateProvider, $translateProvider) {
+kazoosh.config(function(CONF, $stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, templateProvider, $translateProvider) {
+
+	$urlMatcherFactoryProvider.type('urlPath', {
+			encode: function(item) {
+				return decodeURIComponent(item);
+			},
+			decode: function(item) {
+				return encodeURIComponent(item);
+			},
+			is: function(item) {
+				//match path with letters, numbers, hyphen and underscore
+				return item.match(/^(?!\/)[a-zA-Z,0-9,_,-,\/]*/g);
+			}
+		});
 
 	$stateProvider
 		.state('app', {
 			url: '/{lang:(?:de|en)}',
 			abstract: true,
 			template: '<div ui-view=""></div>',
-			params: {lang : { squash : true, value: 'de' }},
+			params: {
+				lang : {squash: true, value: 'de'}
+			},
 			controller: 'AppCtrl'
 		});
 	$stateProvider
@@ -19,7 +34,7 @@ kazoosh.config(function(CONF, $stateProvider, $urlRouterProvider, templateProvid
 		})
 		.state('content', {
 			parent: 'app',
-			url: '/{path:.*}',
+			url: '/{path:urlPath}',
 			templateProvider: function ($stateParams, $templateCache, $http, ContentService, $q) {
 				return templateProvider.getContentTemplate($stateParams, $templateCache, $http, ContentService, $q);
 			},
@@ -30,6 +45,7 @@ kazoosh.config(function(CONF, $stateProvider, $urlRouterProvider, templateProvid
 			url: '/404',
 			templateUrl: 'templates/404.html'
 		});
+
 	$urlRouterProvider.otherwise('/home');
 
 	$translateProvider
