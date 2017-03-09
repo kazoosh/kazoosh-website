@@ -1,9 +1,14 @@
 #i18n
-* modify MdToJsonConverter to merge multiple langugaes into json
-* beautify URL (url encoding)
-* add language to url (detect from brwoser language or url)
+* keep old urls active
+	* http://stackoverflow.com/questions/31459394/angular-js-route-ui-add-default-parmeter
+	* http://stackoverflow.com/questions/32740578/angularjs-optional-language-param-into-url
+* detect language from browser language or url
+* load default jsons with de (add fix for home) and en jsons with en
 * add i18n lib to templates (there is some german in there); see https://angular-translate.github.io/docs/#/guide
+* fix url encoding
 
+
+BOWER vs. NPM
 
 # content conversion
 * time.localtime(os.stat(filePath).st_birthtime does not work on server
