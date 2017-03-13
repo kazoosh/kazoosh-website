@@ -1,7 +1,23 @@
 #i18n
 
+* make convert script also convert english files and only add english subpages
 
 BOWER vs. NPM
+
+
+# BUG
+* bei Umlauten und Sonderzeichen im Dateiname in:
+	def __isFile(self, sourceDir, fileName):
+		return os.path.isfile(os.path.join(sourceDir, fileName)) and not fileName.startswith('.')
+
+
+# CODE
+* use jshint
+* use minified libs
+* rename lib folder to bower_components
+* minify & ubscrue own js + css
+* (introduce build process)
+
 
 # content conversion
 * time.localtime(os.stat(filePath).st_birthtime does not work on server
@@ -26,8 +42,3 @@ BOWER vs. NPM
 
 * Metaangaben in root.md
 
-# BUG
-
-* bei Umlauten und Sonderzeichen im Dateiname in:
-	def __isFile(self, sourceDir, fileName):
-		return os.path.isfile(os.path.join(sourceDir, fileName)) and not fileName.startswith('.')
