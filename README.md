@@ -136,6 +136,9 @@ Contents are taken from "contentSourceDirectory" defined in config, converted fr
 ## content repository
 The content repository for kazoosh website is located here: git@github.com:barnholdy/kazoosh-website-content.git. Check it out and set "contentSourceDirectory" and "imagesSourceDirectory" in config.js.
 
+## file name
+The file name must not end with "_en". This ending is reserved for english translations. Default language is german.
+There might be an issue with parent pages names containing '_en' in their name.
 
 ## markdown file structure
 
