@@ -1,14 +1,18 @@
 #i18n
 
 * make convert script also convert english files and only add english subpages
+* naviagtion controller does not update when languages are changed
+* translate all templates
+
 
 BOWER vs. NPM
 
 
-# BUG
+# BUGS
 * bei Umlauten und Sonderzeichen im Dateiname in:
 	def __isFile(self, sourceDir, fileName):
 		return os.path.isfile(os.path.join(sourceDir, fileName)) and not fileName.startswith('.')
+* why are missing templates load twice?
 
 
 # CODE
