@@ -18,7 +18,7 @@ kazoosh.controller('HomeCtrl', ['CONF', '$scope', '$state', '$stateParams', 'Con
 					function(data){
 						$scope.featured = data;
 					},
-					function(data){
+					function(error){
 						console.error('FAIL');
 					}
 				);
