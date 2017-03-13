@@ -1,6 +1,5 @@
 #i18n
 
-* make convert script also convert english files and only add english subpages
 * naviagtion controller does not update when languages are changed
 * translate all templates
 
