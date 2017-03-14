@@ -1,11 +1,5 @@
 #i18n
-
-* naviagtion controller does not update when languages are changed
 * translate all templates
-
-
-BOWER vs. NPM
-
 
 # BUGS
 * bei Umlauten und Sonderzeichen im Dateiname in:
@@ -13,14 +7,13 @@ BOWER vs. NPM
 		return os.path.isfile(os.path.join(sourceDir, fileName)) and not fileName.startswith('.')
 * why are missing templates load twice?
 
-
 # CODE
 * use jshint
 * use minified libs
 * rename lib folder to bower_components
 * minify & ubscrue own js + css
 * (introduce build process)
-
+* BOWER vs. NPM
 
 # content conversion
 * time.localtime(os.stat(filePath).st_birthtime does not work on server
@@ -44,4 +37,3 @@ BOWER vs. NPM
 * mobiles Menü?
 
 * Metaangaben in root.md
-

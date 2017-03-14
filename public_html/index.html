@@ -48,7 +48,7 @@
 				</li>
 			</ul>
 
-			<ul class="lang-chooser" ng-controller="AppCtrl">
+			<ul class="lang-chooser">
 				<li class="de"><a href="" ng-click="changeLang('de')">{{ 'BUTTON_LANG_DE' | translate }}</a></li>
 				<li class="en"><a href="" ng-click="changeLang('en')">{{ 'BUTTON_LANG_EN' | translate }}</a></li>
 			</ul>
@@ -103,6 +103,7 @@
 
 	<script src="js/provider/TemplateProvider.js"></script>
 
+	<script src="js/services/LanguageService.js"></script>
 	<script src="js/services/ContentService.js"></script>
 
 	<script src="js/controllers/PageClassCtrl.js"></script>

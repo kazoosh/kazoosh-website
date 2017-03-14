@@ -1,31 +1,48 @@
-kazoosh.controller('HomeCtrl', ['CONF', '$scope', '$state', '$stateParams', 'ContentService', '$q', function(CONF, $scope, $state, $stateParams, ContentService, $q) {
+kazoosh.controller('HomeCtrl', [
+	'CONF',
+	'$scope',
+	'$state',
+	'$stateParams',
+	'ContentService',
+	'LanguageService',
+	'$q',
+	function(CONF, $scope, $state, $stateParams, ContentService, LanguageService, $q) {
 
-	ContentService.getContent('root/home').then(
+		$scope.$on('language.initialized', function (event, value) {
+			loadContent();
+		});
 
-		function(content){
+		$scope.$on('language.changed', function (event, value) {
+			loadContent();
+		});
 
-			$scope.content = content;
-
-			//get featured items
-			var requests = [];
-			content.featured.forEach(function(path, i){
-				requests.push(ContentService.getContent(path));
-			});
-
-			
-			$q.all(requests)
-				.then(
-					function(data){
-						$scope.featured = data;
-					},
-					function(error){
-						console.error('FAIL');
-					}
-				);
-		},
-		function(){
-			$state.go('error');
+		if(LanguageService.isLangInitialized()){
+			loadContent();
 		}
-	);
 
-}]);
+		function loadContent(){
+			ContentService.getContent('root/home').then(
+				function(content){
+					$scope.content = content;
+					//get featured items
+					var requests = [];
+					content.featured.forEach(function(path, i){
+						requests.push(ContentService.getContent(path));
+					});
+					$q.all(requests)
+						.then(
+							function(data){
+								$scope.featured = data;
+							},
+							function(error){
+								console.error('FAIL');
+							}
+						);
+				},
+				function(){
+					$state.go('error');
+				}
+			);
+		}
+	}
+]);

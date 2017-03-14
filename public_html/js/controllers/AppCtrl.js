@@ -1,12 +1,7 @@
-kazoosh.controller('AppCtrl', ['$scope', '$state', '$translate', function($scope, $state, $translate) {
+kazoosh.controller('AppCtrl', [
+	'LanguageService',
+	function(LanguageService) {
 	
-	var proposedLang = $translate.proposedLanguage();
-	if($state.current && $state.current.name){
-		$state.go($state.current.name, {lang: proposedLang});
+		LanguageService.initializeLang();
 	}
-
-	$scope.changeLang = function (key) {
-		$translate.use(key);
-		$state.go($state.current.name, {lang: key});
-	};
-}]);
+]);
