@@ -2,9 +2,6 @@
 * translate all templates
 
 # BUGS
-* bei Umlauten und Sonderzeichen im Dateiname in:
-	def __isFile(self, sourceDir, fileName):
-		return os.path.isfile(os.path.join(sourceDir, fileName)) and not fileName.startswith('.')
 * why are missing templates load twice?
 
 # CODE
