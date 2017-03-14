@@ -23,7 +23,6 @@ kazoosh.controller('NavigationCtrl', [
 		}
 
 		function loadContent(){
-			console.log('language.initialized');
 			ContentService.getContent('root').then(
 				function(content){
 					//only show contents with order bigger or equal zero
