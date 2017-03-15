@@ -33,6 +33,10 @@ module.exports = function(grunt) {
 				files: ['public_html/sass/*.scss'],
 				tasks: ['sass']
 			},
+			jshint: {
+				files: ['<%= jshint.files %>'],
+				tasks: ['jshint']
+			},
 		},
 		shell: {
 			mdToJson: {
@@ -53,6 +57,9 @@ module.exports = function(grunt) {
 				expand: true,
 			},
 		},
+		jshint: {
+			files: ['Gruntfile.js', 'public_html/js/**/*.js']
+		}
 	});
 	
 	//merge local config
@@ -89,6 +96,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 
 	
 	grunt.registerTask('content', ['shell:mdToJson:<%= CONF.contentSourceDirectory %>:<%= CONF.contentDestinationDirectory %>']);
