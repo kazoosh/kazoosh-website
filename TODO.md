@@ -6,16 +6,14 @@
 * why are missing templates load twice?
 
 # CODE
-* minify & ubscrue own js + css
+* minify & ubscrue own js + css (introduce build process)
 	>>> see how yoeman does it
 	* create scr and dist (dev, production) folder
 		* bower_components, content, css, js (concated) only go in dist
 	* copy all folders in src to dist with grunt task
 		* sass > css
 		* js/* > app.js
-		* only user app.js or app.min.js in dist
-* (introduce build process)
-* BOWER vs. NPM
+		* only user app.js or app.min.js in dist 
 
 # content conversion
 * time.localtime(os.stat(filePath).st_birthtime does not work on server
