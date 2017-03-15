@@ -23,7 +23,7 @@
   "singleGroups": true,
   "strict": true,
   "undef": true,
-  "unused": true,
+  "unused": "vars",
 
   "asi": false,
   "boss": false,
@@ -46,6 +46,8 @@
 
   "globals": {
     "angular": false,
-    "$": false
+    "$": false,
+    "Showdown": false,
+    "console": false
   }
 }
