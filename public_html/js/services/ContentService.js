@@ -63,7 +63,7 @@ angular.module('kazoosh')
 				},
 				_getLang: function(){
 					var lang = $state.params.lang;
-					return (lang == undefined || lang == 'de') ? '' : '_' + lang;
+					return (lang === undefined || lang === 'de') ? '' : '_' + lang;
 				}
 			};
 		}

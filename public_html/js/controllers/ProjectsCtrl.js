@@ -20,9 +20,9 @@ kazoosh.controller('ProjectsCtrl', [
 		}
 
 		function loadContent(){
-			if($scope.content == undefined){
+			if($scope.content === undefined){
 				$scope.$watch('content', function() {
-					if($scope.content != undefined){
+					if($scope.content !== undefined){
 						loadProject($scope.content);
 					}
 				});

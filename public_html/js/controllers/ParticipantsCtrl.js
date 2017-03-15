@@ -20,9 +20,9 @@ kazoosh.controller('ParticipantsCtrl', [
 		}
 
 		function loadContent(){
-			if($scope.content == undefined){
+			if($scope.content === undefined){
 				$scope.$watch('content', function() {
-					if($scope.content != undefined){
+					if($scope.content !== undefined){
 						loadParticipants($scope.content);
 					}
 				});

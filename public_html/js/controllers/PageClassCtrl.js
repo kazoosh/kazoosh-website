@@ -13,15 +13,15 @@ kazoosh.controller('PageClassCtrl', [
 				var pathArray = toParams.path.split(CONF.DS);
 				for(var i=0; i < pathArray.length-1; i++){
 					pathPart = pathArray[i];
-					pageClasses.push(pathPart)
-					pageClasses.push(pathPart + CONF.default_page_class_prefix)
+					pageClasses.push(pathPart);
+					pageClasses.push(pathPart + CONF.default_page_class_prefix);
 				}
-				pageClasses.push(pathArray[pathArray.length-1])
+				pageClasses.push(pathArray[pathArray.length-1]);
 			}
 			else{
 				pageClasses.push(toState.name);
 			}
 			$scope.pageClasses = pageClasses.join(" ");
-		})
+		});
 	}
 ]);
