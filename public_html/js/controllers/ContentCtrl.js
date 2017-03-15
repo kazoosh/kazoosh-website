@@ -1,36 +1,36 @@
-(function () {
-	'use strict';
+(function() {
+'use strict';
 
-	angular.module('kazoosh').controller('ContentCtrl', [
-		'CONF',
-		'$scope',
-		'$state',
-		'ContentService',
-		'LanguageService',
-		function(CONF, $scope, $state, ContentService, LanguageService) {
-		
-			$scope.$on('language.initialized', function (event, value) {
-				loadContent();
-			});
+angular.module('kazoosh').controller('ContentCtrl', [
+ 'CONF',
+ '$scope',
+ '$state',
+ 'ContentService',
+ 'LanguageService',
+ function(CONF, $scope, $state, ContentService, LanguageService) {
 
-			$scope.$on('language.changed', function (event, value) {
-				loadContent();
-			});
+  $scope.$on('language.initialized', function(event, value) {
+    loadContent();
+  });
 
-			if(LanguageService.isLangInitialized()){
-				loadContent();
-			}
+  $scope.$on('language.changed', function(event, value) {
+    loadContent();
+  });
 
-			function loadContent(){
-				ContentService.getContent($state.params.path).then(
-					function(content){
-						$scope.content = content;
-					},
-					function(){
-						$state.go('error');
-					}
-				);
-			}
-		}
-	]);
+  if (LanguageService.isLangInitialized()) {
+    loadContent();
+  }
+
+  function loadContent() {
+    ContentService.getContent($state.params.path).then(
+     function(content) {
+      $scope.content = content;
+    },
+     function() {
+      $state.go('error');
+    }
+    );
+  }
+},
+]);
 }());
