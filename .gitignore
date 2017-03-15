@@ -27,3 +27,7 @@ node_modules
 
 # node
 npm-debug.log
+
+# sublime text config files
+kazoosh.sublime-project
+kazoosh.sublime-workspace
