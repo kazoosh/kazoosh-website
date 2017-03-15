@@ -1,32 +1,36 @@
-kazoosh.controller('ContentCtrl', [
-	'CONF',
-	'$scope',
-	'$state',
-	'ContentService',
-	'LanguageService',
-	function(CONF, $scope, $state, ContentService, LanguageService) {
-	
-		$scope.$on('language.initialized', function (event, value) {
-			loadContent();
-		});
+(function () {
+	'use strict';
 
-		$scope.$on('language.changed', function (event, value) {
-			loadContent();
-		});
+	angular.module('kazoosh').controller('ContentCtrl', [
+		'CONF',
+		'$scope',
+		'$state',
+		'ContentService',
+		'LanguageService',
+		function(CONF, $scope, $state, ContentService, LanguageService) {
+		
+			$scope.$on('language.initialized', function (event, value) {
+				loadContent();
+			});
 
-		if(LanguageService.isLangInitialized()){
-			loadContent();
+			$scope.$on('language.changed', function (event, value) {
+				loadContent();
+			});
+
+			if(LanguageService.isLangInitialized()){
+				loadContent();
+			}
+
+			function loadContent(){
+				ContentService.getContent($state.params.path).then(
+					function(content){
+						$scope.content = content;
+					},
+					function(){
+						$state.go('error');
+					}
+				);
+			}
 		}
-
-		function loadContent(){
-			ContentService.getContent($state.params.path).then(
-				function(content){
-					$scope.content = content;
-				},
-				function(error){
-					$state.go('error');
-				}
-			);
-		}
-	}
-]);
+	]);
+}());
