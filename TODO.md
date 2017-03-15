@@ -5,8 +5,6 @@
 * why are missing templates load twice?
 
 # CODE
-* use minified libs
-* rename lib folder to bower_components
 * minify & ubscrue own js + css
 * (introduce build process)
 * BOWER vs. NPM

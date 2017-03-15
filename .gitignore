@@ -5,7 +5,7 @@ config.local.json
 .grunt
 
 # bower dependency directory (defined in .bowerrc)
-public_html/lib
+public_html/bower_components
 
 # gernerated content json files
 public_html/content
