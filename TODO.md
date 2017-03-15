@@ -1,11 +1,19 @@
 #i18n
 * translate all templates
+* when creating json files from md's: if an attribute does not exist in the english md, copy it from the german. Do not overwirte attributes.
 
 # BUGS
 * why are missing templates load twice?
 
 # CODE
 * minify & ubscrue own js + css
+	>>> see how yoeman does it
+	* create scr and dist (dev, production) folder
+		* bower_components, content, css, js (concated) only go in dist
+	* copy all folders in src to dist with grunt task
+		* sass > css
+		* js/* > app.js
+		* only user app.js or app.min.js in dist
 * (introduce build process)
 * BOWER vs. NPM
 
