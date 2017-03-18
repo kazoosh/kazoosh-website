@@ -1,17 +1,17 @@
 # local config
-config.local.json
+conf/config.local.json
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
 # bower dependency directory (defined in .bowerrc)
-public_html/bower_components
+bower_components
 
 # gernerated content json files
-public_html/content
+src/content/json
 
 # copied images
-public_html/img
+src/content/img
 
 # node dependency directory
 node_modules
