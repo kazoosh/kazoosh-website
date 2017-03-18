@@ -119,13 +119,17 @@ $ grunt observe-contents
 	
 Can be used if sass is not need or installed.
 
-## start webserver
+## build and run (dev)
 
-* for example using python:
+```
+$ npm start
+```
+
+or
 	
 ```
-$ cd public_html/
-$ python -m SimpleHTTPServer
+$ npm run build
+$ npm run serve
 ```
 
 # CHANGE CONTENT

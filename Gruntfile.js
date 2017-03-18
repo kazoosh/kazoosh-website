@@ -7,14 +7,72 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    CONF: grunt.file.readJSON('config.json'),
+    CONF: grunt.file.readJSON('conf/config.json'),
+    jshint: {
+      files: ['Gruntfile.js', 'src/js/**/*.js'],
+      options: {
+        jshintrc: true,
+        reporter: require('jshint-stylish'),
+      },
+    },
+    jscs: {
+      files: {
+        src: ['<%= jshint.files %>'],
+      },
+      options: {
+        config: '.jscsrc',
+      },
+    },
+    uglify: {
+      options: {
+        banner: '/*\n <%= pkg.name %> ' +
+          '<%= grunt.template.today("yyyy-mm-dd") %> \n*/\n',
+      },
+      build: {
+        files: {
+          'dist/js/app.min.js': 'src/js/**/*.js',
+        },
+      },
+    },
     sass: {
-      dist: {
-        options: {
+      options: {
           style: 'expanded',
         },
+      build: {
         files: {
-          'public_html/css/style.css': 'public_html/sass/style.scss',
+          'src/css/style.css': 'src/sass/style.scss',
+        },
+      },
+    },
+    cssmin: {
+      options: {
+        banner: '/*\n <%= pkg.name %> ' +
+          '<%= grunt.template.today("yyyy-mm-dd") %> \n*/\n',
+      },
+      build: {
+        files: {
+          'src/css/style.min.css': 'src/css/style.css',
+        },
+      },
+    },
+    injector: {
+      bower: {
+        options: {
+          prefix: '..',
+          starttag: '<!-- injector_bower:{{ext}} -->',
+          endtag: '<!-- endinjector_bower -->',
+        },
+        files: {
+          'src/index.html': ['bower.json'],
+        },
+      },
+      dev: {
+        options: {
+          ignorePath: 'src',
+          relative: true,
+        },
+        files: {
+          'src/index.html': ['src/js/**/*.js', 'src/css/**/*.css'],
         },
       },
     },
@@ -43,6 +101,24 @@ module.exports = function(grunt) {
         tasks: ['jshint'],
       },
     },
+    browserSync: {
+      bsFiles: {
+        src: [
+            'src/css/*.css',
+            'src/*.html',
+        ],
+      },
+      options: {
+        server: {
+          watchTask: true,
+          baseDir: './src',
+          routes: {
+            '/bower_components': 'bower_components',
+          },
+        },
+        browser: 'google chrome',
+      },
+    },
     shell: {
       mdToJson: {
         command: function(sourceDirectory, destinationDirectory) {
@@ -61,20 +137,6 @@ module.exports = function(grunt) {
         src: '**',
         dest: '<%= CONF.imagesDestinationDirectory %>',
         expand: true,
-      },
-    },
-    jshint: {
-      files: ['Gruntfile.js', 'public_html/js/**/*.js'],
-      options: {
-        jshintrc: true,
-      },
-    },
-    jscs: {
-      files: {
-        src: ['<%= jshint.files %>'],
-      },
-      options: {
-        config: '.jscsrc',
       },
     },
   });
@@ -122,8 +184,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jscs');
+  grunt.loadNpmTasks('grunt-injector');
+  grunt.loadNpmTasks('grunt-browser-sync');
 
   grunt.registerTask(
     'content',
@@ -132,6 +198,15 @@ module.exports = function(grunt) {
       '<%= CONF.contentDestinationDirectory %>',
     ]
   );
+
+  grunt.registerTask('build', ['jshint', 'jscs', 'sass', 'injector']);
+  grunt.registerTask('serve', ['browserSync', 'watch']);
+  grunt.registerTask('default', ['build', 'serve']);
+
+  grunt.registerTask('build:dist',
+    ['jshint', 'jscs', 'uglify', 'sass', 'cssmin', 'injector']
+  );// Clean
+
   grunt.registerTask('images', ['clean:images', 'copy:images']);
   grunt.registerTask('observe', ['sass', 'content', 'images', 'watch']);
   grunt.registerTask('observe-contents', ['content', 'images', 'watch']);

@@ -14,6 +14,10 @@
 		* sass > css
 		* js/* > app.js
 		* only user app.js or app.min.js in dist 
+	* move fonts one level up
+	* remove "jquery-placeholder" and "jquery.cookie"
+	* remove styles css from version control?
+	* check get steady part of readme
 
 # content conversion
 * time.localtime(os.stat(filePath).st_birthtime does not work on server
