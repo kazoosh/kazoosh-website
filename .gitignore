@@ -16,6 +16,9 @@ src/content/img
 # node dependency directory
 node_modules
 
+# dist build folder
+dist
+
 #python
 *.pyc
 

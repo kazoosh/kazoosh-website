@@ -6,104 +6,65 @@
 $ sudo easy_install pip
 ```
 
-## python-frontmatter
+### python-frontmatter
 
-* https://www.python.org/downloads/
-
-### modul: frontmatter:
+* Parse and manage markdown posts with YAML frontmatter.
+* htps://pypi.python.org/pypi/python-frontmatter/0.1.1
 
 ```
 $ pip install python-frontmatter
 ```
 
-* or htps://pypi.python.org/pypi/python-frontmatter/0.1.1
-
-
-## watchdog
+### watchdog
 
 * http://pythonhosted.org//watchdog/
-	
-### modul: watchdog:
+* Python API library and shell utilities to monitor file system events.
 
 ```
 $ sudo pip install watchdog
 ```
 
+## node js
 
-## bower & grunt
+* http://nodejs.org
+* NodeJS is a JavaScript runtime.
 
-### node js
+```
+$ brew install node
+```
+
+or
+
+Follow instructions to install node without npm and npm seperatly (cleaner):
+	* https://gist.github.com/DanHerbert/9520689
+	* https://wilsonmar.github.io/node-osx-install/#Homebrew
+
+or
 
 * http://nodejs.org/download/
 
-### bower:
-	
-```
-$ sudo npm install -g bower
-```
-
-### grunt
+### update npm
 
 ```
-$ sudo npm install -g grunt-cli
-```
+$ npm install -g npm@lts
+``
 
-## Sass
-Needed, if you want to modify and compile sass files
-
-### ruby
-
-* https://www.ruby-lang.org/de/downloads/
-
-```
-$ brew install ruby
-```
-
-
-### ruby packetmanager: rubygems
-
-* https://rubygems.org/pages/download
-* update:
-
-```
-$ gem update --system
-```
-
-### Sass
-
-```
-$ sudo gem install sass
-```
-
-# GET STEADY!
-================================================================
-
-## node package dependencies
-
-```
-$ npm install
-```
-
-	
-## javascript dependencies
-
-```
-$ bower install
-```
 
 # CONFIGURE
 ================================================================
 
-## "backend"
-* see config.json
-* for local configuration use config.local.default.json and copy it to config.local.json
+* see conf/config.json
+* for local configuration use conf/config.local.default.json and copy it to conf/config.local.json
 
-## angular app
-
-* see public_html/js/config.js
 
 # RUN
 ================================================================
+
+## install dependencies, build and run (dev)
+
+```
+$ npm start
+```
 
 ## watch for all changes (content, image and sass)
 
@@ -119,18 +80,9 @@ $ grunt observe-contents
 	
 Can be used if sass is not need or installed.
 
-## build and run (dev)
+## config
 
-```
-$ npm start
-```
-
-or
-	
-```
-$ npm run build
-$ npm run serve
-```
+* see src/js/config.js
 
 # CHANGE CONTENT
 ================================================================

@@ -6,18 +6,22 @@
 * why are missing templates load twice?
 
 # CODE
-* minify & ubscrue own js + css (introduce build process)
-	>>> see how yoeman does it
-	* create scr and dist (dev, production) folder
-		* bower_components, content, css, js (concated) only go in dist
-	* copy all folders in src to dist with grunt task
-		* sass > css
-		* js/* > app.js
-		* only user app.js or app.min.js in dist 
-	* move fonts one level up
-	* remove "jquery-placeholder" and "jquery.cookie"
-	* remove styles css from version control?
-	* check get steady part of readme
+* grunt fix serve:dist
+* check grunt file for paths to move to config file
+* add ./node_modules/grunt-cli/bin/grunt to package.json
+* move fonts one level up
+* remove "jquery-placeholder" and "jquery.cookie"
+* remove styles css from version control?
+* check get steady part of readme
+*fix npm warnings:
+	npm WARN deprecated minimatch@0.2.14: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+	npm WARN deprecated minimatch@0.3.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+	npm WARN deprecated graceful-fs@1.2.3: graceful-fs v3.0.0 and before will fail on node releases >= v7.0. Please update to graceful-fs@^4.0.0 as soon as possible. Use 'npm ls graceful-fs' to find it in the tree.
+	npm WARN deprecated node-uuid@1.4.7: use uuid module instead
+	npm WARN prefer global jsonlint@1.6.2 should be installed with -g
+	> change grunt version to 1.0.1
+	> 
+
 
 # content conversion
 * time.localtime(os.stat(filePath).st_birthtime does not work on server

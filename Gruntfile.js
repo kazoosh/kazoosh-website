@@ -34,6 +34,21 @@ module.exports = function(grunt) {
         },
       },
     },
+    bower_concat: {
+      build: {
+        dest: {
+          js: 'dist/js/vendor.js',
+          css: 'dist/css/vendor.css',
+        },
+        callback: function(mainFiles, component) {
+          return mainFiles.map(function(filepath) {
+            // Use minified files if available
+            var min = filepath.replace(/\.js$/, '.min.js');
+            return grunt.file.exists(min) ? min : filepath;
+          });
+        },
+      },
+    },
     sass: {
       options: {
           style: 'expanded',
@@ -51,12 +66,12 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'src/css/style.min.css': 'src/css/style.css',
+          'dist/css/style.min.css': 'src/css/style.css',
         },
       },
     },
     injector: {
-      bower: {
+      bower_dev: {
         options: {
           prefix: '..',
           starttag: '<!-- injector_bower:{{ext}} -->',
@@ -66,7 +81,7 @@ module.exports = function(grunt) {
           'src/index.html': ['bower.json'],
         },
       },
-      dev: {
+      src_dev: {
         options: {
           ignorePath: 'src',
           relative: true,
@@ -75,6 +90,37 @@ module.exports = function(grunt) {
           'src/index.html': ['src/js/**/*.js', 'src/css/**/*.css'],
         },
       },
+      bower_dist: {
+        options: {
+          starttag: '<!-- injector_bower:{{ext}} -->',
+          endtag: '<!-- endinjector_bower -->',
+          ignorePath: 'dist',
+          relative: true,
+        },
+        files: {
+          'dist/index.html':
+            ['dist/js/**/vendor*.js', 'dist/css/**/vendor*.css'],
+        },
+      },
+      src_dist: {
+        options: {
+          ignorePath: 'dist',
+          relative: true,
+        },
+        files: {
+          'dist/index.html':
+            ['dist/js/**/app*.js', 'dist/css/**/style*.css'],
+        },
+      },
+    },
+    cacheBust: {
+      build: {
+          options: {
+              assets: ['dist/js/**/*.js', 'dist/css/**/*.css'],
+              deleteOriginals: true,
+            },
+          src: ['dist/index.html'],
+        },
     },
     watch: {
       content: {
@@ -102,21 +148,31 @@ module.exports = function(grunt) {
       },
     },
     browserSync: {
-      bsFiles: {
-        src: [
-            'src/css/*.css',
-            'src/*.html',
-        ],
-      },
-      options: {
-        server: {
-          watchTask: true,
-          baseDir: './src',
-          routes: {
-            '/bower_components': 'bower_components',
-          },
+      dev: {
+        bsFiles: {
+          src: [
+              'src/css/*.css',
+              'src/*.html',
+          ],
         },
-        browser: 'google chrome',
+        options: {
+          server: {
+            watchTask: true,
+            baseDir: './src',
+            routes: {
+              '/bower_components': 'bower_components',
+            },
+          },
+          browser: 'google chrome',
+        },
+      },
+      dist: {
+        options: {
+          server: {
+            baseDir: './dist',
+          },
+          browser: 'google chrome',
+        },
       },
     },
     shell: {
@@ -130,12 +186,19 @@ module.exports = function(grunt) {
     },
     clean: {
       images: ['<%= CONF.imagesDestinationDirectory %>'],
+      dist: ['dist'],
     },
     copy: {
       images: {
         cwd: '<%= CONF.imagesSourceDirectory %>',
         src: '**',
         dest: '<%= CONF.imagesDestinationDirectory %>',
+        expand: true,
+      },
+      assets: {
+        cwd: '<%= CONF.sourceDirectory %>',
+        src: '<%= CONF.assetDirectories %>',
+        dest: '<%= CONF.distDirectory %>',
         expand: true,
       },
     },
@@ -187,9 +250,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-bower-concat');
   grunt.loadNpmTasks('grunt-jscs');
   grunt.loadNpmTasks('grunt-injector');
   grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-cache-bust');
 
   grunt.registerTask(
     'content',
@@ -199,13 +264,22 @@ module.exports = function(grunt) {
     ]
   );
 
-  grunt.registerTask('build', ['jshint', 'jscs', 'sass', 'injector']);
-  grunt.registerTask('serve', ['browserSync', 'watch']);
+  grunt.registerTask('build',
+    ['jshint', 'jscs', 'sass', 'injector:bower_dev', 'injector:src_dev']);
+  grunt.registerTask('serve', ['browserSync:dev', 'watch']);
   grunt.registerTask('default', ['build', 'serve']);
 
   grunt.registerTask('build:dist',
-    ['jshint', 'jscs', 'uglify', 'sass', 'cssmin', 'injector']
-  );// Clean
+    [
+      'jshint', 'jscs',
+      'clean:dist',
+      'uglify', 'bower_concat',
+      'sass', 'cssmin',
+      'copy:assets',
+      'injector:bower_dist', 'injector:src_dist', 'cacheBust',
+    ]
+  );
+  grunt.registerTask('serve:dist', ['browserSync:dist']);
 
   grunt.registerTask('images', ['clean:images', 'copy:images']);
   grunt.registerTask('observe', ['sass', 'content', 'images', 'watch']);

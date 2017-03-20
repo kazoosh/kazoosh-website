@@ -2,5 +2,8 @@
   "contentSourceDirectory": "../../../kazooshcloud/kazooshcloud/Shared/kazoosh-website-content/content",
   "contentDestinationDirectory": "public_html/content",
   "imagesSourceDirectory": "../../../kazooshcloud/kazooshcloud/Shared/kazoosh-website-content/images",
-  "imagesDestinationDirectory": "public_html/img"
+  "imagesDestinationDirectory": "public_html/img",
+  "assetDirectories": ["content/*", "img/*", "locales/*", "templates/*", "index.html"],
+  "sourceDirectory": "src/",
+  "distDirectory": "dist/"
 }
