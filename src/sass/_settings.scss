@@ -8,15 +8,15 @@ $font-family-text: 'Dosis', sans-serif;
 
 @font-face {
  font-family: Fat-Free;
- src: url("fonts/Fat-Free.eot"); /* EOT file for IE */
- src: url("fonts/Fat-Free.ttf") format('truetype');
+ src: url("../fonts/Fat-Free.eot"); /* EOT file for IE */
+ src: url("../fonts/Fat-Free.ttf") format('truetype');
 }
 $font-family-header: Fat-Free, sans-serif;
 
 @font-face {
  font-family: Icons;
- src: url('fonts/foundation-icons.eot'); 
- src: url('fonts/foundation-icons.ttf') format('truetype');
+ src: url('../fonts/foundation-icons.eot'); 
+ src: url('../fonts/foundation-icons.ttf') format('truetype');
  font-weight: normal;
  font-style: normal;
 }

@@ -27,6 +27,8 @@ module.exports = function(grunt) {
       options: {
         banner: '/*\n <%= pkg.name %> ' +
           '<%= grunt.template.today("yyyy-mm-dd") %> \n*/\n',
+        // Beautify: true,
+        // mangle: true,
       },
       build: {
         files: {
