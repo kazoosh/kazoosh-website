@@ -3,7 +3,7 @@
   "contentDestinationDirectory": "public_html/content",
   "imagesSourceDirectory": "../../../kazooshcloud/kazooshcloud/Shared/kazoosh-website-content/images",
   "imagesDestinationDirectory": "public_html/img",
-  "assetDirectories": ["content/**", "img/**", "fonts/**", "locales/**", "templates/**", "index.html"],
+  "assetDirectories": ["content/**", "img/**", "fonts/**", "icons/**", "locales/**", "templates/**", "index.html"],
   "sourceDirectory": "src/",
   "distDirectory": "dist/"
 }

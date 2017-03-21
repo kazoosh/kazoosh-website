@@ -10,6 +10,8 @@ angular.module('kazoosh').controller('ProjectsCtrl', [
  '$q',
  function(CONF, $scope, $state, ContentService, LanguageService, $q) {
 
+  $('.swipebox').swipebox({loopAtEnd: true});
+
   $scope.$on('language.initialized', function(event, value) {
     loadContent();
   });
