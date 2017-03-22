@@ -8,10 +8,10 @@ conf/config.local.json
 bower_components
 
 # gernerated content json files
-src/content/json
+src/content
 
 # copied images
-src/content/img
+src/img
 
 # node dependency directory
 node_modules
