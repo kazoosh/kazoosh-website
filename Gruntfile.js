@@ -207,8 +207,8 @@ module.exports = function(grunt) {
   });
 
   // Merge local config
-  if (grunt.file.exists('config.local.json')) {
-    grunt.config.merge({CONF: grunt.file.readJSON('config.local.json')});
+  if (grunt.file.exists('conf/config.local.json')) {
+    grunt.config.merge({CONF: grunt.file.readJSON('conf/config.local.json')});
   }
 
 
