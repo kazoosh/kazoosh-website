@@ -6,10 +6,6 @@
 * why are missing templates load twice?
 
 # CODE
-* grunt fix serve:dist
-* check grunt file for paths to move to config file
-* add ./node_modules/grunt-cli/bin/grunt to package.json
-* move fonts one level up
 * remove "jquery-placeholder" and "jquery.cookie"
 * remove styles css from version control?
 * check get steady part of readme
