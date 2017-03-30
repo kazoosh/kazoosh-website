@@ -35,6 +35,10 @@
     "prestart": "npm install",
     "start": "grunt",
     "build": "grunt build",
-    "serve": "grunt serve"
+    "serve": "grunt serve",
+    "build:dist": "grunt build:dist",
+    "serve:dist": "grunt serve:dist",
+    "observe": "grunt observe",
+    "observe-contents": "grunt observe-contents"
   }
 }
