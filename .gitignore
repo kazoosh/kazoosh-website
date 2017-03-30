@@ -13,6 +13,9 @@ src/content
 # copied images
 src/img
 
+# generated css
+src/css
+
 # node dependency directory
 node_modules
 
