@@ -258,8 +258,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-cache-bust');
 
-  grunt.registerTask(
-    'content',
+  grunt.registerTask('content',
     [
       'shell:mdToJson:<%= CONF.contentSourceDirectory %>:' +
       '<%= CONF.contentDestinationDirectory %>',
@@ -267,10 +266,20 @@ module.exports = function(grunt) {
   );
 
   grunt.registerTask('build',
-    ['jshint', 'jscs', 'sass', 'injector:bower_dev', 'injector:src_dev']);
-  grunt.registerTask('serve', ['browserSync:dev', 'watch']);
-  grunt.registerTask('default', ['build', 'serve']);
-
+    [
+    'jshint', 'jscs', 'sass', 'injector:bower_dev', 'injector:src_dev',
+    ]
+  );
+  grunt.registerTask('serve',
+    [
+      'browserSync:dev', 'watch',
+    ]
+  );
+  grunt.registerTask('default',
+    [
+      'build', 'serve',
+    ]
+  );
   grunt.registerTask('build:dist',
     [
       'jshint', 'jscs',
@@ -281,7 +290,11 @@ module.exports = function(grunt) {
       'injector:bower_dist', 'injector:src_dist', 'cacheBust',
     ]
   );
-  grunt.registerTask('serve:dist', ['browserSync:dist']);
+  grunt.registerTask('serve:dist',
+    [
+      'browserSync:dist',
+    ]
+  );
 
   grunt.registerTask('images', ['clean:images', 'copy:images']);
   grunt.registerTask('observe', ['sass', 'content', 'images', 'watch']);
