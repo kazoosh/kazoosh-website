@@ -69,20 +69,38 @@ $ npm start
 ## watch for all changes (content, image and sass)
 
 ```
-$ grunt observe
+$ npm run observe
 ```
 
 ## watch for content and image changes only
 
 ```
-$ grunt observe-contents
+$ npm run observe-contents
 ```
-	
-Can be used if sass is not need or installed.
 
 ## config
 
 * see src/js/config.js
+
+# BUILD
+================================================================
+
+## build website for production
+
+```
+npm run build:dist
+```
+
+* writes files to "dist" directory
+
+
+## serve files from build
+
+```
+$ npm run serve:dist
+```
+
+* starts local server and browser to test view build
 
 # CHANGE CONTENT
 ================================================================
