@@ -1,9 +1,13 @@
 {
-  "contentSourceDirectory": "../../../kazooshcloud/kazooshcloud/Shared/kazoosh-website-content/content",
-  "contentDestinationDirectory": "public_html/content",
-  "imagesSourceDirectory": "../../../kazooshcloud/kazooshcloud/Shared/kazoosh-website-content/images",
-  "imagesDestinationDirectory": "public_html/img",
-  "assetDirectories": ["content/**", "img/**", "fonts/**", "icons/**", "locales/**", "templates/**", "index.html"],
-  "sourceDirectory": "src/",
-  "distDirectory": "dist/"
+  "contentSrcDir": "../../../kazooshcloud/kazooshcloud/Shared/kazoosh-website-content/content",
+  "contentDestDir": "src/content",
+  "imagesSrcDir": "../../../kazooshcloud/kazooshcloud/Shared/kazoosh-website-content/images",
+  "imagesDestDir": "src/img",
+  "assetDirs": ["content/**", "img/**", "fonts/**", "icons/**", "locales/**", "templates/**", "index.html"],
+  "sourceDir": "src/",
+  "distDir": "dist/",
+  "cssDir": "css/",
+  "sassDir": "sass/",
+  "jsDir": "js/",
+  "indexHtml": "index.html"
 }

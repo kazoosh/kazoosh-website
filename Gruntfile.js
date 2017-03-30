@@ -4,12 +4,21 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
+  var packageJSON = 'package.json';
+  var bowerJSON = 'bower.json';
+  var confFile = 'conf/config.json';
+  var confFileLocal = 'conf/config.local.json';
+  var mdToJsonScript = 'script/mdToJson.py';
+  var defaultBrowser = 'google chrome';
+
   // Project configuration.
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    CONF: grunt.file.readJSON('conf/config.json'),
+    pkg: grunt.file.readJSON(packageJSON),
+    CONF: grunt.file.readJSON(confFile),
     jshint: {
-      files: ['Gruntfile.js', 'src/js/**/*.js'],
+      files: [
+        'Gruntfile.js', '<%= CONF.sourceDir %><%= CONF.jsDir %>**/*.js',
+      ],
       options: {
         jshintrc: true,
         reporter: require('jshint-stylish'),
@@ -32,15 +41,16 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'dist/js/app.min.js': 'src/js/**/*.js',
+          '<%= CONF.distDir %><%= CONF.jsDir %>app.min.js':
+            '<%= CONF.sourceDir %><%= CONF.jsDir %>**/*.js',
         },
       },
     },
     bower_concat: {
       build: {
         dest: {
-          js: 'dist/js/vendor.js',
-          css: 'dist/css/vendor.css',
+          js: '<%= CONF.distDir %><%= CONF.jsDir %>vendor.js',
+          css: '<%= CONF.distDir %><%= CONF.cssDir %>vendor.css',
         },
         callback: function(mainFiles, component) {
           return mainFiles.map(function(filepath) {
@@ -57,7 +67,8 @@ module.exports = function(grunt) {
         },
       build: {
         files: {
-          'src/css/style.css': 'src/sass/style.scss',
+          '<%= CONF.sourceDir %><%= CONF.cssDir %>style.css':
+            '<%= CONF.sourceDir %><%= CONF.sassDir %>style.scss',
         },
       },
     },
@@ -68,7 +79,8 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'dist/css/style.min.css': 'src/css/style.css',
+          '<%= CONF.distDir %><%= CONF.cssDir %>style.min.css':
+            '<%= CONF.sourceDir %><%= CONF.cssDir %>style.css',
         },
       },
     },
@@ -80,7 +92,7 @@ module.exports = function(grunt) {
           endtag: '<!-- endinjector_bower -->',
         },
         files: {
-          'src/index.html': ['bower.json'],
+          '<%= CONF.sourceDir %><%= CONF.indexHtml %>': [bowerJSON],
         },
       },
       src_dev: {
@@ -89,7 +101,10 @@ module.exports = function(grunt) {
           relative: true,
         },
         files: {
-          'src/index.html': ['src/js/**/*.js', 'src/css/**/*.css'],
+          '<%= CONF.sourceDir %><%= CONF.indexHtml %>': [
+            '<%= CONF.sourceDir %><%= CONF.jsDir %>**/*.js',
+            '<%= CONF.sourceDir %><%= CONF.cssDir %>**/*.css',
+          ],
         },
       },
       bower_dist: {
@@ -100,8 +115,10 @@ module.exports = function(grunt) {
           relative: true,
         },
         files: {
-          'dist/index.html':
-            ['dist/js/**/vendor*.js', 'dist/css/**/vendor*.css'],
+          '<%= CONF.distDir %><%= CONF.indexHtml %>': [
+            '<%= CONF.distDir %><%= CONF.jsDir %>**/vendor*.js',
+            '<%= CONF.distDir %><%= CONF.cssDir %>**/vendor*.css',
+          ],
         },
       },
       src_dist: {
@@ -110,30 +127,33 @@ module.exports = function(grunt) {
           relative: true,
         },
         files: {
-          'dist/index.html':
-            ['dist/js/**/app*.js', 'dist/css/**/style*.css'],
+          '<%= CONF.distDir %><%= CONF.indexHtml %>': [
+            '<%= CONF.distDir %><%= CONF.jsDir %>**/app*.js',
+            '<%= CONF.distDir %><%= CONF.cssDir %>**/style*.css',],
         },
       },
     },
     cacheBust: {
       build: {
           options: {
-              assets: ['dist/js/**/*.js', 'dist/css/**/*.css'],
+              assets: [
+                '<%= CONF.distDir %><%= CONF.jsDir %>**/*.js',
+                '<%= CONF.distDir %><%= CONF.cssDir %>**/*.css',],
               deleteOriginals: true,
             },
-          src: ['dist/index.html'],
+          src: ['<%= CONF.distDir %><%= CONF.indexHtml %>'],
         },
     },
     watch: {
       content: {
-        files: ['<%= CONF.contentSourceDirectory %>/**'],
+        files: ['<%= CONF.contentSrcDir %>/**'],
         tasks: ['content'],
         options: {
           spawn: false,
         },
       },
       images: {
-        files: ['<%= CONF.imagesSourceDirectory %>/**'],
+        files: ['<%= CONF.imagesSrcDir %>/**'],
         // Use images watch event for performance issues
         tasks: ['clean:images', 'copy:images'],
         options: {
@@ -141,7 +161,7 @@ module.exports = function(grunt) {
         },
       },
       css: {
-        files: ['public_html/sass/*.scss'],
+        files: ['<%= CONF.sourceDir %><%= CONF.sassDir %>*.scss'],
         tasks: ['sass'],
       },
       jshint: {
@@ -153,64 +173,63 @@ module.exports = function(grunt) {
       dev: {
         bsFiles: {
           src: [
-              'src/css/*.css',
-              'src/*.html',
+              '<%= CONF.sourceDir %><%= CONF.cssDir %>*.css',
+              '<%= CONF.sourceDir %>*.html',
           ],
         },
         options: {
           server: {
             watchTask: true,
-            baseDir: './src',
+            baseDir: './<%= CONF.sourceDir %>',
             routes: {
               '/bower_components': 'bower_components',
             },
           },
-          browser: 'google chrome',
+          browser: defaultBrowser,
         },
       },
       dist: {
         options: {
           server: {
-            baseDir: './dist',
+            baseDir: './<%= CONF.distDir %>',
           },
-          browser: 'google chrome',
+          browser: defaultBrowser,
         },
       },
     },
     shell: {
       mdToJson: {
-        command: function(sourceDirectory, destinationDirectory) {
-          var script = 'python script/mdToJson.py ' +
-            sourceDirectory + ' ' + destinationDirectory;
+        command: function(sourceDir, destinationDir) {
+          var script = 'python ' + mdToJsonScript + ' ' +
+            sourceDir + ' ' + destinationDir;
           return script;
         },
       },
     },
     clean: {
-      images: ['<%= CONF.imagesDestinationDirectory %>'],
+      images: ['<%= CONF.imagesDestDir%>'],
       dist: ['dist'],
     },
     copy: {
       images: {
-        cwd: '<%= CONF.imagesSourceDirectory %>',
+        cwd: '<%= CONF.imagesSrcDir %>',
         src: '**',
-        dest: '<%= CONF.imagesDestinationDirectory %>',
+        dest: '<%= CONF.imagesDestDir%>',
         expand: true,
       },
       assets: {
-        cwd: '<%= CONF.sourceDirectory %>',
-        src: '<%= CONF.assetDirectories %>',
-        dest: '<%= CONF.distDirectory %>',
+        cwd: '<%= CONF.sourceDir %>',
+        src: '<%= CONF.assetDirs %>',
+        dest: '<%= CONF.distDir %>',
         expand: true,
       },
     },
   });
 
   // Merge local config
-  if (grunt.file.exists('conf/config.local.json')) {
-    grunt.config.merge({CONF: grunt.file.readJSON('conf/config.local.json')});
+  if (grunt.file.exists(confFileLocal)) {
+    grunt.config.merge({CONF: grunt.file.readJSON(confFileLocal)});
   }
-
 
   grunt.event.on('watch', function(action, filepath, target) {
 
@@ -226,7 +245,7 @@ module.exports = function(grunt) {
     If (target === 'images') {
      var pathArray = filepath.split("/");
      var imgFilePath = pathArray.slice(1).join("/");//path without image folder
-     imgFilePath = grunt.config.get('CONF.imagesDestinationDirectory') +
+     imgFilePath = grunt.config.get('CONF.imagesDestDir) +
       '/'+imgFilePath;
 
      if (action === 'deleted') {
@@ -260,8 +279,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('content',
     [
-      'shell:mdToJson:<%= CONF.contentSourceDirectory %>:' +
-      '<%= CONF.contentDestinationDirectory %>',
+      'shell:mdToJson:<%= CONF.contentSrcDir %>:' +
+      '<%= CONF.contentDestDir %>',
     ]
   );
 
