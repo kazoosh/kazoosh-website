@@ -6,9 +6,6 @@
 * why are missing templates load twice?
 
 # CODE
-* remove "jquery-placeholder" and "jquery.cookie"
-* remove styles css from version control?
-* check get steady part of readme
 * include modernizer
 *fix npm warnings:
 	npm WARN deprecated minimatch@0.2.14: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
