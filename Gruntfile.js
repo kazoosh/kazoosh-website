@@ -147,7 +147,7 @@ module.exports = function(grunt) {
     watch: {
       content: {
         files: ['<%= CONF.contentSrcDir %>/**'],
-        tasks: ['content'],
+        tasks: ['json'],
         options: {
           spawn: false,
         },
@@ -277,46 +277,50 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-cache-bust');
 
-  grunt.registerTask('content',
-    [
+  grunt.registerTask('json', [
       'shell:mdToJson:<%= CONF.contentSrcDir %>:' +
       '<%= CONF.contentDestDir %>',
-    ]
-  );
-
-  grunt.registerTask('build',
-    [
-    'jshint', 'jscs', 'sass', 'injector:bower_dev', 'injector:src_dev',
-    ]
-  );
-  grunt.registerTask('serve',
-    [
+  ]);
+  grunt.registerTask('images', [
+    'clean:images', 'copy:images',
+  ]);
+  grunt.registerTask('contents', [
+    'sass', 'json', 'images',
+  ]);
+  grunt.registerTask('observe', [
+    'contents', 'watch',
+  ]);
+  grunt.registerTask('observe-contents', [
+    'contents', 'watch',
+  ]);
+  grunt.registerTask('build', [
+    'jshint', 'jscs',
+    'contents',
+    'injector:bower_dev', 'injector:src_dev',
+  ]);
+  grunt.registerTask('serve', [
       'browserSync:dev', 'watch',
-    ]
-  );
-  grunt.registerTask('default',
-    [
-      'build', 'serve',
-    ]
-  );
-  grunt.registerTask('build:dist',
-    [
+    ]);
+  grunt.registerTask('build:dist', [
       'jshint', 'jscs',
+      'contents',
       'clean:dist',
       'uglify', 'bower_concat',
       'sass', 'cssmin',
       'copy:assets',
       'injector:bower_dist', 'injector:src_dist', 'cacheBust',
-    ]
-  );
-  grunt.registerTask('serve:dist',
-    [
+  ]);
+  grunt.registerTask('serve:dist', [
       'browserSync:dist',
-    ]
-  );
-
-  grunt.registerTask('images', ['clean:images', 'copy:images']);
-  grunt.registerTask('observe', ['sass', 'content', 'images', 'watch']);
-  grunt.registerTask('observe-contents', ['content', 'images', 'watch']);
+  ]);
+  grunt.registerTask('start', [
+      'build', 'serve',
+  ]);
+  grunt.registerTask('start:dist', [
+      'build:dist', 'serve:dist',
+  ]);
+  grunt.registerTask('default', [
+      'start',
+  ]);
 };
 }());

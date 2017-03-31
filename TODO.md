@@ -5,17 +5,6 @@
 # BUGS
 * why are missing templates load twice?
 
-# CODE
-*fix npm warnings:
-	npm WARN deprecated minimatch@0.2.14: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
-	npm WARN deprecated minimatch@0.3.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
-	npm WARN deprecated graceful-fs@1.2.3: graceful-fs v3.0.0 and before will fail on node releases >= v7.0. Please update to graceful-fs@^4.0.0 as soon as possible. Use 'npm ls graceful-fs' to find it in the tree.
-	npm WARN deprecated node-uuid@1.4.7: use uuid module instead
-	npm WARN prefer global jsonlint@1.6.2 should be installed with -g
-	> change grunt version to 1.0.1
-	> 
-
-
 # content conversion
 * time.localtime(os.stat(filePath).st_birthtime does not work on server
 
